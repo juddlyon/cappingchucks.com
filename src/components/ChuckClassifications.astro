@@ -1,0 +1,54 @@
+<section id="classifications" class="py-14 border-b border-border">
+    <div class="mx-auto max-w-3xl px-6">
+        <span class="section-rule"></span>
+        <h2 class="mb-6">Chuck Classifications</h2>
+
+        <div class="class-block">
+            <span class="class-tag">Electromagnetic</span>
+            <h3>Magnetic Hysteresis Chucks</h3>
+            <p>These use an electromagnetic hysteresis coupling to transmit torque from the spindle motor to the closure. A variable DC current sets the magnetic field intensity, which determines the slip-torque threshold. When torque reaches the preset value, the hysteresis disc slips without mechanical contact. Result: torque repeatability under 3% CV with zero wear on drive surfaces.</p>
+            <ul class="class-specs">
+                <li>No mechanical clutch surfaces, so no friction-based wear</li>
+                <li>Slip-torque repeatability: &plusmn;0.1 N·m across 10M+ cycles</li>
+                <li>Torque set by current control (PLC or analog signal)</li>
+                <li>Standard choice for high-speed rotary cappers above 800 CPM</li>
+            </ul>
+        </div>
+
+        <div class="class-block">
+            <span class="class-tag">Mechanical</span>
+            <h3>Friction Chucks</h3>
+            <p>Spring-loaded clutch plates or disc-pack assemblies that transmit torque through friction engagement. You adjust torque by changing the compression preload on the clutch spring, either with a threaded collar or a calibrated shim stack. These are the workhorses of inline capping where spindle speeds stay low enough that mechanical slip doesn't generate excessive heat.</p>
+            <ul class="class-specs">
+                <li>Spring-loaded clutch with adjustable compression preload</li>
+                <li>Clutch plate materials: sintered bronze, friction composite, ceramic</li>
+                <li>Torque set via shim stack or threaded adjustment collar</li>
+                <li>Cost-effective for mid-range line speeds, 200 to 600 CPM</li>
+            </ul>
+        </div>
+
+        <div class="class-block">
+            <span class="class-tag">Pneumatic</span>
+            <h3>Pneumatic Chucks</h3>
+            <p>Air-cylinder actuated chucks use regulated pressure to control grip force and application torque. Torque profiles are programmable through PLC-controlled proportional valves, so you can switch formats without touching hardware. The air cylinder acts on internal gripping jaws or a collet mechanism that conforms to the closure OD.</p>
+            <ul class="class-specs">
+                <li>Programmable torque profiles via proportional pneumatic valves</li>
+                <li>PLC integration for recipe-based format changeover</li>
+                <li>Air-cylinder actuated gripper jaws or collet mechanism</li>
+                <li>Best suited for multi-SKU lines with frequent changeovers</li>
+            </ul>
+        </div>
+
+        <div class="class-block">
+            <span class="class-tag">Vacuum</span>
+            <h3>Vacuum-Style Chucks</h3>
+            <p>These hold lightweight closures by negative-pressure retention before and during thread engagement. A vacuum port in the chuck bore draws the closure into the cavity and centers it on the container finish before the spindle descends. Common on high-speed ROPP lines and lightweight flat-cap formats where mechanical gripping would deform the closure shell.</p>
+            <ul class="class-specs">
+                <li>Negative-pressure retention for thin-wall and delicate closures</li>
+                <li>Integrated vacuum port with venturi or pump-fed supply</li>
+                <li>Prevents closure deformation during high-speed pick-and-place</li>
+                <li>Used on ROPP, flat-cap, and lightweight aluminum closure lines</li>
+            </ul>
+        </div>
+    </div>
+</section>

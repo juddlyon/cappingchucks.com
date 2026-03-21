@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import TechnicalOverview from '../components/TechnicalOverview.astro';
+import CompatibilityIndex from '../components/CompatibilityIndex.astro';
+import ChuckClassifications from '../components/ChuckClassifications.astro';
+import ApplicationGuide from '../components/ApplicationGuide.astro';
+import TroubleshootingTable from '../components/TroubleshootingTable.astro';
+import Glossary from '../components/Glossary.astro';
+---
+
+<BaseLayout
+    title="CappingChucks.com | Precision Capping Chucks and Headsets"
+    description="Technical reference for precision capping chucks, capping headsets, and rotary capper tooling. OEM-compatible chuck assemblies for Zalkin, Krones, AROL, and more."
+    ogTitle="CappingChucks.com | Capping Chucks and Headsets"
+    ogDescription="Technical reference for precision capping chucks and headsets. OEM-compatible assemblies, chuck classifications, and troubleshooting for rotary and inline capping systems."
+>
+    <Hero />
+    <main>
+        <TechnicalOverview />
+        <CompatibilityIndex />
+        <ChuckClassifications />
+        <ApplicationGuide />
+        <TroubleshootingTable />
+        <Glossary />
+    </main>
+</BaseLayout>

@@ -1,0 +1,108 @@
+---
+import { SEO } from 'astro-seo';
+import '../styles/global.css';
+
+interface Props {
+    title: string;
+    description: string;
+    canonical?: string;
+    ogTitle?: string;
+    ogDescription?: string;
+    ogType?: string;
+}
+
+const {
+    title,
+    description,
+    canonical = 'https://cappingchucks.com/',
+    ogTitle,
+    ogDescription,
+    ogType = 'website',
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <SEO
+        title={title}
+        description={description}
+        canonical={canonical}
+        openGraph={{
+            basic: {
+                title: ogTitle || title,
+                type: ogType,
+                url: canonical,
+                image: 'https://cappingchucks.com/og-image.png',
+            },
+            optional: {
+                description: ogDescription || description,
+                siteName: 'CappingChucks.com',
+            },
+        }}
+        extend={{
+            meta: [
+                { name: 'keywords', content: 'capping chucks, capping headsets, rotary capper tooling, capping turret, torque control, closure integrity, aftermarket replacement chucks, OEM capping equipment' },
+            ],
+        }}
+    />
+
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Precision Capping Chucks & Headsets",
+        "description": "Technical reference for precision capping chucks, capping headsets, and rotary capper tooling.",
+        "url": "https://cappingchucks.com/",
+        "publisher": {
+            "@type": "Organization",
+            "name": "CappingChucks.com",
+            "url": "https://cappingchucks.com/"
+        },
+        "about": {
+            "@type": "Thing",
+            "name": "Capping Chucks",
+            "description": "Precision tooling components used in rotary and inline capping machines to apply controlled torque to threaded, ROPP, and snap-on closures."
+        }
+    })} />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Outfit:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="nav-bar" aria-label="Primary navigation">
+        <div class="mx-auto max-w-3xl px-6 flex items-center justify-between">
+            <a href="/" class="nav-logo" aria-label="CappingChucks.com home">Capping<span>Chucks</span></a>
+            <ul class="nav-links">
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#compatibility">OEM</a></li>
+                <li><a href="#classifications">Types</a></li>
+                <li><a href="#applications">Applications</a></li>
+                <li><a href="#troubleshooting">Troubleshooting</a></li>
+                <li><a href="#glossary">Glossary</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <slot />
+
+    <footer class="border-t border-border py-10">
+        <div class="mx-auto max-w-3xl px-6">
+            <div class="flex justify-between items-center max-sm:flex-col max-sm:gap-3 max-sm:text-center">
+                <div>
+                    <p class="footer-brand">Capping<span>Chucks</span>.com</p>
+                    <p class="font-mono text-[0.7rem] text-ink-muted mt-1">Engineered for the packaging line.</p>
+                </div>
+                <p class="font-mono text-[0.68rem] text-ink-faint text-right max-sm:text-center">
+                    &copy; 2026 CappingChucks.com<br>
+                    All trademarks are property of their respective owners.
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

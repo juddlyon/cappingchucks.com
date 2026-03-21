@@ -1,0 +1,50 @@
+<section id="troubleshooting" class="py-14 border-b border-border">
+    <div class="mx-auto max-w-3xl px-6">
+        <span class="section-rule"></span>
+        <h2 class="mb-6">Troubleshooting &amp; Calibration</h2>
+
+        <div class="overflow-x-auto">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Issue</th>
+                        <th>Likely Cause</th>
+                        <th>Fix</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Cap Scuffing</td>
+                        <td>Excessive radial grip force or misaligned bore. The closure shell abrades against the chuck's knurl pattern during rotation.</td>
+                        <td>Reduce grip pressure or replace worn insert. Verify bore ID matches closure OD within &plusmn;0.15mm. Replace urethane liner if scuffed.</td>
+                    </tr>
+                    <tr>
+                        <td>Inconsistent Torque (High CV%)</td>
+                        <td>Worn clutch plates, contaminated hysteresis disc, or unstable pneumatic supply pressure. Also check incoming closure and container finish dimensions.</td>
+                        <td>Replace clutch plates or clean hysteresis assembly. Verify air supply at 6.0 bar &plusmn;0.2 bar with moisture trap inline. Run Cpk study on incoming components.</td>
+                    </tr>
+                    <tr>
+                        <td>Stripped TE Bands</td>
+                        <td>Over-torque causing the closure to rotate past the bridge fracture point. Bridges shear during application instead of at first opening.</td>
+                        <td>Reduce application torque 10 to 15%. Verify bridge count and thickness against closure spec. Check chuck runout for uneven axial loading.</td>
+                    </tr>
+                    <tr>
+                        <td>Cross-Threading</td>
+                        <td>Closure not centered on the finish before thread engagement. Worn guide rails, wrong chuck height, or vacuum pick failure in cap feed.</td>
+                        <td>Check chuck descent height and pre-thread contact point. Inspect centering bell for wear. Confirm container finish perpendicularity (tilt under 1&deg;).</td>
+                    </tr>
+                    <tr>
+                        <td>Vacuum Loss Post-Capping</td>
+                        <td>Not enough torque for full seal compression. Could also be damaged liner or out-of-spec container finish (chipped or ovalized).</td>
+                        <td>Increase torque in 0.2 N·m steps until headspace vacuum meets spec. Check finish sealing surface with go/no-go gauges.</td>
+                    </tr>
+                    <tr>
+                        <td>Undertorque</td>
+                        <td>Clutch slipping below target due to worn friction surfaces, weak spring, or hysteresis coil degradation. Contamination on clutch interfaces drops the friction coefficient.</td>
+                        <td>Replace clutch disc and spring. Degrease all contact surfaces. On hysteresis units, verify coil resistance and current draw against spec. Audit all spindle stations.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
