@@ -1,0 +1,58 @@
+---
+const faqs = [
+    {
+        question: "What is a capping chuck?",
+        answer: "A capping chuck is the tooling component that sits on a capping machine spindle and applies torque to a closure. It grips the cap's outer surface, rotates it onto the container finish threads, and releases at a preset torque value. Chucks are used on both rotary and inline capping equipment."
+    },
+    {
+        question: "What is the difference between a capping chuck and a capping headset?",
+        answer: "The terms are often used interchangeably. Strictly, a capping chuck refers to the closure-gripping component, while a capping headset is the full assembly including the chuck, clutch mechanism, and spindle coupling. On ROPP lines, the headset also includes threading rollers and a top-pressure pad."
+    },
+    {
+        question: "How do you calibrate a capping chuck?",
+        answer: "Set the target application torque based on the closure manufacturer's spec. On friction chucks, adjust the spring preload via the threaded collar or shim stack. On magnetic hysteresis chucks, adjust the DC current to the coil. Verify with a calibrated torque analyzer on at least 10 consecutive samples and check that the coefficient of variation (CV%) stays below 5%."
+    },
+    {
+        question: "What causes inconsistent torque on a capping line?",
+        answer: "Common causes include worn clutch plates, contaminated hysteresis discs, unstable pneumatic supply pressure, and out-of-spec incoming closures or container finishes. Backlash in the spindle coupling and incorrect chuck bore diameter can also contribute to torque scatter."
+    },
+    {
+        question: "Can aftermarket capping chucks replace OEM parts?",
+        answer: "Yes. Aftermarket replacement chucks are reverse-engineered to match OEM dimensional tolerances, including spindle coupling geometry, bore profile, and urethane durometer. They are drop-in compatible with equipment from Zalkin, Krones, AROL, CSI, Fowler, and other manufacturers."
+    },
+    {
+        question: "What type of capping chuck is best for high-speed lines?",
+        answer: "Magnetic hysteresis chucks are the standard for high-speed rotary cappers running above 800 closures per minute. They have no mechanical wear surfaces and deliver torque repeatability under 3% CV. For lower-speed inline applications, mechanical friction chucks are more cost-effective."
+    },
+];
+---
+
+<section id="faq" class="py-14 border-b border-border">
+    <div class="mx-auto max-w-3xl px-6">
+        <span class="section-rule"></span>
+        <h2 class="mb-6">Frequently Asked Questions</h2>
+
+        <div class="space-y-6">
+            {faqs.map((faq) => (
+                <div class="faq-entry">
+                    <h3 class="text-base mb-1">{faq.question}</h3>
+                    <p class="text-[0.92rem] text-ink-light leading-relaxed">{faq.answer}</p>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
+
+<!-- FAQPage Schema -->
+<script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answer
+        }
+    }))
+})} />

@@ -42,10 +42,14 @@ const {
                 siteName: 'CappingChucks.com',
             },
         }}
+        twitter={{
+            card: 'summary_large_image',
+            title: ogTitle || title,
+            description: ogDescription || description,
+            image: 'https://cappingchucks.com/og-image.png',
+        }}
         extend={{
-            meta: [
-                { name: 'keywords', content: 'capping chucks, capping headsets, rotary capper tooling, capping turret, torque control, closure integrity, aftermarket replacement chucks, OEM capping equipment' },
-            ],
+            meta: [],
         }}
     />
 
@@ -83,6 +87,7 @@ const {
                 <li><a href="#classifications">Types</a></li>
                 <li><a href="#applications">Applications</a></li>
                 <li><a href="#troubleshooting">Troubleshooting</a></li>
+                <li><a href="#faq">FAQ</a></li>
                 <li><a href="#glossary">Glossary</a></li>
             </ul>
         </div>
