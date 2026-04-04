@@ -1,5 +1,8 @@
 ---
+import { Picture } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import bottleCaps from '../assets/images/bottle-caps.jpg';
+import precisionMachining from '../assets/images/precision-machining.jpg';
 ---
 
 <BaseLayout
@@ -14,6 +17,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <p class="font-mono text-[0.7rem] text-teal-700 tracking-wider uppercase mb-2"><a href="/" class="no-underline hover:underline">Home</a> / Chuck Types</p>
             <h1 class="mb-4">Capping Chuck Types</h1>
             <p class="text-lg text-ink-light leading-relaxed max-w-xl">Four chuck drive mechanisms, each suited to a different combination of line speed, closure format, and changeover frequency.</p>
+        </div>
+        <div class="mx-auto max-w-4xl">
+            <Picture
+                src={precisionMachining}
+                alt="Precision metal lathe machining a steel component in an industrial workshop"
+                class="w-full h-48 sm:h-56 object-cover object-center"
+                widths={[600, 900, 1200]}
+                sizes="100vw"
+                formats={['avif', 'webp']}
+                quality={80}
+                loading="eager"
+            />
         </div>
     </header>
 
@@ -80,10 +95,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 <h2 class="mb-6">Application by Closure Type</h2>
 
                 <figure class="mb-8 -mx-6 sm:mx-0">
-                    <img
-                        src="/images/bottle-caps.jpg"
+                    <Picture
+                        src={bottleCaps}
                         alt="Assorted plastic closure caps in various sizes and colors used across beverage, dairy, and pharmaceutical packaging"
                         class="w-full h-48 sm:h-56 object-cover"
+                        widths={[600, 900, 1200]}
+                        sizes="(max-width: 768px) 100vw, 768px"
+                        formats={['avif', 'webp']}
+                        quality={80}
                         loading="lazy"
                     />
                     <figcaption class="mt-2 px-6 sm:px-0 font-mono text-[0.68rem] text-ink-faint">Closure caps span a wide range of diameters, materials, and tamper-evident configurations. Photo: Pexels</figcaption>

@@ -1,5 +1,7 @@
 ---
+import { Picture } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import productionLine from '../assets/images/production-line.jpg';
 ---
 
 <BaseLayout
@@ -24,10 +26,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 <h2 class="mb-6">Platform Cross-Reference</h2>
 
                 <figure class="mb-8 -mx-6 sm:mx-0">
-                    <img
-                        src="/images/production-line.jpg"
+                    <Picture
+                        src={productionLine}
                         alt="Glass bottles on a rotary capping turret at a wine bottling facility"
                         class="w-full h-48 sm:h-56 object-cover"
+                        widths={[600, 900, 1200]}
+                        sizes="(max-width: 768px) 100vw, 768px"
+                        formats={['avif', 'webp']}
+                        quality={80}
                         loading="lazy"
                     />
                     <figcaption class="mt-2 px-6 sm:px-0 font-mono text-[0.68rem] text-ink-faint">Rotary capping turret on a glass bottle line. Photo: Pexels</figcaption>
