@@ -1,12 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Hero from '../components/Hero.astro';
-import TechnicalOverview from '../components/TechnicalOverview.astro';
-import CompatibilityIndex from '../components/CompatibilityIndex.astro';
-import ChuckClassifications from '../components/ChuckClassifications.astro';
-import ApplicationGuide from '../components/ApplicationGuide.astro';
-import TroubleshootingTable from '../components/TroubleshootingTable.astro';
-import Glossary from '../components/Glossary.astro';
 import FAQ from '../components/FAQ.astro';
 ---
 
@@ -16,14 +9,78 @@ import FAQ from '../components/FAQ.astro';
     ogTitle="CappingChucks.com | Capping Chucks and Headsets"
     ogDescription="Technical reference for precision capping chucks and headsets. OEM-compatible assemblies, chuck classifications, and troubleshooting for rotary and inline capping systems."
 >
-    <Hero />
+    <header class="pt-16 pb-0 border-b border-border">
+        <div class="mx-auto max-w-3xl px-6 pb-12">
+            <h1 class="mb-4">Precision Capping Chucks & Headsets</h1>
+            <p class="text-lg text-ink-light leading-relaxed max-w-xl">Technical reference for rotary and inline capping chucks. OEM cross-references, calibration data, and chuck specifications for packaging engineers.</p>
+        </div>
+        <div class="mx-auto max-w-4xl">
+            <img
+                src="/images/bottling-line.jpg"
+                alt="Wine bottles on a conveyor at an industrial bottling facility"
+                class="w-full h-64 object-cover object-center sm:h-80"
+                loading="eager"
+            />
+        </div>
+    </header>
+
     <main>
-        <TechnicalOverview />
-        <CompatibilityIndex />
-        <ChuckClassifications />
-        <ApplicationGuide />
-        <TroubleshootingTable />
+        <section id="overview" class="py-14 border-b border-border">
+            <div class="mx-auto max-w-3xl px-6">
+                <span class="section-rule"></span>
+                <h2 class="mb-6">Technical Overview</h2>
+
+                <div class="space-y-4 text-[0.95rem] text-ink-light">
+                    <p>A capping chuck is the torque-transmitting interface between a capping turret spindle and the closure. It sits at the bottom of each spindle station on a rotary capper, or on the descending head of an inline unit. The chuck grips the closure's outer shell, applies controlled rotational torque, and threads the cap onto the container finish to a target removal-torque spec.</p>
+
+                    <p>Torque consistency depends on the chuck's internal drive mechanism (magnetic hysteresis, friction clutch, pneumatic cylinder, or servo). A properly calibrated chuck delivers full thread engagement, correct TE band bridge fracture, and enough seal compression to hold headspace vacuum without leaking.</p>
+                </div>
+
+                <div class="spec-panel mt-8">
+                    <h3 class="mb-3 text-sm">Key Performance Parameters</h3>
+                    <div class="spec-row"><span class="spec-label">Application Torque Range</span><span class="spec-value">0.5 to 25 N·m</span></div>
+                    <div class="spec-row"><span class="spec-label">Torque CV% Target</span><span class="spec-value">&le; 5%</span></div>
+                    <div class="spec-row"><span class="spec-label">Line Speed Capability</span><span class="spec-value">Up to 1,200 CPM</span></div>
+                    <div class="spec-row"><span class="spec-label">Closure Dia. Range</span><span class="spec-value">18 mm to 120 mm</span></div>
+                    <div class="spec-row"><span class="spec-label">Typical Service Life</span><span class="spec-value">2 to 5M Cycles</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-14 border-b border-border">
+            <div class="mx-auto max-w-3xl px-6">
+                <span class="section-rule"></span>
+                <h2 class="mb-6">Reference Guides</h2>
+
+                <div class="space-y-6">
+                    <a href="/chuck-types/" class="hub-link">
+                        <h3>Capping Chuck Types</h3>
+                        <p>Magnetic hysteresis, friction, pneumatic, and vacuum chucks. How each type works, when to use it, and which closure formats they handle.</p>
+                    </a>
+
+                    <a href="/capping-headsets/" class="hub-link">
+                        <h3>Capping Headsets</h3>
+                        <p>Magnetic, spring-clutch, and hysteresis headset assemblies. Torque delivery mechanisms, ROPP tooling, and headset selection by line speed.</p>
+                    </a>
+
+                    <a href="/oem-compatibility/" class="hub-link">
+                        <h3>OEM Compatibility Index</h3>
+                        <p>Drop-in aftermarket chuck and headset cross-references for Zalkin, Krones, AROL, CSI, Fowler, and Tedelta capping platforms.</p>
+                    </a>
+
+                    <a href="/troubleshooting/" class="hub-link">
+                        <h3>Troubleshooting & Calibration</h3>
+                        <p>Diagnostic procedures for cap scuffing, torque scatter, stripped TE bands, cross-threading, vacuum loss, and undertorque conditions.</p>
+                    </a>
+
+                    <a href="/glossary/" class="hub-link">
+                        <h3>Glossary</h3>
+                        <p>Definitions for knurling, thread pitch, top load, slip torque, bridge count, closure ovalization, and other capping terminology.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
         <FAQ />
-        <Glossary />
     </main>
 </BaseLayout>

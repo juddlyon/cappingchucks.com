@@ -347,6 +347,32 @@
         border-bottom: none;
     }
 
+    /* Hub links */
+    .hub-link {
+        display: block;
+        padding: 1.25rem 1.5rem;
+        border: 1px solid var(--color-border);
+        background: var(--color-paper-warm);
+        text-decoration: none;
+        transition: border-color 0.15s;
+    }
+
+    .hub-link:hover {
+        border-color: var(--color-teal-700);
+    }
+
+    .hub-link h3 {
+        font-size: 1rem;
+        color: var(--color-ink);
+        margin-bottom: 0.25rem;
+    }
+
+    .hub-link p {
+        font-size: 0.88rem;
+        color: var(--color-ink-light);
+        line-height: 1.6;
+    }
+
     /* Callout */
     .callout {
         background: var(--color-paper-warm);

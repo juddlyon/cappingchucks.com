@@ -1,0 +1,144 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+    title="Capping Chuck Types | Magnetic, Friction, Pneumatic, Vacuum"
+    description="Technical guide to capping chuck types: magnetic hysteresis, friction, pneumatic, and vacuum chucks. Specifications, closure compatibility, and selection criteria for rotary and inline cappers."
+    canonical="https://cappingchucks.com/chuck-types/"
+    ogTitle="Capping Chuck Types | CappingChucks.com"
+    ogDescription="Magnetic hysteresis, friction, pneumatic, and vacuum capping chucks. How each type works and when to use it."
+>
+    <header class="pt-16 pb-12 border-b border-border">
+        <div class="mx-auto max-w-3xl px-6">
+            <p class="font-mono text-[0.7rem] text-teal-700 tracking-wider uppercase mb-2"><a href="/" class="no-underline hover:underline">Home</a> / Chuck Types</p>
+            <h1 class="mb-4">Capping Chuck Types</h1>
+            <p class="text-lg text-ink-light leading-relaxed max-w-xl">Four chuck drive mechanisms, each suited to a different combination of line speed, closure format, and changeover frequency.</p>
+        </div>
+    </header>
+
+    <main>
+        <section id="classifications" class="py-14 border-b border-border">
+            <div class="mx-auto max-w-3xl px-6">
+                <span class="section-rule"></span>
+                <h2 class="mb-6">Chuck Classifications</h2>
+
+                <div class="class-block">
+                    <span class="class-tag">Electromagnetic</span>
+                    <h3>Magnetic Hysteresis Chucks</h3>
+                    <p>These use an electromagnetic hysteresis coupling to transmit torque from the spindle motor to the closure. A variable DC current sets the magnetic field intensity, which determines the slip-torque threshold. When torque reaches the preset value, the hysteresis disc slips without mechanical contact. Result: torque repeatability under 3% CV with zero wear on drive surfaces.</p>
+                    <ul class="class-specs">
+                        <li>No mechanical clutch surfaces, so no friction-based wear</li>
+                        <li>Slip-torque repeatability: &plusmn;0.1 N·m across 10M+ cycles</li>
+                        <li>Torque set by current control (PLC or analog signal)</li>
+                        <li>Standard choice for high-speed rotary cappers above 800 CPM</li>
+                    </ul>
+                    <p class="mt-3 text-[0.88rem] text-ink-light">Magnetic hysteresis chucks are the drive mechanism inside <a href="/capping-headsets/">magnetic capping headsets</a>. The headset is the full assembly; the chuck is the closure-gripping component on the output side.</p>
+                </div>
+
+                <div class="class-block">
+                    <span class="class-tag">Mechanical</span>
+                    <h3>Friction Chucks</h3>
+                    <p>Spring-loaded clutch plates or disc-pack assemblies that transmit torque through friction engagement. You adjust torque by changing the compression preload on the clutch spring, either with a threaded collar or a calibrated shim stack. These are the workhorses of inline capping where spindle speeds stay low enough that mechanical slip doesn't generate excessive heat.</p>
+                    <ul class="class-specs">
+                        <li>Spring-loaded clutch with adjustable compression preload</li>
+                        <li>Clutch plate materials: sintered bronze, friction composite, ceramic</li>
+                        <li>Torque set via shim stack or threaded adjustment collar</li>
+                        <li>Cost-effective for mid-range line speeds, 200 to 600 CPM</li>
+                    </ul>
+                </div>
+
+                <div class="class-block">
+                    <span class="class-tag">Pneumatic</span>
+                    <h3>Pneumatic Chucks</h3>
+                    <p>Air-cylinder actuated chucks use regulated pressure to control grip force and application torque. Torque profiles are programmable through PLC-controlled proportional valves, so you can switch formats without touching hardware. The air cylinder acts on internal gripping jaws or a collet mechanism that conforms to the closure OD.</p>
+                    <ul class="class-specs">
+                        <li>Programmable torque profiles via proportional pneumatic valves</li>
+                        <li>PLC integration for recipe-based format changeover</li>
+                        <li>Air-cylinder actuated gripper jaws or collet mechanism</li>
+                        <li>Best suited for multi-SKU lines with frequent changeovers</li>
+                    </ul>
+                </div>
+
+                <div class="class-block">
+                    <span class="class-tag">Vacuum</span>
+                    <h3>Vacuum-Style Chucks</h3>
+                    <p>These hold lightweight closures by negative-pressure retention before and during thread engagement. A vacuum port in the chuck bore draws the closure into the cavity and centers it on the container finish before the spindle descends. Common on high-speed ROPP lines and lightweight flat-cap formats where mechanical gripping would deform the closure shell.</p>
+                    <ul class="class-specs">
+                        <li>Negative-pressure retention for thin-wall and delicate closures</li>
+                        <li>Integrated vacuum port with venturi or pump-fed supply</li>
+                        <li>Prevents closure deformation during high-speed pick-and-place</li>
+                        <li>Used on ROPP, flat-cap, and lightweight aluminum closure lines</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="applications" class="py-14 border-b border-border">
+            <div class="mx-auto max-w-3xl px-6">
+                <span class="section-rule"></span>
+                <h2 class="mb-6">Application by Closure Type</h2>
+
+                <figure class="mb-8 -mx-6 sm:mx-0">
+                    <img
+                        src="/images/bottle-caps.jpg"
+                        alt="Assorted plastic closure caps in various sizes and colors used across beverage, dairy, and pharmaceutical packaging"
+                        class="w-full h-48 sm:h-56 object-cover"
+                        loading="lazy"
+                    />
+                    <figcaption class="mt-2 px-6 sm:px-0 font-mono text-[0.68rem] text-ink-faint">Closure caps span a wide range of diameters, materials, and tamper-evident configurations. Photo: Pexels</figcaption>
+                </figure>
+
+                <div>
+                    <div class="app-entry">
+                        <span class="app-code">PCO-1881-T</span>
+                        <h3>28mm PCO 1881 (Tethered)</h3>
+                        <p>Tethered closure format required by the EU Single-Use Plastics Directive (SUPD). Chuck bore must clear the hinge band and tether link without interference during thread application. This means a modified internal bore profile compared to standard 28mm PCO tooling.</p>
+                    </div>
+
+                    <div class="app-entry">
+                        <span class="app-code">HDPE-38</span>
+                        <h3>38mm HDPE Dairy & Juice</h3>
+                        <p>Wide-mouth HDPE closures for dairy, juice, and smoothie containers. The 38mm thread diameter demands high-grip <a href="/glossary/#knurling">knurl</a> engagement in the chuck. Typical application torque runs 2.0 to 4.5 N·m with foil-seal compression verification.</p>
+                    </div>
+
+                    <div class="app-entry">
+                        <span class="app-code">ROPP</span>
+                        <h3>Roll-On Pilfer-Proof</h3>
+                        <p>Aluminum ROPP closures for spirits, wine, olive oil, and pharmaceutical syrups. The <a href="/capping-headsets/">headset</a> carries a top-pressure pad, threading rollers, and pilfer-band forming tools. Thread profile gets plastically formed onto the bottle finish, so roller geometry has to match the glass finish thread helix exactly.</p>
+                    </div>
+
+                    <div class="app-entry">
+                        <span class="app-code">CRC</span>
+                        <h3>Child-Resistant Closures</h3>
+                        <p>Pharmaceutical and household chemical push-turn and squeeze-turn CRC formats. The chuck applies axial load and rotational torque at the same time to engage the ratchet mechanism without over-torquing the inner seal. Torque verification per 16 CFR &sect;1700 (CPSC) is required.</p>
+                    </div>
+
+                    <div class="app-entry">
+                        <span class="app-code">SPORT</span>
+                        <h3>Sport / Pull-Push Closures</h3>
+                        <p>Pull-push and flip-top sport closures for bottled water, sports drinks, and personal care products. The chuck has to grip the closure body without touching the dispensing spout. Bore clearance is modified to accommodate the protruding nozzle and hinge tab.</p>
+                    </div>
+
+                    <div class="app-entry">
+                        <span class="app-code">TRIG-OC</span>
+                        <h3>Trigger Sprayer Overcaps</h3>
+                        <p>Overcap application for trigger sprayer assemblies on household cleaning and garden chemical containers. This is a snap-fit, not a threaded closure. The chuck applies controlled axial press-on force (<a href="/glossary/#top-load">top load</a>) rather than torque.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-14">
+            <div class="mx-auto max-w-3xl px-6">
+                <span class="section-rule"></span>
+                <h2 class="mb-4">Related</h2>
+                <ul class="space-y-2 text-[0.92rem]">
+                    <li><a href="/capping-headsets/">Capping Headsets</a> -- magnetic, spring-clutch, and hysteresis headset assemblies</li>
+                    <li><a href="/oem-compatibility/">OEM Compatibility Index</a> -- drop-in replacements by machine platform</li>
+                    <li><a href="/troubleshooting/">Troubleshooting & Calibration</a> -- torque scatter, scuffing, and TE band diagnostics</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+</BaseLayout>

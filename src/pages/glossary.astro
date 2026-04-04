@@ -1,0 +1,72 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+    title="Capping Chuck Glossary | Torque, Knurling, Thread Pitch, and More"
+    description="Definitions for capping chuck and headset terminology: knurling, thread pitch, top load, static torque, slip torque, bridge count, closure ovalization. References ASTM D3198 and ISBT standards."
+    canonical="https://cappingchucks.com/glossary/"
+    ogTitle="Glossary | CappingChucks.com"
+    ogDescription="Capping terminology defined: knurling, torque, thread pitch, top load, slip torque, bridge count, and closure ovalization."
+>
+    <header class="pt-16 pb-12 border-b border-border">
+        <div class="mx-auto max-w-3xl px-6">
+            <p class="font-mono text-[0.7rem] text-teal-700 tracking-wider uppercase mb-2"><a href="/" class="no-underline hover:underline">Home</a> / Glossary</p>
+            <h1 class="mb-4">Glossary</h1>
+            <p class="text-lg text-ink-light leading-relaxed max-w-xl">Technical terms used in capping chuck and <a href="/capping-headsets/">headset</a> specifications, calibration, and troubleshooting.</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="py-14 border-b border-border">
+            <div class="mx-auto max-w-3xl px-6">
+                <dl>
+                    <div class="gloss-entry" id="knurling">
+                        <dt class="gloss-term">Knurling</dt>
+                        <dd class="gloss-def">A pattern of raised diamond or straight-line ridges on the outside of a closure shell. This is what the <a href="/chuck-types/">chuck</a> grips during torque application. Knurl pitch and depth have to match between chuck insert and closure, or you get slippage or <a href="/troubleshooting/">scuffing</a>.</dd>
+                    </div>
+                    <div class="gloss-entry" id="thread-pitch">
+                        <dt class="gloss-term">Thread Pitch</dt>
+                        <dd class="gloss-def">The axial distance between adjacent thread crests, measured in millimeters per revolution. Standard beverage closure pitches run from 3.0mm to 6.35mm. Pitch determines how many rotations you need for full engagement and directly affects the relationship between application torque and axial seal compression.</dd>
+                    </div>
+                    <div class="gloss-entry" id="top-load">
+                        <dt class="gloss-term">Top Load</dt>
+                        <dd class="gloss-def">Axial compressive force applied by the chuck onto the closure's top panel during application, measured in Newtons. Top load compresses the internal liner against the container finish sealing surface. Too much deforms thin-wall closures. Too little means poor seal integrity and vacuum loss.</dd>
+                    </div>
+                    <div class="gloss-entry" id="static-torque">
+                        <dt class="gloss-term">Static Torque</dt>
+                        <dd class="gloss-def">The torque needed to start loosening a closure that has been applied and allowed to rest. Measured with a calibrated torque analyzer. Typically 10 to 30% lower than original application torque due to stress relaxation in the liner and thread-interface friction decay. This is the primary QC metric for closure integrity audits.</dd>
+                    </div>
+                    <div class="gloss-entry" id="slip-torque">
+                        <dt class="gloss-term">Slip Torque</dt>
+                        <dd class="gloss-def">The torque threshold where the <a href="/capping-headsets/">headset's</a> clutch mechanism disengages and allows free rotation between drive spindle and closure. This sets the maximum torque the headset can deliver. It needs to sit above target application torque but below the closure's structural failure point.</dd>
+                    </div>
+                    <div class="gloss-entry" id="bridge-count">
+                        <dt class="gloss-term">Bridge Count (TE Band)</dt>
+                        <dd class="gloss-def">Number of frangible plastic bridges connecting the tamper-evident band to the closure body, typically 6 to 12 per closure. Bridge count determines how much force is needed to separate the band at first opening. During capping, the chuck has to seat the closure fully without <a href="/troubleshooting/">fracturing bridges prematurely</a>.</dd>
+                    </div>
+                    <div class="gloss-entry" id="closure-ovalization">
+                        <dt class="gloss-term">Closure Ovalization</dt>
+                        <dd class="gloss-def">A dimensional defect where the closure's round cross-section goes elliptical. Usually caused by excessive chuck grip force, bad stacking in storage, or thin-wall molding tolerance issues. Ovalized closures don't engage threads evenly, leading to cross-threading, torque scatter, and compromised seals. Max allowable ovality is typically &plusmn;0.2mm on nominal OD.</dd>
+                    </div>
+                </dl>
+
+                <div class="callout mt-8">
+                    Testing methods referenced here conform to ASTM D3198 (Application and Removal Torque of Threaded or Lug-Style Closures) and the ISBT Voluntary Standard for Torque Testing.
+                </div>
+            </div>
+        </section>
+
+        <section class="py-14">
+            <div class="mx-auto max-w-3xl px-6">
+                <span class="section-rule"></span>
+                <h2 class="mb-4">Related</h2>
+                <ul class="space-y-2 text-[0.92rem]">
+                    <li><a href="/chuck-types/">Capping Chuck Types</a> -- where these terms get applied</li>
+                    <li><a href="/capping-headsets/">Capping Headsets</a> -- torque delivery and slip torque in practice</li>
+                    <li><a href="/troubleshooting/">Troubleshooting & Calibration</a> -- using these specs to diagnose issues</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+</BaseLayout>

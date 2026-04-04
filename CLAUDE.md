@@ -44,6 +44,11 @@ public/
 - Single-column document layout (max-w-3xl), technical manual aesthetic
 - All color tokens pass WCAG AA contrast
 
+## CLI Tools (global Node)
+
+- `seo-pulse` — GSC client for search performance data (impressions, clicks, ranking queries)
+- `internal-linker` — internal linking utility
+
 ## Content Notes
 
 - No em dashes in copy
