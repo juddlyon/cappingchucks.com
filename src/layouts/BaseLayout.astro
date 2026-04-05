@@ -9,6 +9,8 @@ interface Props {
     ogTitle?: string;
     ogDescription?: string;
     ogType?: string;
+    schemaType?: 'WebPage' | 'TechArticle';
+    breadcrumb?: string;
 }
 
 const {
@@ -18,7 +20,46 @@ const {
     ogTitle,
     ogDescription,
     ogType = 'website',
+    schemaType = 'WebPage',
+    breadcrumb,
 } = Astro.props;
+
+const pageSchema: Record<string, unknown> = {
+    "@context": "https://schema.org",
+    "@type": schemaType,
+    "name": title,
+    "description": description,
+    "url": canonical,
+    "publisher": {
+        "@type": "Organization",
+        "name": "CappingChucks.com",
+        "url": "https://cappingchucks.com/"
+    },
+};
+
+if (schemaType === 'TechArticle') {
+    pageSchema["author"] = { "@type": "Organization", "name": "CappingChucks.com" };
+    pageSchema["mainEntityOfPage"] = canonical;
+}
+
+const breadcrumbSchema = breadcrumb ? {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://cappingchucks.com/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": breadcrumb,
+            "item": canonical
+        }
+    ]
+} : null;
 ---
 
 <!DOCTYPE html>
@@ -54,23 +95,8 @@ const {
     />
 
     <!-- Schema.org structured data -->
-    <script type="application/ld+json" set:html={JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": title,
-        "description": description,
-        "url": canonical,
-        "publisher": {
-            "@type": "Organization",
-            "name": "CappingChucks.com",
-            "url": "https://cappingchucks.com/"
-        },
-        "about": {
-            "@type": "Thing",
-            "name": "Capping Chucks",
-            "description": "Precision tooling components used in rotary and inline capping machines to apply controlled torque to threaded, ROPP, and snap-on closures."
-        }
-    })} />
+    <script type="application/ld+json" set:html={JSON.stringify(pageSchema)} />
+    {breadcrumbSchema && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
