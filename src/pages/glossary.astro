@@ -11,28 +11,29 @@ import technicalBlueprint from '../assets/images/technical-blueprint.jpg';
     ogTitle="Glossary | CappingChucks.com"
     ogDescription="Capping terminology defined: knurling, torque, thread pitch, top load, slip torque, bridge count, and closure ovalization."
 >
-    <header class="pt-16 pb-12 border-b border-border">
-        <div class="mx-auto max-w-3xl px-6">
+    <header class="pt-20 pb-12 border-b border-border">
+        <div class="mx-auto max-w-3xl px-6 pb-4">
             <p class="font-mono text-[0.7rem] text-teal-700 tracking-wider uppercase mb-2"><a href="/" class="no-underline hover:underline">Home</a> / Glossary</p>
             <h1 class="mb-4">Glossary</h1>
             <p class="text-lg text-ink-light leading-relaxed max-w-xl">Technical terms used in capping chuck and <a href="/capping-headsets/">headset</a> specifications, calibration, and troubleshooting.</p>
         </div>
-        <div class="mx-auto max-w-4xl">
+        <figure class="mx-auto max-w-4xl px-6">
             <Picture
                 src={technicalBlueprint}
-                alt="Technical engineering blueprint with compass showing precision machined part drawings"
-                class="w-full h-48 sm:h-56 object-cover object-center"
+                alt="Engineering blueprint with compass and pencil showing cross-section drawings of machined components"
+                class="w-full h-56 sm:h-72 object-cover object-center rounded-lg"
                 widths={[600, 900, 1200]}
                 sizes="100vw"
                 formats={['avif', 'webp']}
                 quality={80}
                 loading="eager"
             />
-        </div>
+            <figcaption class="mt-2 font-mono text-[0.68rem] text-ink-faint">Technical drawing of precision machined components. Photo: Pexels</figcaption>
+        </figure>
     </header>
 
     <main>
-        <section class="py-14 border-b border-border">
+        <section class="py-16 border-b border-border">
             <div class="mx-auto max-w-3xl px-6">
                 <dl>
                     <div class="gloss-entry" id="knurling">
@@ -71,11 +72,11 @@ import technicalBlueprint from '../assets/images/technical-blueprint.jpg';
             </div>
         </section>
 
-        <section class="py-14">
+        <section class="py-16 pb-20">
             <div class="mx-auto max-w-3xl px-6">
                 <span class="section-rule"></span>
                 <h2 class="mb-4">Related</h2>
-                <ul class="space-y-2 text-[0.92rem]">
+                <ul class="space-y-3 text-[0.92rem]">
                     <li><a href="/chuck-types/">Capping Chuck Types</a> -- where these terms get applied</li>
                     <li><a href="/capping-headsets/">Capping Headsets</a> -- torque delivery and slip torque in practice</li>
                     <li><a href="/troubleshooting/">Troubleshooting & Calibration</a> -- using these specs to diagnose issues</li>

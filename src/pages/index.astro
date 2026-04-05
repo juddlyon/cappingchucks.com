@@ -11,27 +11,28 @@ import bottlingLine from '../assets/images/bottling-line.jpg';
     ogTitle="CappingChucks.com | Capping Chucks and Headsets"
     ogDescription="Technical reference for precision capping chucks and headsets. OEM-compatible assemblies, chuck classifications, and troubleshooting for rotary and inline capping systems."
 >
-    <header class="pt-16 pb-0 border-b border-border">
-        <div class="mx-auto max-w-3xl px-6 pb-12">
+    <header class="pt-20 border-b border-border">
+        <div class="mx-auto max-w-3xl px-6 pb-16">
             <h1 class="mb-4">Precision Capping Chucks & Headsets</h1>
             <p class="text-lg text-ink-light leading-relaxed max-w-xl">Technical reference for rotary and inline capping chucks. OEM cross-references, calibration data, and chuck specifications for packaging engineers.</p>
         </div>
-        <div class="mx-auto max-w-4xl">
+        <figure class="mx-auto max-w-4xl">
             <Picture
                 src={bottlingLine}
-                alt="Wine bottles on a conveyor at an industrial bottling facility"
-                class="w-full h-64 object-cover object-center sm:h-80"
+                alt="Wine bottles moving through a rotary capping station on an industrial bottling line"
+                class="w-full h-64 object-cover object-center sm:h-80 rounded-lg"
                 widths={[600, 900, 1200]}
                 sizes="100vw"
                 formats={['avif', 'webp']}
                 quality={80}
                 loading="eager"
             />
-        </div>
+            <figcaption class="mt-2 px-6 font-mono text-[0.68rem] text-ink-faint">Rotary capping station on a high-speed bottling line. Photo: Pexels</figcaption>
+        </figure>
     </header>
 
     <main>
-        <section id="overview" class="py-14 border-b border-border">
+        <section id="overview" class="py-16 border-b border-border">
             <div class="mx-auto max-w-3xl px-6">
                 <span class="section-rule"></span>
                 <h2 class="mb-6">Technical Overview</h2>
@@ -53,12 +54,12 @@ import bottlingLine from '../assets/images/bottling-line.jpg';
             </div>
         </section>
 
-        <section class="py-14 border-b border-border">
+        <section class="py-16 border-b border-border">
             <div class="mx-auto max-w-3xl px-6">
                 <span class="section-rule"></span>
                 <h2 class="mb-6">Reference Guides</h2>
 
-                <div class="space-y-6">
+                <div class="space-y-8">
                     <a href="/chuck-types/" class="hub-link">
                         <h3>Capping Chuck Types</h3>
                         <p>Magnetic hysteresis, friction, pneumatic, and vacuum chucks. How each type works, when to use it, and which closure formats they handle.</p>

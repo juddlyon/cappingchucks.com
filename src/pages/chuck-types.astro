@@ -12,28 +12,29 @@ import precisionMachining from '../assets/images/precision-machining.jpg';
     ogTitle="Capping Chuck Types | CappingChucks.com"
     ogDescription="Magnetic hysteresis, friction, pneumatic, and vacuum capping chucks. How each type works and when to use it."
 >
-    <header class="pt-16 pb-12 border-b border-border">
-        <div class="mx-auto max-w-3xl px-6">
+    <header class="pt-20 pb-12 border-b border-border">
+        <div class="mx-auto max-w-3xl px-6 pb-4">
             <p class="font-mono text-[0.7rem] text-teal-700 tracking-wider uppercase mb-2"><a href="/" class="no-underline hover:underline">Home</a> / Chuck Types</p>
             <h1 class="mb-4">Capping Chuck Types</h1>
             <p class="text-lg text-ink-light leading-relaxed max-w-xl">Four chuck drive mechanisms, each suited to a different combination of line speed, closure format, and changeover frequency.</p>
         </div>
-        <div class="mx-auto max-w-4xl">
+        <figure class="mx-auto max-w-4xl px-6">
             <Picture
                 src={precisionMachining}
-                alt="Precision metal lathe machining a steel component in an industrial workshop"
-                class="w-full h-48 sm:h-56 object-cover object-center"
+                alt="Metal lathe turning a precision steel component with coolant feed in a machining workshop"
+                class="w-full h-56 sm:h-72 object-cover object-center rounded-lg"
                 widths={[600, 900, 1200]}
                 sizes="100vw"
                 formats={['avif', 'webp']}
                 quality={80}
                 loading="eager"
             />
-        </div>
+            <figcaption class="mt-2 font-mono text-[0.68rem] text-ink-faint">Precision machining of capping chuck components. Photo: Pexels</figcaption>
+        </figure>
     </header>
 
     <main>
-        <section id="classifications" class="py-14 border-b border-border">
+        <section id="classifications" class="py-16 border-b border-border">
             <div class="mx-auto max-w-3xl px-6">
                 <span class="section-rule"></span>
                 <h2 class="mb-6">Chuck Classifications</h2>
@@ -89,7 +90,7 @@ import precisionMachining from '../assets/images/precision-machining.jpg';
             </div>
         </section>
 
-        <section id="applications" class="py-14 border-b border-border">
+        <section id="applications" class="py-16 border-b border-border">
             <div class="mx-auto max-w-3xl px-6">
                 <span class="section-rule"></span>
                 <h2 class="mb-6">Application by Closure Type</h2>
@@ -98,7 +99,7 @@ import precisionMachining from '../assets/images/precision-machining.jpg';
                     <Picture
                         src={bottleCaps}
                         alt="Assorted plastic closure caps in various sizes and colors used across beverage, dairy, and pharmaceutical packaging"
-                        class="w-full h-48 sm:h-56 object-cover"
+                        class="w-full h-56 sm:h-72 object-cover rounded-lg"
                         widths={[600, 900, 1200]}
                         sizes="(max-width: 768px) 100vw, 768px"
                         formats={['avif', 'webp']}
@@ -148,11 +149,11 @@ import precisionMachining from '../assets/images/precision-machining.jpg';
             </div>
         </section>
 
-        <section class="py-14">
+        <section class="py-16 pb-20">
             <div class="mx-auto max-w-3xl px-6">
                 <span class="section-rule"></span>
                 <h2 class="mb-4">Related</h2>
-                <ul class="space-y-2 text-[0.92rem]">
+                <ul class="space-y-3 text-[0.92rem]">
                     <li><a href="/capping-headsets/">Capping Headsets</a> -- magnetic, spring-clutch, and hysteresis headset assemblies</li>
                     <li><a href="/oem-compatibility/">OEM Compatibility Index</a> -- drop-in replacements by machine platform</li>
                     <li><a href="/troubleshooting/">Troubleshooting & Calibration</a> -- torque scatter, scuffing, and TE band diagnostics</li>
