@@ -260,28 +260,20 @@
     }
 
     .class-specs {
-        list-style: none;
+        list-style: disc;
         margin-top: 0.75rem;
-        padding-left: 0;
+        padding-left: 1.25rem;
     }
 
     .class-specs li {
         font-family: var(--font-mono);
         font-size: 0.75rem;
         color: var(--color-ink-muted);
-        padding: 0.25rem 0 0.25rem 1rem;
-        position: relative;
+        padding: 0.25rem 0;
     }
 
-    .class-specs li::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 0.7em;
-        width: 4px;
-        height: 4px;
-        background: var(--color-teal-700);
-        border-radius: 50%;
+    .class-specs li::marker {
+        color: var(--color-teal-700);
     }
 
     /* Application entries */
