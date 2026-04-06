@@ -6,7 +6,7 @@ import technicalBlueprint from '../assets/images/technical-blueprint.jpg';
 
 <BaseLayout
     title="Capping Chuck Glossary | Torque, Knurling, Thread Pitch, and More"
-    description="Definitions for capping chuck and headset terminology: knurling, thread pitch, top load, static torque, slip torque, bridge count, closure ovalization. References ASTM D3198 and ISBT standards."
+    description="Definitions for capping chuck and headset terminology: knurling, thread pitch, top load, static torque, slip torque, bridge count, closure ovalization."
     canonical="https://cappingchucks.com/glossary/"
     ogTitle="Glossary | CappingChucks.com"
     ogDescription="Capping terminology defined: knurling, torque, thread pitch, top load, slip torque, bridge count, and closure ovalization."
@@ -43,7 +43,7 @@ import technicalBlueprint from '../assets/images/technical-blueprint.jpg';
                     </div>
                     <div class="gloss-entry" id="thread-pitch">
                         <dt class="gloss-term">Thread Pitch</dt>
-                        <dd class="gloss-def">The axial distance between adjacent thread crests, measured in millimeters per revolution. Standard beverage closure pitches run from 3.0mm to 6.35mm. Pitch determines how many rotations you need for full engagement and directly affects the relationship between application torque and axial seal compression.</dd>
+                        <dd class="gloss-def">The axial distance between adjacent thread crests, measured in millimeters per revolution. Standard beverage closure pitches run from 3.0mm to 6.35mm (see <a href="https://www.isbt.com/resources/isbt-threadspecs" rel="noopener" target="_blank">ISBT voluntary threadspecs</a>). Pitch determines how many rotations you need for full engagement and directly affects the relationship between application torque and axial seal compression.</dd>
                     </div>
                     <div class="gloss-entry" id="top-load">
                         <dt class="gloss-term">Top Load</dt>
@@ -51,7 +51,7 @@ import technicalBlueprint from '../assets/images/technical-blueprint.jpg';
                     </div>
                     <div class="gloss-entry" id="static-torque">
                         <dt class="gloss-term">Static Torque</dt>
-                        <dd class="gloss-def">The torque needed to start loosening a closure that has been applied and allowed to rest. Measured with a calibrated torque analyzer. Typically 10 to 30% lower than original application torque due to stress relaxation in the liner and thread-interface friction decay. This is the primary QC metric for closure integrity audits.</dd>
+                        <dd class="gloss-def">The torque needed to start loosening a closure that has been applied and allowed to rest. Measured with a calibrated torque analyzer. Removal torque is often lower than original application torque because of relaxation in the liner and changes at the thread interface. It is a common QC metric for closure integrity audits.</dd>
                     </div>
                     <div class="gloss-entry" id="slip-torque">
                         <dt class="gloss-term">Slip Torque</dt>
@@ -63,13 +63,28 @@ import technicalBlueprint from '../assets/images/technical-blueprint.jpg';
                     </div>
                     <div class="gloss-entry" id="closure-ovalization">
                         <dt class="gloss-term">Closure Ovalization</dt>
-                        <dd class="gloss-def">A dimensional defect where the closure's round cross-section goes elliptical. Usually caused by excessive chuck grip force, bad stacking in storage, or thin-wall molding tolerance issues. Ovalized closures don't engage threads evenly, leading to cross-threading, torque scatter, and compromised seals. Max allowable ovality is typically &plusmn;0.2mm on nominal OD.</dd>
+                        <dd class="gloss-def">A dimensional defect where the closure's round cross-section goes elliptical. Usually caused by excessive chuck grip force, bad stacking in storage, or thin-wall molding tolerance issues. Ovalized closures do not engage threads evenly, leading to cross-threading, torque scatter, and compromised seals. Allowable ovality depends on the closure supplier's dimensional specification.</dd>
                     </div>
                 </dl>
 
                 <div class="callout mt-8">
-                    Testing methods referenced here conform to ASTM D3198 (Application and Removal Torque of Threaded or Lug-Style Closures) and the ISBT Voluntary Standard for Torque Testing.
+                    Use the closure supplier's current torque-test method and any applicable customer, regulatory, or industry specifications when setting validation criteria. <a href="https://store.astm.org/d2063_d2063m-24.html" rel="noopener" target="_blank">ASTM D2063</a> covers torque retention measurement for threaded closures.
                 </div>
+            </div>
+        </section>
+
+        <section class="py-16 border-b border-border">
+            <div class="mx-auto max-w-3xl px-6">
+                <span class="section-rule"></span>
+                <h2 class="mb-4">Industry Resources</h2>
+                <p class="text-[0.92rem] text-ink-light mb-6">Standards bodies, trade organizations, and regulatory references relevant to capping and closure work.</p>
+                <ul class="space-y-3 text-[0.92rem]">
+                    <li><a href="https://www.isbt.com/" rel="noopener" target="_blank">ISBT</a> -- International Society of Beverage Technologists. Maintains the <a href="https://www.isbt.com/resources/isbt-threadspecs" rel="noopener" target="_blank">voluntary threadspecs</a> (PCO 1881, 1810, etc.) used across the beverage industry.</li>
+                    <li><a href="https://www.pmmi.org/" rel="noopener" target="_blank">PMMI</a> -- The Association for Packaging and Processing Technologies. Trade association for packaging machinery manufacturers.</li>
+                    <li><a href="https://store.astm.org/d2063_d2063m-24.html" rel="noopener" target="_blank">ASTM D2063</a> -- Standard test methods for torque retention measurement on threaded closures (current revision, 2024).</li>
+                    <li><a href="https://www.ecfr.gov/current/title-16/chapter-II/subchapter-E/part-1700" rel="noopener" target="_blank">16 CFR Part 1700</a> -- CPSC regulation governing child-resistant packaging in the United States.</li>
+                    <li><a href="https://eur-lex.europa.eu/eli/dir/2019/904/oj" rel="noopener" target="_blank">EU Directive 2019/904</a> -- Single-Use Plastics Directive requiring tethered closures on certain beverage containers.</li>
+                </ul>
             </div>
         </section>
 

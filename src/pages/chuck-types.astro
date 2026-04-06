@@ -44,12 +44,12 @@ import precisionMachining from '../assets/images/precision-machining.jpg';
                 <div class="class-block">
                     <span class="class-tag">Electromagnetic</span>
                     <h3>Magnetic Hysteresis Chucks</h3>
-                    <p>These use an electromagnetic hysteresis coupling to transmit torque from the spindle motor to the closure. A variable DC current sets the magnetic field intensity, which determines the slip-torque threshold. When torque reaches the preset value, the hysteresis disc slips without mechanical contact. Result: torque repeatability under 3% CV with zero wear on drive surfaces.</p>
+                    <p>These use an electromagnetic hysteresis coupling to transmit torque from the spindle motor to the closure. A variable DC current sets the magnetic field intensity, which determines the slip-torque threshold. When torque reaches the preset value, the hysteresis disc slips without mechanical contact. In well-maintained high-speed applications, this design is often chosen for tighter torque consistency and reduced wear compared with friction-based clutches.</p>
                     <ul class="class-specs">
                         <li>No mechanical clutch surfaces, so no friction-based wear</li>
-                        <li>Slip-torque repeatability: &plusmn;0.1 N·m across 10M+ cycles</li>
+                        <li>Torque repeatability depends on closure, speed, and headset design</li>
                         <li>Torque set by current control (PLC or analog signal)</li>
-                        <li>Standard choice for high-speed rotary cappers above 800 CPM</li>
+                        <li>Common choice for high-speed rotary cappers where repeatability is critical</li>
                     </ul>
                     <p class="mt-3 text-[0.88rem] text-ink-light">Magnetic hysteresis chucks are the drive mechanism inside <a href="/capping-headsets/">magnetic capping headsets</a>. The headset is the full assembly; the chuck is the closure-gripping component on the output side.</p>
                 </div>
@@ -114,14 +114,14 @@ import precisionMachining from '../assets/images/precision-machining.jpg';
                 <div>
                     <div class="app-entry">
                         <span class="app-code">PCO-1881-T</span>
-                        <h3>28mm PCO 1881 (Tethered)</h3>
-                        <p>Tethered closure format required by the EU Single-Use Plastics Directive (SUPD). Chuck bore must clear the hinge band and tether link without interference during thread application. This means a modified internal bore profile compared to standard 28mm PCO tooling.</p>
+                        <h3>28mm <a href="https://www.isbt.com/resources/isbt-threadspecs" rel="noopener" target="_blank">PCO 1881</a> (Tethered)</h3>
+                        <p>Tethered closure format used to meet <a href="https://eur-lex.europa.eu/eli/dir/2019/904/oj" rel="noopener" target="_blank">EU Single-Use Plastics Directive</a> requirements for certain beverage containers. Chuck bore must clear the hinge band and tether link without interference during thread application. This usually requires a modified internal bore profile compared with standard 28 mm PCO tooling.</p>
                     </div>
 
                     <div class="app-entry">
                         <span class="app-code">HDPE-38</span>
                         <h3>38mm HDPE Dairy & Juice</h3>
-                        <p>Wide-mouth HDPE closures for dairy, juice, and smoothie containers. The 38mm thread diameter demands high-grip <a href="/glossary/#knurling">knurl</a> engagement in the chuck. Typical application torque runs 2.0 to 4.5 N·m with foil-seal compression verification.</p>
+                        <p>Wide-mouth HDPE closures for dairy, juice, and smoothie containers. The 38 mm thread diameter demands strong <a href="/glossary/#knurling">knurl</a> engagement in the chuck. Application torque targets vary by closure, liner, and container finish and should be confirmed against the closure supplier's specification.</p>
                     </div>
 
                     <div class="app-entry">
@@ -133,7 +133,7 @@ import precisionMachining from '../assets/images/precision-machining.jpg';
                     <div class="app-entry">
                         <span class="app-code">CRC</span>
                         <h3>Child-Resistant Closures</h3>
-                        <p>Pharmaceutical and household chemical push-turn and squeeze-turn CRC formats. The chuck applies axial load and rotational torque at the same time to engage the ratchet mechanism without over-torquing the inner seal. Torque verification per 16 CFR &sect;1700 (CPSC) is required.</p>
+                        <p>Pharmaceutical and household chemical push-turn and squeeze-turn CRC formats. The chuck applies axial load and rotational torque at the same time to engage the ratchet mechanism without over-torquing the inner seal. Child-resistant packages in the U.S. are generally governed by <a href="https://www.ecfr.gov/current/title-16/chapter-II/subchapter-E/part-1700" rel="noopener" target="_blank">16 CFR Part 1700</a>, while production torque targets should be set from the closure manufacturer's specification and validated on the finished package.</p>
                     </div>
 
                     <div class="app-entry">
@@ -157,7 +157,7 @@ import precisionMachining from '../assets/images/precision-machining.jpg';
                 <h2 class="mb-4">Related</h2>
                 <ul class="space-y-3 text-[0.92rem]">
                     <li><a href="/capping-headsets/">Capping Headsets</a> -- magnetic, spring-clutch, and hysteresis headset assemblies</li>
-                    <li><a href="/oem-compatibility/">OEM Compatibility Index</a> -- drop-in replacements by machine platform</li>
+                    <li><a href="/oem-compatibility/">OEM Compatibility Index</a> -- platform reference and fit-up factors by machine family</li>
                     <li><a href="/troubleshooting/">Troubleshooting & Calibration</a> -- torque scatter, scuffing, and TE band diagnostics</li>
                 </ul>
             </div>

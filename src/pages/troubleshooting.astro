@@ -58,22 +58,22 @@ import measurementCaliper from '../assets/images/measurement-caliper.jpg';
                             <tr>
                                 <td>Inconsistent Torque (High CV%)</td>
                                 <td>Worn clutch plates, contaminated hysteresis disc, or unstable pneumatic supply pressure. Also check incoming closure and container finish dimensions.</td>
-                                <td>Replace clutch plates or clean hysteresis assembly. Verify air supply at 6.0 bar &plusmn;0.2 bar with moisture trap inline. Run Cpk study on incoming components.</td>
+                                <td>Replace clutch plates or clean the hysteresis assembly. Verify pneumatic supply against the machine OEM's specified pressure range and confirm moisture control is working. Run capability checks on incoming closures and container finishes if variation persists.</td>
                             </tr>
                             <tr>
                                 <td>Stripped TE Bands</td>
                                 <td>Over-torque causing the closure to rotate past the <a href="/glossary/#bridge-count">bridge</a> fracture point. Bridges shear during application instead of at first opening.</td>
-                                <td>Reduce application torque 10 to 15%. Verify bridge count and thickness against closure spec. Check chuck runout for uneven axial loading.</td>
+                                <td>Reduce application torque in controlled increments. Verify bridge count and thickness against the closure specification. Check chuck runout for uneven axial loading.</td>
                             </tr>
                             <tr>
                                 <td>Cross-Threading</td>
                                 <td>Closure not centered on the finish before thread engagement. Worn guide rails, wrong chuck height, or vacuum pick failure in cap feed.</td>
-                                <td>Check chuck descent height and pre-thread contact point. Inspect centering bell for wear. Confirm container finish perpendicularity (tilt under 1&deg;).</td>
+                                <td>Check chuck descent height and pre-thread contact point. Inspect centering hardware for wear. Confirm container-finish geometry against the container drawing or inspection standard.</td>
                             </tr>
                             <tr>
                                 <td>Vacuum Loss Post-Capping</td>
                                 <td>Not enough torque for full seal compression. Could also be damaged liner or out-of-spec container finish (chipped or ovalized).</td>
-                                <td>Increase torque in 0.2 N·m steps until headspace vacuum meets spec. Check finish sealing surface with go/no-go gauges.</td>
+                                <td>Increase torque in controlled increments until headspace vacuum meets the package specification. Check the finish sealing surface with the gauges or inspection method specified for that container.</td>
                             </tr>
                             <tr>
                                 <td>Undertorque</td>
@@ -94,16 +94,16 @@ import measurementCaliper from '../assets/images/measurement-caliper.jpg';
                 <div class="space-y-4 text-[0.95rem] text-ink-light">
                     <p>Set the target application torque based on the closure manufacturer's specification. On <a href="/capping-headsets/#spring-clutch">spring-clutch headsets</a>, adjust the compression preload via the threaded collar or shim stack. On <a href="/capping-headsets/#magnetic">magnetic hysteresis headsets</a>, adjust the DC current to the coil.</p>
 
-                    <p>Verify with a calibrated torque analyzer on at least 10 consecutive samples. Calculate the coefficient of variation (CV%). Target is under 5% for standard applications, under 3% for high-speed rotary lines. If CV% exceeds target, check for worn clutch surfaces, backlash in the spindle coupling, or inconsistent incoming closure dimensions.</p>
+                    <p>Verify with a calibrated torque analyzer using a documented sample size appropriate for the line's validation or quality procedure. Calculate the coefficient of variation (CV%). Many plants use tighter CV targets on high-speed rotary lines than on slower or less critical applications. If variation exceeds your limit, check for worn clutch surfaces, backlash in the spindle coupling, or inconsistent incoming closure dimensions.</p>
                 </div>
 
                 <div class="spec-panel mt-8">
                     <h3 class="mb-3 text-sm">Calibration Parameters</h3>
-                    <div class="spec-row"><span class="spec-label">Minimum Sample Size</span><span class="spec-value">10 consecutive closures</span></div>
-                    <div class="spec-row"><span class="spec-label">CV% Target (standard)</span><span class="spec-value">&le; 5%</span></div>
-                    <div class="spec-row"><span class="spec-label">CV% Target (high-speed)</span><span class="spec-value">&le; 3%</span></div>
-                    <div class="spec-row"><span class="spec-label">Torque Analyzer</span><span class="spec-value">Calibrated per ASTM D3198</span></div>
-                    <div class="spec-row"><span class="spec-label">Verification Standard</span><span class="spec-value">ISBT Voluntary Standard</span></div>
+                    <div class="spec-row"><span class="spec-label">Sample Size</span><span class="spec-value">Set by plant validation or quality procedure</span></div>
+                    <div class="spec-row"><span class="spec-label">CV% Target</span><span class="spec-value">Set by application risk and package specification</span></div>
+                    <div class="spec-row"><span class="spec-label">High-Speed Lines</span><span class="spec-value">Often use tighter variation limits</span></div>
+                    <div class="spec-row"><span class="spec-label">Torque Analyzer</span><span class="spec-value">Use a calibrated instrument with a documented method</span></div>
+                    <div class="spec-row"><span class="spec-label">Verification Basis</span><span class="spec-value">Closure supplier, customer, regulatory, and plant requirements (see <a href="https://store.astm.org/d2063_d2063m-24.html" rel="noopener" target="_blank">ASTM D2063</a>)</span></div>
                 </div>
             </div>
         </section>
