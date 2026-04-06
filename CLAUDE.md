@@ -53,5 +53,5 @@ public/
 
 - No em dashes in copy
 - Direct, engineer-to-engineer tone (not marketing/AI voice)
-- OEM brand references verified: Zalkin/Sidel, Krones, AROL, CSI, Fowler/Pro Mach, Tedelta
+- OEM brand references verified: Zalkin/ProMach, Krones, AROL/BW Packaging, CSI, Fowler/ProMach, Tedelta
 - Standards referenced: ASTM D3198, ISBT Voluntary Standard, 16 CFR §1700, EU SUPD
