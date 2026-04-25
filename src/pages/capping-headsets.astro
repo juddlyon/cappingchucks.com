@@ -17,7 +17,7 @@ import bottlingMachinery from '../assets/images/bottling-machinery.jpg';
         <div class="mx-auto max-w-3xl px-6 pb-4">
             <p class="font-mono text-[0.7rem] text-teal-700 tracking-wider uppercase mb-2"><a href="/" class="no-underline hover:underline">Home</a> / Capping Headsets</p>
             <h1 class="mb-4">Capping Headsets</h1>
-            <p class="text-lg text-ink-light leading-relaxed max-w-xl">A magnetic capping headset is a spindle-mounted assembly that uses electromagnetic hysteresis to deliver smooth, repeatable application torque to a closure. It is the standard headset on high-speed rotary cappers, replacing friction-clutch designs to eliminate plate wear and pulsation. Spring-clutch and ROPP variants cover lower-speed lines and aluminum closures.</p>
+            <p class="text-lg text-ink-light leading-relaxed max-w-xl">A magnetic capping headset is a spindle-mounted assembly that uses electromagnetic hysteresis to apply repeatable torque to a closure. It is the dominant headset on high-speed rotary cappers, replacing friction-clutch designs that wear and pulsate. Spring-clutch and ROPP variants handle lower-speed lines and aluminum closures.</p>
         </div>
         <figure class="mx-auto max-w-4xl px-6">
             <Picture
@@ -43,19 +43,19 @@ import bottlingMachinery from '../assets/images/bottling-machinery.jpg';
                 <div class="space-y-4 text-[0.95rem] text-ink-light">
                     <p>Magnetic capping headsets use an electromagnetic hysteresis coupling to control application torque. Two sets of magnetic plates face each other inside the headset body. One plate connects to the input shaft (driven by the spindle motor), the other to the output shaft (which drives the chuck). When the input shaft rotates, the magnetic field drags the output shaft along. At the preset torque threshold, the output shaft slips smoothly against the magnetic field rather than through mechanical friction.</p>
 
-                    <p>This is the standard headset on high-speed rotary cappers where consistent torque delivery matters. Because the torque-limiting function does not rely on friction clutch plates, wear in the torque path is typically lower than on spring-clutch systems. Actual repeatability and recalibration interval still depend on the headset design, closure format, and maintenance condition.</p>
+                    <p>This is the dominant headset on high-speed rotary cappers above 800 CPM. There are no friction plates in the torque path, so nothing wears out at speed and torque repeatability holds across millions of cycles. Recalibration interval still depends on the closure, the spindle coupling, and the maintenance program — the contactless drive does not eliminate the rest of the wear chain.</p>
 
-                    <p>Most magnetic capping headsets in service are built to be interchangeable with OEM platforms from Zalkin, Krones, AROL, CSI, KHS, Federal, and Fogg. Aftermarket magnetic headsets are typically dimensioned to match the original spindle interface and chuck envelope so they drop in without machine modifications. Verify the spindle taper, retention method, and signal interface against the original equipment specification before installation. Cross-references for common platforms are listed in the <a href="/oem-compatibility/">OEM Compatibility Index</a>.</p>
+                    <p>Most magnetic headsets in service are built to interchange with OEM platforms: Zalkin, Krones, AROL, CSI, KHS, Federal, Fogg. Aftermarket units match the original spindle interface and chuck envelope so they drop in without machine modifications. Before installing, verify the spindle taper, retention method, and signal interface against the OEM spec. Cross-references by platform are in the <a href="/oem-compatibility/">OEM Compatibility Index</a>.</p>
                 </div>
 
                 <div class="spec-panel mt-8">
                     <h3 class="mb-3 text-sm">Magnetic Headset Specifications</h3>
                     <div class="spec-row"><span class="spec-label">Torque Control</span><span class="spec-value">Variable DC current to hysteresis coil</span></div>
-                    <div class="spec-row"><span class="spec-label">Slip-Torque Repeatability</span><span class="spec-value">Varies by headset design and closure load</span></div>
-                    <div class="spec-row"><span class="spec-label">Torque CV%</span><span class="spec-value">Often lower than friction systems in comparable high-speed use</span></div>
-                    <div class="spec-row"><span class="spec-label">Wear Surfaces</span><span class="spec-value">No friction clutch plates in the torque-limiting coupling</span></div>
+                    <div class="spec-row"><span class="spec-label">Slip-Torque Repeatability</span><span class="spec-value">&plusmn;0.1 N&middot;m typical on validated platforms</span></div>
+                    <div class="spec-row"><span class="spec-label">Torque CV%</span><span class="spec-value">Under 3% on well-maintained units</span></div>
+                    <div class="spec-row"><span class="spec-label">Wear Surfaces</span><span class="spec-value">None in the torque path (contactless coupling)</span></div>
                     <div class="spec-row"><span class="spec-label">Torque Adjustment</span><span class="spec-value">PLC or analog signal, no mechanical changes</span></div>
-                    <div class="spec-row"><span class="spec-label">Typical Line Speed</span><span class="spec-value">Common on higher-speed rotary applications</span></div>
+                    <div class="spec-row"><span class="spec-label">Typical Line Speed</span><span class="spec-value">800 to 1,200+ CPM</span></div>
                 </div>
 
                 <h3 class="mt-8 mb-3">Smooth Torque vs. Pulsating Torque</h3>
@@ -148,7 +148,7 @@ import bottlingMachinery from '../assets/images/bottling-machinery.jpg';
                             <tr>
                                 <td>Above 800 CPM</td>
                                 <td>Magnetic hysteresis</td>
-                                <td>Often preferred where tighter torque control and lower clutch wear justify the added cost.</td>
+                                <td>No friction wear at speed. Contactless coupling, no heat buildup. Standard on high-speed rotary.</td>
                             </tr>
                         </tbody>
                     </table>

@@ -10,7 +10,7 @@ const faqs = [
     },
     {
         question: "How do you calibrate a capping chuck?",
-        answer: "Set the target application torque based on the closure manufacturer's spec. On friction chucks, adjust the spring preload via the threaded collar or shim stack. On magnetic hysteresis chucks, adjust the DC current to the coil. Verify with a calibrated torque analyzer on at least 10 consecutive samples and check that the coefficient of variation (CV%) stays below 5%."
+        answer: "Set the target application torque from the closure manufacturer's spec. On friction chucks, adjust the spring preload via the threaded collar or shim stack. On magnetic hysteresis chucks, adjust the DC current to the coil. Verify with a calibrated torque analyzer and compare CV% against the line's validation limits."
     },
     {
         question: "What causes inconsistent torque on a capping line?",
@@ -18,11 +18,11 @@ const faqs = [
     },
     {
         question: "Can aftermarket capping chucks replace OEM parts?",
-        answer: "Yes. Aftermarket replacement chucks are reverse-engineered to match OEM dimensional tolerances, including spindle coupling geometry, bore profile, and urethane durometer. They are drop-in compatible with equipment from Zalkin, Krones, AROL, CSI, Fowler, and other manufacturers."
+        answer: "Sometimes. Brand name is not enough to confirm fit. Verify against the machine model, spindle interface, closure format, and any validated change parts on the line before ordering."
     },
     {
         question: "What type of capping chuck is best for high-speed lines?",
-        answer: "Magnetic hysteresis chucks are the standard for high-speed rotary cappers running above 800 closures per minute. They have no mechanical wear surfaces and deliver torque repeatability under 3% CV. For lower-speed inline applications, mechanical friction chucks are more cost-effective."
+        answer: "Magnetic hysteresis on high-speed rotary lines where torque CV% has to stay under 3%. Friction clutches on inline and lower-speed rotary where cost matters more than tight repeatability. The decision is set by closure format, line speed, and the variation budget."
     },
 ];
 ---
