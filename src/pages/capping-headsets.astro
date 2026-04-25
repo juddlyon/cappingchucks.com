@@ -17,7 +17,7 @@ import bottlingMachinery from '../assets/images/bottling-machinery.jpg';
         <div class="mx-auto max-w-3xl px-6 pb-4">
             <p class="font-mono text-[0.7rem] text-teal-700 tracking-wider uppercase mb-2"><a href="/" class="no-underline hover:underline">Home</a> / Capping Headsets</p>
             <h1 class="mb-4">Capping Headsets</h1>
-            <p class="text-lg text-ink-light leading-relaxed max-w-xl">A capping headset is the complete spindle-mounted assembly that delivers controlled torque to a closure. It includes the <a href="/chuck-types/">chuck</a> (which grips the cap), the clutch or torque-limiting mechanism, and the spindle coupling.</p>
+            <p class="text-lg text-ink-light leading-relaxed max-w-xl">A magnetic capping headset is a spindle-mounted assembly that uses electromagnetic hysteresis to deliver smooth, repeatable application torque to a closure. It is the standard headset on high-speed rotary cappers, replacing friction-clutch designs to eliminate plate wear and pulsation. Spring-clutch and ROPP variants cover lower-speed lines and aluminum closures.</p>
         </div>
         <figure class="mx-auto max-w-4xl px-6">
             <Picture
@@ -35,6 +35,38 @@ import bottlingMachinery from '../assets/images/bottling-machinery.jpg';
     </header>
 
     <main>
+        <section id="magnetic" class="py-16 border-b border-border">
+            <div class="mx-auto max-w-3xl px-6">
+                <span class="section-rule"></span>
+                <h2 class="mb-6">Magnetic Capping Headsets</h2>
+
+                <div class="space-y-4 text-[0.95rem] text-ink-light">
+                    <p>Magnetic capping headsets use an electromagnetic hysteresis coupling to control application torque. Two sets of magnetic plates face each other inside the headset body. One plate connects to the input shaft (driven by the spindle motor), the other to the output shaft (which drives the chuck). When the input shaft rotates, the magnetic field drags the output shaft along. At the preset torque threshold, the output shaft slips smoothly against the magnetic field rather than through mechanical friction.</p>
+
+                    <p>This is the standard headset on high-speed rotary cappers where consistent torque delivery matters. Because the torque-limiting function does not rely on friction clutch plates, wear in the torque path is typically lower than on spring-clutch systems. Actual repeatability and recalibration interval still depend on the headset design, closure format, and maintenance condition.</p>
+
+                    <p>Most magnetic capping headsets in service are built to be interchangeable with OEM platforms from Zalkin, Krones, AROL, CSI, KHS, Federal, and Fogg. Aftermarket magnetic headsets are typically dimensioned to match the original spindle interface and chuck envelope so they drop in without machine modifications. Verify the spindle taper, retention method, and signal interface against the original equipment specification before installation. Cross-references for common platforms are listed in the <a href="/oem-compatibility/">OEM Compatibility Index</a>.</p>
+                </div>
+
+                <div class="spec-panel mt-8">
+                    <h3 class="mb-3 text-sm">Magnetic Headset Specifications</h3>
+                    <div class="spec-row"><span class="spec-label">Torque Control</span><span class="spec-value">Variable DC current to hysteresis coil</span></div>
+                    <div class="spec-row"><span class="spec-label">Slip-Torque Repeatability</span><span class="spec-value">Varies by headset design and closure load</span></div>
+                    <div class="spec-row"><span class="spec-label">Torque CV%</span><span class="spec-value">Often lower than friction systems in comparable high-speed use</span></div>
+                    <div class="spec-row"><span class="spec-label">Wear Surfaces</span><span class="spec-value">No friction clutch plates in the torque-limiting coupling</span></div>
+                    <div class="spec-row"><span class="spec-label">Torque Adjustment</span><span class="spec-value">PLC or analog signal, no mechanical changes</span></div>
+                    <div class="spec-row"><span class="spec-label">Typical Line Speed</span><span class="spec-value">Common on higher-speed rotary applications</span></div>
+                </div>
+
+                <h3 class="mt-8 mb-3">Smooth Torque vs. Pulsating Torque</h3>
+                <div class="space-y-4 text-[0.95rem] text-ink-light">
+                    <p>Older magnetic headset designs use opposing pole configurations that produce a pulsating torque output. The magnetic field snaps from pole to pole as the discs rotate, creating torque spikes at each transition. This works, but pulsation introduces micro-shocks that increase mechanical wear on downstream components and can cause inconsistent TE band engagement on thin-wall closures.</p>
+
+                    <p>Current-generation headsets use a smooth torque design where the magnetic field provides constant, even resistance throughout the rotation. This eliminates pulsation, reduces mechanical stress on the capping turret, and delivers more consistent <a href="/glossary/#slip-torque">slip torque</a> across the full speed range.</p>
+                </div>
+            </div>
+        </section>
+
         <section id="headset-vs-chuck" class="py-16 border-b border-border">
             <div class="mx-auto max-w-3xl px-6">
                 <span class="section-rule"></span>
@@ -48,43 +80,13 @@ import bottlingMachinery from '../assets/images/bottling-machinery.jpg';
             </div>
         </section>
 
-        <section id="magnetic" class="py-16 border-b border-border">
-            <div class="mx-auto max-w-3xl px-6">
-                <span class="section-rule"></span>
-                <h2 class="mb-6">Magnetic Capping Headsets</h2>
-
-                <div class="space-y-4 text-[0.95rem] text-ink-light">
-                    <p>Magnetic capping headsets use an electromagnetic hysteresis coupling to control application torque. Two sets of magnetic plates face each other inside the headset body. One plate connects to the input shaft (driven by the spindle motor), the other to the output shaft (which drives the chuck). When the input shaft rotates, the magnetic field drags the output shaft along. At the preset torque threshold, the output shaft slips smoothly against the magnetic field rather than through mechanical friction.</p>
-
-                    <p>This is the dominant technology on high-speed rotary cappers running above 800 closures per minute. Because there are no friction surfaces in the torque path, there is zero mechanical wear on the drive components. Torque repeatability holds under 3% CV across millions of cycles without recalibration.</p>
-                </div>
-
-                <div class="spec-panel mt-8">
-                    <h3 class="mb-3 text-sm">Magnetic Headset Specifications</h3>
-                    <div class="spec-row"><span class="spec-label">Torque Control</span><span class="spec-value">Variable DC current to hysteresis coil</span></div>
-                    <div class="spec-row"><span class="spec-label">Slip-Torque Repeatability</span><span class="spec-value">&plusmn;0.1 N·m across 10M+ cycles</span></div>
-                    <div class="spec-row"><span class="spec-label">Torque CV%</span><span class="spec-value">&lt; 3%</span></div>
-                    <div class="spec-row"><span class="spec-label">Wear Surfaces</span><span class="spec-value">None (contactless coupling)</span></div>
-                    <div class="spec-row"><span class="spec-label">Torque Adjustment</span><span class="spec-value">PLC or analog signal, no mechanical changes</span></div>
-                    <div class="spec-row"><span class="spec-label">Typical Line Speed</span><span class="spec-value">800 to 1,200+ CPM</span></div>
-                </div>
-
-                <h3 class="mt-8 mb-3">Smooth Torque vs. Pulsating Torque</h3>
-                <div class="space-y-4 text-[0.95rem] text-ink-light">
-                    <p>Older magnetic headset designs use opposing pole configurations that produce a pulsating torque output. The magnetic field snaps from pole to pole as the discs rotate, creating torque spikes at each transition. This works, but pulsation introduces micro-shocks that increase mechanical wear on downstream components and can cause inconsistent TE band engagement on thin-wall closures.</p>
-
-                    <p>Current-generation headsets use a smooth torque design where the magnetic field provides constant, even resistance throughout the rotation. This eliminates pulsation, reduces mechanical stress on the capping turret, and delivers more consistent <a href="/glossary/#slip-torque">slip torque</a> across the full speed range.</p>
-                </div>
-            </div>
-        </section>
-
         <section id="spring-clutch" class="py-16 border-b border-border">
             <div class="mx-auto max-w-3xl px-6">
                 <span class="section-rule"></span>
                 <h2 class="mb-6">Spring-Clutch Headsets</h2>
 
                 <div class="space-y-4 text-[0.95rem] text-ink-light">
-                    <p>Spring-clutch (friction) headsets transmit torque through a stack of clutch plates held under spring compression. When the applied torque exceeds the spring preload, the plates slip. You set the torque target by adjusting the spring compression via a threaded collar or shim stack.</p>
+                    <p>Spring-clutch (friction) headsets, sometimes called capping clutches, transmit torque through a stack of clutch plates held under spring compression. When the applied torque exceeds the spring preload, the plates slip. You set the torque target by adjusting the spring compression via a threaded collar or shim stack.</p>
 
                     <p>These are the standard headset on inline cappers and lower-speed rotary machines running under 600 CPM. They cost less than magnetic headsets and are mechanically simpler to maintain. The tradeoff is wear: clutch plates degrade over time, and torque output drifts as friction surfaces wear. Expect to replace clutch plates on a regular maintenance cycle and verify torque calibration after each replacement.</p>
                 </div>
@@ -146,7 +148,7 @@ import bottlingMachinery from '../assets/images/bottling-machinery.jpg';
                             <tr>
                                 <td>Above 800 CPM</td>
                                 <td>Magnetic hysteresis</td>
-                                <td>No mechanical wear at speed. Contactless coupling eliminates heat buildup. Industry standard for high-speed rotary.</td>
+                                <td>Often preferred where tighter torque control and lower clutch wear justify the added cost.</td>
                             </tr>
                         </tbody>
                     </table>
