@@ -1,0 +1,58 @@
+---
+interface Props {
+    caption?: string;
+}
+
+const { caption = 'Cutaway of one capping station. The clutch sets the torque. The chuck and insert grip the cap.' } = Astro.props;
+---
+
+<figure class="diagram">
+    <svg viewBox="0 0 640 510" role="img" aria-labelledby="chuck-diagram-title chuck-diagram-desc" style="width:100%;height:auto;font-family:var(--font-display)">
+        <title id="chuck-diagram-title">Capping chuck cross-section diagram</title>
+        <desc id="chuck-diagram-desc">From top to bottom: the spindle drive shaft, the torque clutch, the chuck body, the rubber insert that grips the cap, the cap, and the bottle neck.</desc>
+
+        <!-- Spindle -->
+        <rect x="200" y="15" width="40" height="75" rx="6" fill="#8a94a6" stroke="#1b1f2a" stroke-width="3" />
+        <!-- Torque clutch -->
+        <rect x="145" y="90" width="150" height="90" rx="16" fill="#0057b8" stroke="#1b1f2a" stroke-width="3" />
+        <rect x="165" y="118" width="110" height="10" rx="5" fill="#ffcd00" />
+        <rect x="165" y="142" width="110" height="10" rx="5" fill="#ffcd00" />
+        <!-- Chuck body with bore -->
+        <path d="M160 180 H280 V285 H262 V228 H178 V285 H160 Z" fill="#d1001f" stroke="#1b1f2a" stroke-width="3" stroke-linejoin="round" />
+        <!-- Insert -->
+        <path d="M178 228 H262 V285 H252 V238 H188 V285 H178 Z" fill="#007a3d" stroke="#1b1f2a" stroke-width="2" />
+        <!-- Cap -->
+        <rect x="190" y="240" width="60" height="52" rx="6" fill="#ffcd00" stroke="#1b1f2a" stroke-width="3" />
+        <line x1="198" y1="250" x2="198" y2="284" stroke="#1b1f2a" stroke-width="2" />
+        <line x1="210" y1="250" x2="210" y2="284" stroke="#1b1f2a" stroke-width="2" />
+        <line x1="222" y1="250" x2="222" y2="284" stroke="#1b1f2a" stroke-width="2" />
+        <line x1="234" y1="250" x2="234" y2="284" stroke="#1b1f2a" stroke-width="2" />
+        <!-- Bottle -->
+        <path d="M196 292 H244 V360 C244 385 290 395 290 430 V500 H150 V430 C150 395 196 385 196 360 Z" fill="#e8f2ff" stroke="#1b1f2a" stroke-width="3" stroke-linejoin="round" />
+
+        <!-- Spin arrow -->
+        <path d="M120 250 A30 12 0 1 0 150 262" fill="none" stroke="#1b1f2a" stroke-width="3" />
+        <path d="M150 262 L138 254 L140 268 Z" fill="#1b1f2a" />
+        <text x="30" y="300" font-size="17" fill="#1b1f2a" font-weight="700">Spins the cap</text>
+
+        <!-- Leader lines and labels -->
+        <g stroke="#1b1f2a" stroke-width="2">
+            <line x1="240" y1="50" x2="340" y2="50" />
+            <line x1="295" y1="135" x2="340" y2="135" />
+            <line x1="280" y1="200" x2="340" y2="200" />
+            <line x1="257" y1="260" x2="340" y2="260" />
+            <line x1="250" y1="285" x2="340" y2="320" />
+            <line x1="270" y1="440" x2="340" y2="440" />
+        </g>
+        <g font-size="19" fill="#1b1f2a" font-weight="700">
+            <text x="348" y="56">1. Spindle (drive shaft)</text>
+            <text x="348" y="132">2. Torque clutch</text>
+            <text x="348" y="154" font-size="16" font-weight="600">magnetic or spring</text>
+            <text x="348" y="206">3. Chuck body</text>
+            <text x="348" y="266">4. Insert (grips the cap)</text>
+            <text x="348" y="326">5. Cap</text>
+            <text x="348" y="446">6. Bottle neck</text>
+        </g>
+    </svg>
+    <figcaption>{caption}</figcaption>
+</figure>

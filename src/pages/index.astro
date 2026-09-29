@@ -1,88 +1,118 @@
 ---
-import { Picture } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import ChuckDiagram from '../components/ChuckDiagram.astro';
 import FAQ from '../components/FAQ.astro';
 import bottlingLine from '../assets/images/bottling-line.jpg';
 ---
 
 <BaseLayout
-    title="CappingChucks.com | Precision Capping Chucks and Headsets"
-    description="Technical reference for precision capping chucks, capping headsets, and rotary capper tooling. Chuck classifications, compatibility factors, and troubleshooting for packaging engineers."
-    ogTitle="CappingChucks.com | Capping Chucks and Headsets"
-    ogDescription="Technical reference for precision capping chucks and headsets. Chuck classifications, compatibility factors, and troubleshooting for rotary and inline capping systems."
+    title="Capping Chucks: Types, Torque Specs, and How They Work"
+    description="What a capping chuck is, how it grips and torques a bottle cap, the main chuck types, and the torque, speed, and size numbers that matter. Plain-English guide to bottle capping chucks."
+    ogTitle="Capping Chucks: Types, Torque Specs, and How They Work"
+    ogDescription="Plain-English guide to bottle capping chucks: how they work, chuck types, torque specs, and calibration."
 >
-    <header class="pt-20 border-b border-border">
-        <div class="mx-auto max-w-3xl px-6 pb-16">
-            <h1 class="mb-4">Precision Capping Chucks & Headsets</h1>
-            <p class="text-lg text-ink-light leading-relaxed max-w-xl">A capping chuck is the tooling component on a capping machine spindle that grips a closure and applies controlled torque to thread it onto a bottle. This is the technical reference: chuck classifications, OEM cross-references, and calibration data for rotary and inline capping lines.</p>
-        </div>
-        <figure class="mx-auto max-w-4xl">
-            <Picture
-                src={bottlingLine}
-                alt="Wine bottles moving through a rotary capping station on an industrial bottling line"
-                class="w-full h-64 object-cover object-center sm:h-80 rounded-lg"
-                widths={[600, 900, 1200]}
-                sizes="100vw"
-                formats={['avif', 'webp']}
-                quality={80}
-                loading="eager"
-            />
-            <figcaption class="mt-2 px-6 font-mono text-[0.68rem] text-ink-faint">Rotary capping station on a high-speed bottling line. Photo: Pexels</figcaption>
-        </figure>
-    </header>
+    <PageHero
+        title="Capping Chucks"
+        answerLabel="What is a capping chuck?"
+        image={bottlingLine}
+        alt="Wine bottles moving through a rotary capping station on an industrial bottling line"
+        caption="Rotary capping station on a bottling line. Photo: Pexels"
+    >
+        <p>A capping chuck is the part of a capping machine that grabs a bottle cap, spins it onto the bottle, and stops at a set <a href="/glossary/#torque">torque</a> (twisting force). One chuck sits at the bottom of each spinning spindle.</p>
+    </PageHero>
 
     <main>
-        <section id="overview" class="py-16 border-b border-border">
-            <div class="mx-auto max-w-3xl px-6">
-                <span class="section-rule"></span>
-                <h2 class="mb-6">Technical Overview</h2>
-
-                <div class="space-y-4 text-[0.95rem] text-ink-light">
-                    <p>A capping chuck is the torque-transmitting interface between a capping turret spindle and the closure. It sits at the bottom of each spindle station on a rotary capper, or on the descending head of an inline unit. The chuck grips the closure shell, applies controlled rotational torque, and threads the cap onto the container finish to a target removal-torque spec.</p>
-
-                    <p>Torque consistency comes from the drive mechanism: magnetic hysteresis, friction clutch, pneumatic cylinder, or servo. A calibrated chuck delivers full thread engagement, fractures TE band bridges cleanly at first opening, and applies enough seal compression to hold headspace vacuum without leaking.</p>
-                </div>
-
-                <div class="spec-panel mt-8">
-                    <h3 class="mb-3 text-sm">Key Performance Parameters</h3>
-                    <div class="spec-row"><span class="spec-label">Application Torque Range</span><span class="spec-value">0.5 to 25 N·m, by closure</span></div>
-                    <div class="spec-row"><span class="spec-label">Torque CV% Target</span><span class="spec-value">&le; 5% standard, &le; 3% on validated rotary lines</span></div>
-                    <div class="spec-row"><span class="spec-label">Line Speed Capability</span><span class="spec-value">Up to 1,200 CPM</span></div>
-                    <div class="spec-row"><span class="spec-label">Closure Dia. Range</span><span class="spec-value">18 to 120 mm</span></div>
-                    <div class="spec-row"><span class="spec-label">Service Life</span><span class="spec-value">2 to 5M cycles between insert replacement</span></div>
+        <section id="fast-facts" class="section">
+            <div class="wrap">
+                <span class="kicker">Fast facts</span>
+                <h2>Capping chucks by the numbers</h2>
+                <div class="facts">
+                    <div class="fact"><span class="fact-num">0.5&ndash;25 N&middot;m</span><span class="fact-label">Torque range, set by the cap</span></div>
+                    <div class="fact"><span class="fact-num">&le; 5%</span><span class="fact-label">Torque spread (<a href="/glossary/#cv">CV%</a>) on most lines. &le; 3% on fast rotary lines.</span></div>
+                    <div class="fact"><span class="fact-num">1,200</span><span class="fact-label">Caps per minute on the fastest lines</span></div>
+                    <div class="fact"><span class="fact-num">18&ndash;120 mm</span><span class="fact-label">Cap sizes chucks are made for</span></div>
+                    <div class="fact"><span class="fact-num">2&ndash;5 million</span><span class="fact-label">Caps before an insert needs replacing</span></div>
                 </div>
             </div>
         </section>
 
-        <section class="py-16 border-b border-border">
-            <div class="mx-auto max-w-3xl px-6">
-                <span class="section-rule"></span>
-                <h2 class="mb-6">Reference Guides</h2>
+        <section id="how-it-works" class="section section-alt">
+            <div class="wrap">
+                <span class="kicker kicker-green">How it works</span>
+                <h2>What a capping chuck does, step by step</h2>
+                <div class="grid gap-8 md:grid-cols-2 items-start">
+                    <ol class="steps">
+                        <li>The chuck comes down over a loose cap sitting on the bottle.</li>
+                        <li>A rubber or plastic <a href="/glossary/#insert">insert</a> inside the chuck grips the ridges (<a href="/glossary/#knurling">knurling</a>) on the side of the cap.</li>
+                        <li>The spindle spins the chuck. The cap threads onto the bottle neck.</li>
+                        <li>When the cap hits the set torque, the clutch above the chuck slips. The cap stops turning, so it is never too tight.</li>
+                        <li>The chuck lets go and lifts. The next bottle moves in.</li>
+                    </ol>
+                    <ChuckDiagram />
+                </div>
+            </div>
+        </section>
 
-                <div class="space-y-8">
-                    <a href="/chuck-types/" class="hub-link">
+        <section id="grip-styles" class="section">
+            <div class="wrap">
+                <span class="kicker">Types</span>
+                <h2>How bottle capping chucks grip the cap</h2>
+                <p class="lead prose-col">Chucks differ in two ways: how they hold the cap, and what controls the torque. Here are the four common ways to hold the cap. For torque control, see <a href="/chuck-types/">capping chuck types</a>.</p>
+                <div class="cards cards-2">
+                    <div class="card card-blue">
+                        <h3>One-piece insert chuck</h3>
+                        <p>A solid metal cup, usually aluminum or stainless steel, with a rubber or urethane liner inside. The liner is shaped to fit one cap size. Simple, cheap, and the most common style.</p>
+                    </div>
+                    <div class="card card-red">
+                        <h3>Jaw chuck</h3>
+                        <p>Three or four metal jaws close around the cap. Jaws can handle caps with odd shapes and features that a plain cup cannot grip.</p>
+                    </div>
+                    <div class="card card-yellow">
+                        <h3>Pneumatic chuck</h3>
+                        <p>Air pressure closes jaws or a flexible collar around the cap. Change the air pressure to change the grip. Good for lines that switch between many cap types.</p>
+                    </div>
+                    <div class="card card-green">
+                        <h3>Vacuum chuck</h3>
+                        <p>Suction pulls the cap up into the chuck and holds it centered. Used for thin or light caps that squeezing would bend. <a href="/chuck-types/#vacuum">More on vacuum cap chucks</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="chuck-vs-headset" class="section section-alt">
+            <div class="wrap prose-col">
+                <span class="kicker kicker-blue">Chuck or headset?</span>
+                <h2>The chuck is one part of the headset</h2>
+                <p>The chuck only grips the cap. The full unit on the spindle is called a capping headset, or capping head. The headset holds the chuck plus the clutch that controls torque.</p>
+                <p>On fast rotary lines, that clutch is usually magnetic. To learn how those work, read our guide to <a href="/capping-headsets/">magnetic capping headsets</a>.</p>
+            </div>
+        </section>
+
+        <section id="guides" class="section">
+            <div class="wrap">
+                <span class="kicker kicker-green">Guides</span>
+                <h2>Pick a guide</h2>
+                <div class="cards cards-2">
+                    <a href="/chuck-types/" class="card card-link card-blue">
                         <h3>Capping Chuck Types</h3>
-                        <p>Magnetic hysteresis, friction, pneumatic, and vacuum chucks. How each type works, when to use it, and which closure formats they handle.</p>
+                        <p>Magnetic, friction, pneumatic, and vacuum chucks. How each one works and when to use it.</p>
                     </a>
-
-                    <a href="/capping-headsets/" class="hub-link">
-                        <h3>Capping Headsets</h3>
-                        <p>Magnetic, spring-clutch, and hysteresis headset assemblies. Torque delivery mechanisms, ROPP tooling, and headset selection by line speed.</p>
+                    <a href="/capping-headsets/" class="card card-link card-red">
+                        <h3>Magnetic Capping Headsets</h3>
+                        <p>How magnetic headsets set torque with no parts rubbing, plus spring-clutch and ROPP heads.</p>
                     </a>
-
-                    <a href="/oem-compatibility/" class="hub-link">
-                        <h3>OEM Compatibility Index</h3>
-                        <p>Reference index for common Zalkin, Krones, AROL, CSI, and Tedelta capping platforms and the fit-up factors that affect aftermarket replacement work.</p>
+                    <a href="/troubleshooting/" class="card card-link card-yellow">
+                        <h3>Troubleshooting and Calibration</h3>
+                        <p>Fix scuffed caps, uneven torque, broken tamper bands, and cross-threading. Step-by-step calibration.</p>
                     </a>
-
-                    <a href="/troubleshooting/" class="hub-link">
-                        <h3>Troubleshooting & Calibration</h3>
-                        <p>Diagnostic procedures for cap scuffing, torque scatter, stripped TE bands, cross-threading, vacuum loss, and undertorque conditions.</p>
+                    <a href="/oem-compatibility/" class="card card-link card-green">
+                        <h3>OEM Compatibility</h3>
+                        <p>Zalkin, Krones, AROL, CSI, and Tedelta cappers, and what to check before buying parts.</p>
                     </a>
-
-                    <a href="/glossary/" class="hub-link">
+                    <a href="/glossary/" class="card card-link card-blue">
                         <h3>Glossary</h3>
-                        <p>Definitions for knurling, thread pitch, top load, slip torque, bridge count, closure ovalization, and other capping terminology.</p>
+                        <p>Plain definitions for torque, knurling, top load, slip torque, 29/25, PCO 1881, and more.</p>
                     </a>
                 </div>
             </div>

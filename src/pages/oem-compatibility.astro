@@ -1,83 +1,106 @@
 ---
 import { Picture } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
 import productionLine from '../assets/images/production-line.jpg';
 ---
 
 <BaseLayout
-    title="OEM Capping Chuck Compatibility | Zalkin, Krones, AROL, CSI"
-    description="Reference index of common capping machine OEMs and platform families used in aftermarket chuck and headset discussions."
+    title="OEM Capping Chuck Compatibility: Zalkin, Krones, AROL, CSI"
+    description="What to check before buying aftermarket capping chucks and headsets for Zalkin, Krones, AROL, CSI, and Tedelta cappers. Includes matching chucks to caps like 29/25 and PCO 1881."
     canonical="https://cappingchucks.com/oem-compatibility/"
-    ogTitle="OEM Compatibility Index | CappingChucks.com"
-    ogDescription="Drop-in aftermarket capping chucks and headsets for Zalkin, Krones, AROL, CSI, and Tedelta capping platforms."
+    ogTitle="OEM Compatibility | CappingChucks.com"
+    ogDescription="What to check before buying aftermarket capping chucks and headsets for Zalkin, Krones, AROL, CSI, and Tedelta cappers."
     schemaType="TechArticle"
     breadcrumb="OEM Compatibility"
 >
-    <header class="pt-20 pb-12 border-b border-border">
-        <div class="mx-auto max-w-3xl px-6">
-            <p class="font-mono text-[0.7rem] text-teal-700 tracking-wider uppercase mb-2"><a href="/" class="no-underline hover:underline">Home</a> / OEM Compatibility</p>
-            <h1 class="mb-4">OEM Compatibility Index</h1>
-            <p class="text-lg text-ink-light leading-relaxed max-w-xl">Reference index of OEM platform families covered in aftermarket chuck and <a href="/capping-headsets/">capping headset</a> work. Confirm interchangeability against the exact machine model, spindle geometry, and closure format before ordering.</p>
-        </div>
-    </header>
+    <PageHero title="OEM Compatibility" crumb="OEM Compatibility" answerLabel="Will it fit?">
+        <p>Maybe. The machine brand alone does not tell you. Check the exact machine model, the spindle connection, and the cap before you order an aftermarket chuck or <a href="/capping-headsets/">capping headset</a>.</p>
+    </PageHero>
 
     <main>
-        <section class="py-16 border-b border-border">
-            <div class="mx-auto max-w-3xl px-6">
-                <span class="section-rule"></span>
-                <h2 class="mb-6">Platform Cross-Reference</h2>
+        <section id="checklist" class="section">
+            <div class="wrap">
+                <span class="kicker">Checklist</span>
+                <h2>Check these 4 things before you order</h2>
+                <ol class="steps prose-col">
+                    <li><strong>Machine model and serial number.</strong> Same brand does not mean same parts.</li>
+                    <li><strong>Spindle connection.</strong> Keyed, splined, or bayonet, plus the taper and how it locks.</li>
+                    <li><strong>The cap.</strong> Size, thread, and tamper band style set the chuck insert shape.</li>
+                    <li><strong>Torque control.</strong> Magnetic, spring clutch, or air, and the control signal it uses.</li>
+                </ol>
+            </div>
+        </section>
 
-                <figure class="mb-8 -mx-6 sm:mx-0">
+        <section id="platforms" class="section section-alt">
+            <div class="wrap">
+                <span class="kicker kicker-blue">Brands</span>
+                <h2>Capper brands</h2>
+
+                <figure class="mb-8">
                     <Picture
                         src={productionLine}
                         alt="Glass bottles on a rotary capping turret at a wine bottling facility"
-                        class="w-full h-56 sm:h-72 object-cover rounded-lg"
+                        class="w-full h-56 sm:h-72 object-cover rounded-3xl border-[3px] border-ink"
                         widths={[600, 900, 1200]}
-                        sizes="(max-width: 768px) 100vw, 768px"
+                        sizes="(max-width: 1024px) 100vw, 1024px"
                         formats={['avif', 'webp']}
                         quality={80}
                         loading="lazy"
                     />
-                    <figcaption class="mt-2 px-6 sm:px-0 font-mono text-[0.68rem] text-ink-faint">Rotary capping turret on a glass bottle line. Photo: Pexels</figcaption>
+                    <figcaption class="mt-2 text-base text-ink-soft">Rotary capping turret on a glass bottle line. Photo: Pexels</figcaption>
                 </figure>
 
-                <div>
-                    <div class="oem-entry">
-                        <p><span class="oem-name"><a href="https://www.zalkincapping.com/" rel="noopener" target="_blank">Zalkin</a></span><span class="oem-parent">ProMach</span></p>
-                        <p class="oem-desc">Zalkin rotary cappers run on beverage and food lines. For aftermarket fit-up, check the spindle interface, closure-handling geometry, and torque-control method on the installed machine.</p>
+                <div class="cards cards-2">
+                    <div class="card card-blue" id="zalkin">
+                        <span class="pill">Part of ProMach</span>
+                        <h3><a href="https://www.zalkincapping.com/" rel="noopener" target="_blank">Zalkin</a></h3>
+                        <p>Rotary cappers for drink and food lines. Check the spindle connection, how the machine handles caps, and its torque control.</p>
                     </div>
-                    <div class="oem-entry">
-                        <p><span class="oem-name"><a href="https://www.krones.com/en/products/machines/capper-models-for-a-wide-range-of-applications.php" rel="noopener" target="_blank">Krones AG</a></span><span class="oem-parent">Krones Group</span></p>
-                        <p class="oem-desc">Krones capping stations cover most beverage line types. Fit-up depends on the capper configuration, cap-handling geometry, and change-part stack on the actual machine.</p>
+                    <div class="card card-red" id="krones">
+                        <span class="pill">Krones Group</span>
+                        <h3><a href="https://www.krones.com/en/products/machines/capper-models-for-a-wide-range-of-applications.php" rel="noopener" target="_blank">Krones AG</a></h3>
+                        <p>Capping stations for most kinds of drink lines. Krones and Zalkin are separate companies. Fit depends on the capper setup, how it handles caps, and the change parts on your machine.</p>
                     </div>
-                    <div class="oem-entry">
-                        <p><span class="oem-name"><a href="https://www.arol.com/" rel="noopener" target="_blank">AROL S.p.A.</a></span><span class="oem-parent">AROL</span></p>
-                        <p class="oem-desc">AROL machines run tethered, ROPP, and standard formats. Verify spindle connection, closure-contact geometry, and chuck-interface material before ordering aftermarket tooling.</p>
+                    <div class="card card-yellow" id="arol">
+                        <span class="pill">AROL</span>
+                        <h3><a href="https://www.arol.com/" rel="noopener" target="_blank">AROL S.p.A.</a></h3>
+                        <p>Runs tethered, ROPP, and standard caps. Check the spindle connection, the chuck shape where it meets the cap, and the insert material.</p>
                     </div>
-                    <div class="oem-entry">
-                        <p><span class="oem-name"><a href="https://www.csiclosures.com/" rel="noopener" target="_blank">CSI</a></span><span class="oem-parent">Closure Systems International</span></p>
-                        <p class="oem-desc">CSI equipment runs multiple closure formats, including aluminum roll-on. Don't assume fit from the brand name; verify against the installed machine configuration.</p>
+                    <div class="card card-green" id="csi">
+                        <span class="pill">Closure Systems International</span>
+                        <h3><a href="https://www.csiclosures.com/" rel="noopener" target="_blank">CSI</a></h3>
+                        <p>Runs many cap types, including aluminum roll-on caps. Check against the machine you actually have.</p>
                     </div>
-                    <div class="oem-entry">
-                        <p><span class="oem-name"><a href="https://us.tedelta.com/" rel="noopener" target="_blank">Tedelta</a></span><span class="oem-parent">Tedelta</span></p>
-                        <p class="oem-desc">Tedelta equipment runs on pharmaceutical and cosmetic lines. Check replacement compatibility against the machine serial, spindle arrangement, and validated closure format.</p>
+                    <div class="card card-blue" id="tedelta">
+                        <span class="pill">Tedelta</span>
+                        <h3><a href="https://us.tedelta.com/" rel="noopener" target="_blank">Tedelta</a></h3>
+                        <p>Used on medicine and cosmetics lines. Check the machine serial number, spindle layout, and approved cap.</p>
                     </div>
-                </div>
-
-                <div class="callout">
-                    Brand names are trademarks of their respective owners and are referenced here for cross-identification only. Exact replacement compatibility should be confirmed from machine records, drawings, or sample-part qualification.
                 </div>
             </div>
         </section>
 
-        <section class="py-16 pb-20">
-            <div class="mx-auto max-w-3xl px-6">
-                <span class="section-rule"></span>
-                <h2 class="mb-4">Related</h2>
-                <ul class="space-y-3 text-[0.92rem]">
-                    <li><a href="/chuck-types/">Capping Chuck Types</a> -- magnetic, friction, pneumatic, and vacuum classifications</li>
-                    <li><a href="/capping-headsets/">Capping Headsets</a> -- headset assemblies and torque delivery mechanisms</li>
-                    <li><a href="/troubleshooting/">Troubleshooting & Calibration</a> -- diagnostics for chuck and headset issues</li>
+        <section id="match-the-cap" class="section">
+            <div class="wrap prose-col">
+                <span class="kicker kicker-green">Match the cap</span>
+                <h2>Chucks are sized to the cap, not the machine</h2>
+                <p>A capper that runs more than one cap needs the right chuck or insert for each one. For example, a Krones line might run both 28 mm <a href="/glossary/#pco-1881">PCO 1881</a> soft drink caps and <a href="/glossary/#29-25">29/25</a> still water caps. Those are different neck finishes, so check that the chuck insert matches each cap.</p>
+                <p>29/25 means the bottle neck has a 29 mm thread diameter and a 25 mm inside diameter (<a href="https://www.corvaglia.com/caps/29-25-aqua/" rel="noopener" target="_blank">Corvaglia</a>). It is common on still water because it uses less plastic.</p>
+                <div class="note">
+                    <strong>Trademarks:</strong> Brand names belong to their owners. We use them only to help you identify machines. Confirm fit from machine records, drawings, or a sample part test.
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="wrap">
+                <h2>Keep reading</h2>
+                <ul class="related">
+                    <li><a href="/chuck-types/">Capping chuck types</a></li>
+                    <li><a href="/capping-headsets/">Magnetic capping headsets</a></li>
+                    <li><a href="/troubleshooting/">Troubleshooting</a></li>
+                    <li><a href="/glossary/">Glossary</a></li>
                 </ul>
             </div>
         </section>

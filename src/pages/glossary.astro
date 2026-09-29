@@ -1,101 +1,88 @@
 ---
-import { Picture } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
 import technicalBlueprint from '../assets/images/technical-blueprint.jpg';
+
+const terms = [
+    { id: 'capping-chuck', term: 'Capping Chuck', def: 'The part of a capping machine that grips a cap and screws it onto a bottle. It sits at the bottom of a spinning spindle. See <a href="/">capping chucks</a>.' },
+    { id: 'capping-headset', term: 'Capping Headset (Capping Head)', def: 'The full unit on a spindle: the chuck, the clutch that controls torque, and the spindle adapter. See <a href="/capping-headsets/">magnetic capping headsets</a>.' },
+    { id: 'torque', term: 'Torque', def: 'Twisting force. For caps, it is measured in newton-meters (N&middot;m). Capping torque runs from about 0.5 to 25 N&middot;m, depending on the cap.' },
+    { id: 'insert', term: 'Chuck Insert', def: 'The rubber, urethane, or plastic lining inside a chuck that touches the cap. It wears out and gets replaced, often every 2 to 5 million caps.' },
+    { id: 'knurling', term: 'Knurling', def: 'The small ridges on the side of a cap. The chuck insert grips these. If the insert does not match the ridges, the cap slips or gets <a href="/troubleshooting/#scuffing">scuffed</a>.' },
+    { id: 'slip-torque', term: 'Slip Torque', def: 'The torque where the headset clutch lets go and stops turning the cap. It must be higher than the target torque but lower than the torque that would break the cap.' },
+    { id: 'static-torque', term: 'Static Torque (Removal Torque)', def: 'The torque needed to start opening a cap after it has sat for a while. It is often 10 to 30% lower than the torque used to put the cap on, because the liner settles. This is the main number checked in quality audits.' },
+    { id: 'cv', term: 'CV% (Torque Spread)', def: 'Coefficient of variation. It shows how much torque changes from cap to cap. Lower is better. Most lines aim for 5% or less. Fast rotary lines aim for 3% or less.' },
+    { id: 'cpm', term: 'CPM', def: 'Caps (or containers) per minute. A measure of line speed. The fastest lines run about 1,200 CPM.' },
+    { id: 'hysteresis', term: 'Hysteresis Coupling', def: 'A magnetic clutch. Magnets pass turning force across a gap without touching. When the load gets too high, the magnets slip. Used in <a href="/capping-headsets/#magnetic">magnetic capping headsets</a>.' },
+    { id: 'top-load', term: 'Top Load', def: 'How hard the chuck pushes down on the top of the cap, measured in newtons (N). It presses the liner against the bottle to make a seal. Too much bends thin caps. Too little gives a weak seal.' },
+    { id: 'liner', term: 'Liner', def: 'The seal inside a cap. It can be a separate disc (like a foil induction liner) or a seal molded into the cap. The liner type changes how much torque and top load you need.' },
+    { id: 'thread-pitch', term: 'Thread Pitch', def: 'The distance from one thread to the next, in millimeters. Drink caps run from 3.0 to 6.35 mm (see <a href="https://www.isbt.com/resources/isbt-threadspecs" rel="noopener" target="_blank">ISBT threadspecs</a>). Pitch sets how many turns it takes to fully seat the cap.' },
+    { id: 'bridge-count', term: 'Bridge Count (Tamper Band)', def: 'The number of small plastic bridges that hold the tamper band to the cap, usually 6 to 12. They should break when the customer opens the bottle, not <a href="/troubleshooting/#te-bands">during capping</a>.' },
+    { id: 'closure-ovalization', term: 'Cap Ovalization', def: 'When a round cap gets squeezed into an oval. Causes include too much chuck grip, bad storage, or molding problems. Oval caps cross-thread and seal badly. The limit is often &plusmn;0.2 mm from the normal width, per the cap maker.' },
+    { id: 'ropp', term: 'ROPP', def: 'Roll-on pilfer-proof. An aluminum cap that has no threads until the capping head rolls them into the metal. Used on spirits, wine, and olive oil. See <a href="/capping-headsets/#ropp">ROPP headsets</a>.' },
+    { id: 'pco-1881', term: 'PCO 1881', def: 'A common 28 mm bottle neck finish for soft drinks and water, published in the <a href="https://www.isbt.com/resources/isbt-threadspecs" rel="noopener" target="_blank">ISBT threadspecs</a>. Tethered versions are required in the EU.' },
+    { id: '29-25', term: '29/25', def: 'A bottle neck finish with a 29 mm thread diameter and a 25 mm inside diameter. Common on still water because it uses less plastic than older finishes.' },
+    { id: 'vacuum-chuck', term: 'Vacuum Chuck', def: 'A chuck that holds the cap with suction instead of squeezing it. Used for thin or light caps. See <a href="/chuck-types/#vacuum">vacuum cap chucks</a>.' },
+];
 ---
 
 <BaseLayout
-    title="Capping Chuck Glossary | Torque, Knurling, Thread Pitch, and More"
-    description="Definitions for capping chuck and headset terminology: knurling, thread pitch, top load, static torque, slip torque, bridge count, closure ovalization."
+    title="Capping Chuck Glossary: Torque, Knurling, Slip Torque, and More"
+    description="Plain-English definitions of capping terms: capping chuck, headset, torque, slip torque, CV%, knurling, top load, liner, ROPP, PCO 1881, 29/25, and more."
     canonical="https://cappingchucks.com/glossary/"
-    ogTitle="Glossary | CappingChucks.com"
-    ogDescription="Capping terminology defined: knurling, torque, thread pitch, top load, slip torque, bridge count, and closure ovalization."
+    ogTitle="Capping Glossary | CappingChucks.com"
+    ogDescription="Capping terms in plain English: torque, slip torque, knurling, top load, ROPP, PCO 1881, 29/25, and more."
     breadcrumb="Glossary"
 >
-    <header class="pt-20 pb-12 border-b border-border">
-        <div class="mx-auto max-w-3xl px-6 pb-4">
-            <p class="font-mono text-[0.7rem] text-teal-700 tracking-wider uppercase mb-2"><a href="/" class="no-underline hover:underline">Home</a> / Glossary</p>
-            <h1 class="mb-4">Glossary</h1>
-            <p class="text-lg text-ink-light leading-relaxed max-w-xl">Technical terms used in capping chuck and <a href="/capping-headsets/">headset</a> specifications, calibration, and troubleshooting.</p>
-        </div>
-        <figure class="mx-auto max-w-4xl px-6">
-            <Picture
-                src={technicalBlueprint}
-                alt="Engineering blueprint with compass and pencil showing cross-section drawings of machined components"
-                class="w-full h-56 sm:h-72 object-cover object-center rounded-lg"
-                widths={[600, 900, 1200]}
-                sizes="100vw"
-                formats={['avif', 'webp']}
-                quality={80}
-                loading="eager"
-            />
-            <figcaption class="mt-2 font-mono text-[0.68rem] text-ink-faint">Technical drawing of precision machined components. Photo: Pexels</figcaption>
-        </figure>
-    </header>
+    <PageHero
+        title="Capping Glossary"
+        crumb="Glossary"
+        answerLabel="What's here"
+        image={technicalBlueprint}
+        alt="Engineering blueprint with compass and pencil showing cross-section drawings of machined components"
+        caption="Technical drawing of machined parts. Photo: Pexels"
+    >
+        <p>Plain definitions for the words used around <a href="/chuck-types/">capping chucks</a> and <a href="/capping-headsets/">headsets</a>. Each one keeps the real numbers.</p>
+    </PageHero>
 
     <main>
-        <section class="py-16 border-b border-border">
-            <div class="mx-auto max-w-3xl px-6">
-                <dl>
-                    <div class="gloss-entry" id="knurling">
-                        <dt class="gloss-term">Knurling</dt>
-                        <dd class="gloss-def">A pattern of raised diamond or straight-line ridges on the outside of a closure shell. This is what the <a href="/chuck-types/">chuck</a> grips during torque application. Knurl pitch and depth have to match between chuck insert and closure, or you get slippage or <a href="/troubleshooting/">scuffing</a>.</dd>
-                    </div>
-                    <div class="gloss-entry" id="thread-pitch">
-                        <dt class="gloss-term">Thread Pitch</dt>
-                        <dd class="gloss-def">The axial distance between adjacent thread crests, measured in millimeters per revolution. Standard beverage closure pitches run from 3.0mm to 6.35mm (see <a href="https://www.isbt.com/resources/isbt-threadspecs" rel="noopener" target="_blank">ISBT voluntary threadspecs</a>). Pitch determines how many rotations you need for full engagement and directly affects the relationship between application torque and axial seal compression.</dd>
-                    </div>
-                    <div class="gloss-entry" id="top-load">
-                        <dt class="gloss-term">Top Load</dt>
-                        <dd class="gloss-def">Axial compressive force applied by the chuck onto the closure's top panel during application, measured in Newtons. Top load compresses the internal liner against the container finish sealing surface. Too much deforms thin-wall closures. Too little means poor seal integrity and vacuum loss.</dd>
-                    </div>
-                    <div class="gloss-entry" id="static-torque">
-                        <dt class="gloss-term">Static Torque</dt>
-                        <dd class="gloss-def">The torque needed to start loosening a closure that has been applied and allowed to rest. Measured with a calibrated torque analyzer. Typically 10 to 30% lower than the original application torque due to liner relaxation and friction decay at the thread interface. Primary QC metric for closure integrity audits.</dd>
-                    </div>
-                    <div class="gloss-entry" id="slip-torque">
-                        <dt class="gloss-term">Slip Torque</dt>
-                        <dd class="gloss-def">The torque threshold where the <a href="/capping-headsets/">headset's</a> clutch mechanism disengages and allows free rotation between drive spindle and closure. This sets the maximum torque the headset can deliver. It needs to sit above target application torque but below the closure's structural failure point.</dd>
-                    </div>
-                    <div class="gloss-entry" id="bridge-count">
-                        <dt class="gloss-term">Bridge Count (TE Band)</dt>
-                        <dd class="gloss-def">Number of frangible plastic bridges connecting the tamper-evident band to the closure body, typically 6 to 12 per closure. Bridge count determines how much force is needed to separate the band at first opening. During capping, the chuck has to seat the closure fully without <a href="/troubleshooting/">fracturing bridges prematurely</a>.</dd>
-                    </div>
-                    <div class="gloss-entry" id="closure-ovalization">
-                        <dt class="gloss-term">Closure Ovalization</dt>
-                        <dd class="gloss-def">A dimensional defect where the closure's round cross-section goes elliptical. Caused by excessive chuck grip force, bad stacking in storage, or thin-wall molding tolerance issues. Ovalized closures don't engage threads evenly, leading to cross-threading, torque scatter, and compromised seals. Allowable ovality is typically &plusmn;0.2 mm on nominal OD, per the closure supplier's spec.</dd>
-                    </div>
+        <section class="section">
+            <div class="wrap prose-col">
+                <dl class="gloss">
+                    {terms.map((t) => (
+                        <div id={t.id}>
+                            <dt>{t.term}</dt>
+                            <dd set:html={t.def} />
+                        </div>
+                    ))}
                 </dl>
-
-                <div class="callout mt-8">
-                    Use the closure supplier's current torque-test method and any applicable customer, regulatory, or industry specifications when setting validation criteria. <a href="https://store.astm.org/d2063_d2063m-24.html" rel="noopener" target="_blank">ASTM D2063</a> covers torque retention measurement for threaded closures.
+                <div class="note">
+                    <strong>Testing tip:</strong> Use the cap maker's current torque test method plus any customer or legal rules. <a href="https://store.astm.org/d2063_d2063m-24.html" rel="noopener" target="_blank">ASTM D2063</a> covers how to measure torque on threaded caps.
                 </div>
             </div>
         </section>
 
-        <section class="py-16 border-b border-border">
-            <div class="mx-auto max-w-3xl px-6">
-                <span class="section-rule"></span>
-                <h2 class="mb-4">Industry Resources</h2>
-                <p class="text-[0.92rem] text-ink-light mb-6">Standards bodies, trade organizations, and regulatory references relevant to capping and closure work.</p>
-                <ul class="space-y-3 text-[0.92rem]">
-                    <li><a href="https://www.isbt.com/" rel="noopener" target="_blank">ISBT</a> -- International Society of Beverage Technologists. Maintains the <a href="https://www.isbt.com/resources/isbt-threadspecs" rel="noopener" target="_blank">voluntary threadspecs</a> (PCO 1881, 1810, etc.) used across the beverage industry.</li>
-                    <li><a href="https://www.pmmi.org/" rel="noopener" target="_blank">PMMI</a> -- The Association for Packaging and Processing Technologies. Trade association for packaging machinery manufacturers.</li>
-                    <li><a href="https://store.astm.org/d2063_d2063m-24.html" rel="noopener" target="_blank">ASTM D2063</a> -- Standard test methods for torque retention measurement on threaded closures (current revision, 2024).</li>
-                    <li><a href="https://www.ecfr.gov/current/title-16/chapter-II/subchapter-E/part-1700" rel="noopener" target="_blank">16 CFR Part 1700</a> -- CPSC regulation governing child-resistant packaging in the United States.</li>
-                    <li><a href="https://eur-lex.europa.eu/eli/dir/2019/904/oj" rel="noopener" target="_blank">EU Directive 2019/904</a> -- Single-Use Plastics Directive requiring tethered closures on certain beverage containers.</li>
+        <section id="resources" class="section section-alt">
+            <div class="wrap prose-col">
+                <span class="kicker kicker-blue">Resources</span>
+                <h2>Standards and groups</h2>
+                <ul class="space-y-3">
+                    <li><a href="https://www.isbt.com/" rel="noopener" target="_blank">ISBT</a>: International Society of Beverage Technologists. Publishes the <a href="https://www.isbt.com/resources/isbt-threadspecs" rel="noopener" target="_blank">threadspecs</a> for PCO 1881, 1810, and other finishes.</li>
+                    <li><a href="https://www.pmmi.org/" rel="noopener" target="_blank">PMMI</a>: The trade group for packaging machine makers.</li>
+                    <li><a href="https://store.astm.org/d2063_d2063m-24.html" rel="noopener" target="_blank">ASTM D2063</a>: Test methods for torque on threaded caps (2024 edition).</li>
+                    <li><a href="https://www.ecfr.gov/current/title-16/chapter-II/subchapter-E/part-1700" rel="noopener" target="_blank">16 CFR Part 1700</a>: U.S. rules for child-resistant packaging.</li>
+                    <li><a href="https://eur-lex.europa.eu/eli/dir/2019/904/oj" rel="noopener" target="_blank">EU Directive 2019/904</a>: The Single-Use Plastics Directive, which requires tethered caps on some drink bottles.</li>
                 </ul>
             </div>
         </section>
 
-        <section class="py-16 pb-20">
-            <div class="mx-auto max-w-3xl px-6">
-                <span class="section-rule"></span>
-                <h2 class="mb-4">Related</h2>
-                <ul class="space-y-3 text-[0.92rem]">
-                    <li><a href="/chuck-types/">Capping Chuck Types</a> -- where these terms get applied</li>
-                    <li><a href="/capping-headsets/">Capping Headsets</a> -- torque delivery and slip torque in practice</li>
-                    <li><a href="/troubleshooting/">Troubleshooting & Calibration</a> -- using these specs to diagnose issues</li>
+        <section class="section">
+            <div class="wrap">
+                <h2>Keep reading</h2>
+                <ul class="related">
+                    <li><a href="/chuck-types/">Capping chuck types</a></li>
+                    <li><a href="/capping-headsets/">Magnetic capping headsets</a></li>
+                    <li><a href="/troubleshooting/">Troubleshooting</a></li>
                 </ul>
             </div>
         </section>

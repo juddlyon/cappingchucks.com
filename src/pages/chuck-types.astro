@@ -1,164 +1,151 @@
 ---
 import { Picture } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
 import bottleCaps from '../assets/images/bottle-caps.jpg';
 import precisionMachining from '../assets/images/precision-machining.jpg';
 ---
 
 <BaseLayout
-    title="Capping Chuck Types | Magnetic, Friction, Pneumatic, Vacuum"
-    description="Technical guide to capping chuck types: magnetic hysteresis, friction, pneumatic, and vacuum chucks. Specifications, closure compatibility, and selection criteria for rotary and inline cappers."
+    title="Capping Chuck Types: Magnetic, Friction, Pneumatic, Vacuum"
+    description="The four capping chuck types explained simply: magnetic hysteresis, friction, pneumatic, and vacuum cap chucks. How each one works, specs, and which caps each one fits."
     canonical="https://cappingchucks.com/chuck-types/"
     ogTitle="Capping Chuck Types | CappingChucks.com"
-    ogDescription="Magnetic hysteresis, friction, pneumatic, and vacuum capping chucks. How each type works and when to use it."
+    ogDescription="Magnetic, friction, pneumatic, and vacuum capping chucks. How each type works and when to use it."
     schemaType="TechArticle"
     breadcrumb="Capping Chuck Types"
 >
-    <header class="pt-20 pb-12 border-b border-border">
-        <div class="mx-auto max-w-3xl px-6 pb-4">
-            <p class="font-mono text-[0.7rem] text-teal-700 tracking-wider uppercase mb-2"><a href="/" class="no-underline hover:underline">Home</a> / Chuck Types</p>
-            <h1 class="mb-4">Capping Chuck Types</h1>
-            <p class="text-lg text-ink-light leading-relaxed max-w-xl">Four drive mechanisms. Pick by line speed, closure format, and changeover frequency.</p>
-        </div>
-        <figure class="mx-auto max-w-4xl px-6">
-            <Picture
-                src={precisionMachining}
-                alt="Metal lathe turning a precision steel component with coolant feed in a machining workshop"
-                class="w-full h-56 sm:h-72 object-cover object-center rounded-lg"
-                widths={[600, 900, 1200]}
-                sizes="100vw"
-                formats={['avif', 'webp']}
-                quality={80}
-                loading="eager"
-            />
-            <figcaption class="mt-2 font-mono text-[0.68rem] text-ink-faint">Precision machining of capping chuck components. Photo: Pexels</figcaption>
-        </figure>
-    </header>
+    <PageHero
+        title="Capping Chuck Types"
+        crumb="Chuck Types"
+        answerLabel="The short version"
+        image={precisionMachining}
+        alt="Metal lathe turning a precision steel component with coolant feed in a machining workshop"
+        caption="Machining a metal part on a lathe. Photo: Pexels"
+    >
+        <p>There are four main capping chuck types: magnetic, friction, pneumatic, and vacuum. Pick one based on your line speed, your cap, and how often you switch cap types.</p>
+    </PageHero>
 
     <main>
-        <section id="classifications" class="py-16 border-b border-border">
-            <div class="mx-auto max-w-3xl px-6">
-                <span class="section-rule"></span>
-                <h2 class="mb-6">Chuck Classifications</h2>
+        <section id="classifications" class="section">
+            <div class="wrap">
+                <span class="kicker">The four types</span>
+                <h2>How each chuck type works</h2>
+                <div class="cards cards-2">
+                    <div class="card card-blue" id="magnetic">
+                        <span class="pill">Magnetic</span>
+                        <h3>Magnetic hysteresis chucks</h3>
+                        <p>Magnets pass the turning force from the motor to the cap. A DC electric current sets how strong the magnets pull. When the cap reaches the set torque, the magnets slip without touching. Nothing rubs, so nothing wears out.</p>
+                        <ul>
+                            <li>No rubbing clutch parts</li>
+                            <li>Repeats within &plusmn;0.1 N&middot;m over 10 million+ caps</li>
+                            <li>Torque set by a PLC or analog signal</li>
+                            <li>Standard on rotary cappers above 800 caps per minute</li>
+                        </ul>
+                        <p class="mt-3">These chucks are the heart of <a href="/capping-headsets/">magnetic capping headsets</a>.</p>
+                    </div>
 
-                <div class="class-block">
-                    <span class="class-tag">Electromagnetic</span>
-                    <h3>Magnetic Hysteresis Chucks</h3>
-                    <p>These use an electromagnetic hysteresis coupling to transmit torque from the spindle motor to the closure. A variable DC current sets the magnetic field intensity, which determines the slip-torque threshold. When torque reaches the preset value, the hysteresis disc slips without mechanical contact. On high-speed rotary lines, magnetic hysteresis delivers tighter torque consistency than friction clutches and has nothing to wear out in the drive path.</p>
-                    <ul class="class-specs">
-                        <li>No mechanical clutch surfaces, so no friction-based wear</li>
-                        <li>Slip-torque repeatability: &plusmn;0.1 N&middot;m across 10M+ cycles</li>
-                        <li>Torque set by current control (PLC or analog signal)</li>
-                        <li>Standard for high-speed rotary cappers above 800 CPM</li>
-                    </ul>
-                    <p class="mt-3 text-[0.88rem] text-ink-light">Magnetic hysteresis chucks are the drive mechanism inside <a href="/capping-headsets/">magnetic capping headsets</a>. The headset is the full assembly; the chuck is the closure-gripping component on the output side.</p>
-                </div>
+                    <div class="card card-red" id="friction">
+                        <span class="pill">Mechanical</span>
+                        <h3>Friction chucks</h3>
+                        <p>A spring presses clutch plates together. The plates pass the turning force by friction. When the cap is tight, the plates slip. To change torque, tighten or loosen the spring with a threaded collar or shims. Best at lower speeds, where slipping plates don't get too hot.</p>
+                        <ul>
+                            <li>Spring pressure sets the torque</li>
+                            <li>Plates made of sintered bronze, friction composite, or ceramic</li>
+                            <li>Adjusted with shims or a threaded collar</li>
+                            <li>Good value at 200 to 600 caps per minute</li>
+                        </ul>
+                    </div>
 
-                <div class="class-block">
-                    <span class="class-tag">Mechanical</span>
-                    <h3>Friction Chucks</h3>
-                    <p>Spring-loaded clutch plates or disc-pack assemblies that transmit torque through friction engagement. You adjust torque by changing the compression preload on the clutch spring, either with a threaded collar or a calibrated shim stack. These are the workhorses of inline capping where spindle speeds stay low enough that mechanical slip doesn't generate excessive heat.</p>
-                    <ul class="class-specs">
-                        <li>Spring-loaded clutch with adjustable compression preload</li>
-                        <li>Clutch plate materials: sintered bronze, friction composite, ceramic</li>
-                        <li>Torque set via shim stack or threaded adjustment collar</li>
-                        <li>Cost-effective for mid-range line speeds, 200 to 600 CPM</li>
-                    </ul>
-                </div>
+                    <div class="card card-yellow" id="pneumatic">
+                        <span class="pill">Air</span>
+                        <h3>Pneumatic chucks</h3>
+                        <p>Air pressure controls how hard the chuck grips and how much torque it applies. An air cylinder closes jaws or a flexible collar around the cap. A PLC can change the air settings for each product, so you can switch cap types without changing parts.</p>
+                        <ul>
+                            <li>Torque set by air valves the PLC controls</li>
+                            <li>Saved settings for each product</li>
+                            <li>Air-driven jaws or collar</li>
+                            <li>Best for lines that run many different products</li>
+                        </ul>
+                    </div>
 
-                <div class="class-block">
-                    <span class="class-tag">Pneumatic</span>
-                    <h3>Pneumatic Chucks</h3>
-                    <p>Air-cylinder actuated chucks use regulated pressure to control grip force and application torque. Torque profiles are programmable through PLC-controlled proportional valves, so you can switch formats without touching hardware. The air cylinder acts on internal gripping jaws or a collet mechanism that conforms to the closure OD.</p>
-                    <ul class="class-specs">
-                        <li>Programmable torque profiles via proportional pneumatic valves</li>
-                        <li>PLC integration for recipe-based format changeover</li>
-                        <li>Air-cylinder actuated gripper jaws or collet mechanism</li>
-                        <li>Best suited for multi-SKU lines with frequent changeovers</li>
-                    </ul>
-                </div>
-
-                <div class="class-block">
-                    <span class="class-tag">Vacuum</span>
-                    <h3>Vacuum-Style Chucks</h3>
-                    <p>These hold lightweight closures by negative-pressure retention before and during thread engagement. A vacuum port in the chuck bore draws the closure into the cavity and centers it on the container finish before the spindle descends. Common on high-speed ROPP lines and lightweight flat-cap formats where mechanical gripping would deform the closure shell.</p>
-                    <ul class="class-specs">
-                        <li>Negative-pressure retention for thin-wall and delicate closures</li>
-                        <li>Integrated vacuum port with venturi or pump-fed supply</li>
-                        <li>Prevents closure deformation during high-speed pick-and-place</li>
-                        <li>Used on ROPP, flat-cap, and lightweight aluminum closure lines</li>
-                    </ul>
+                    <div class="card card-green" id="vacuum">
+                        <span class="pill">Suction</span>
+                        <h3>Vacuum cap chucks</h3>
+                        <p>A vacuum cap chuck holds the cap with suction instead of squeezing it. A small port in the chuck pulls air out and draws the cap up into the chuck. The cap sits centered over the bottle before the spindle comes down. Used for thin or light caps that squeezing would bend out of round.</p>
+                        <ul>
+                            <li>Suction holds thin and delicate caps</li>
+                            <li>Vacuum comes from a venturi (air-powered) or a pump</li>
+                            <li>Keeps caps from bending at high speed</li>
+                            <li>Used on ROPP, flat caps, and light aluminum caps</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="applications" class="py-16 border-b border-border">
-            <div class="mx-auto max-w-3xl px-6">
-                <span class="section-rule"></span>
-                <h2 class="mb-6">Application by Closure Type</h2>
+        <section id="applications" class="section section-alt">
+            <div class="wrap">
+                <span class="kicker kicker-green">By cap</span>
+                <h2>Which chuck for which cap</h2>
 
-                <figure class="mb-8 -mx-6 sm:mx-0">
+                <figure class="mb-8">
                     <Picture
                         src={bottleCaps}
                         alt="Assorted plastic closure caps in various sizes and colors used across beverage, dairy, and pharmaceutical packaging"
-                        class="w-full h-56 sm:h-72 object-cover rounded-lg"
+                        class="w-full h-56 sm:h-72 object-cover rounded-3xl border-[3px] border-ink"
                         widths={[600, 900, 1200]}
-                        sizes="(max-width: 768px) 100vw, 768px"
+                        sizes="(max-width: 1024px) 100vw, 1024px"
                         formats={['avif', 'webp']}
                         quality={80}
                         loading="lazy"
                     />
-                    <figcaption class="mt-2 px-6 sm:px-0 font-mono text-[0.68rem] text-ink-faint">Closure caps span a wide range of diameters, materials, and tamper-evident configurations. Photo: Pexels</figcaption>
+                    <figcaption class="mt-2 text-base text-ink-soft">Caps come in many sizes, materials, and tamper band styles. Photo: Pexels</figcaption>
                 </figure>
 
-                <div>
-                    <div class="app-entry">
-                        <span class="app-code">PCO-1881-T</span>
-                        <h3>28mm <a href="https://www.isbt.com/resources/isbt-threadspecs" rel="noopener" target="_blank">PCO 1881</a> (Tethered)</h3>
-                        <p>Tethered closure format required by the <a href="https://eur-lex.europa.eu/eli/dir/2019/904/oj" rel="noopener" target="_blank">EU Single-Use Plastics Directive</a> on beverage containers. The chuck bore must clear the hinge band and tether link during thread application, which means a modified internal bore profile compared with standard 28 mm PCO tooling.</p>
+                <div class="cards cards-3">
+                    <div class="card">
+                        <span class="pill">PCO-1881-T</span>
+                        <h3>28 mm <a href="https://www.isbt.com/resources/isbt-threadspecs" rel="noopener" target="_blank">PCO 1881</a> tethered caps</h3>
+                        <p>Tethered caps stay attached to the bottle. The <a href="https://eur-lex.europa.eu/eli/dir/2019/904/oj" rel="noopener" target="_blank">EU Single-Use Plastics Directive</a> requires them on drink bottles. The chuck needs a reshaped inside so it clears the hinge and tether. Standard 28 mm PCO chucks won't do.</p>
                     </div>
-
-                    <div class="app-entry">
-                        <span class="app-code">HDPE-38</span>
-                        <h3>38mm HDPE Dairy & Juice</h3>
-                        <p>Wide-mouth HDPE closures for dairy, juice, and smoothie containers. The 38 mm thread diameter demands strong <a href="/glossary/#knurling">knurl</a> engagement. Typical application torque: 2.0 to 4.5 N&middot;m. Verify against the closure supplier's spec and the package's foil-seal compression target.</p>
+                    <div class="card">
+                        <span class="pill">HDPE-38</span>
+                        <h3>38 mm dairy and juice caps</h3>
+                        <p>Wide plastic caps for milk, juice, and smoothies. They need a strong grip on the <a href="/glossary/#knurling">knurling</a>. Typical torque is 2.0 to 4.5 N&middot;m. Check this against the cap maker's spec and the foil seal target.</p>
                     </div>
-
-                    <div class="app-entry">
-                        <span class="app-code">ROPP</span>
-                        <h3>Roll-On Pilfer-Proof</h3>
-                        <p>Aluminum ROPP closures for spirits, wine, olive oil, and pharmaceutical syrups. The <a href="/capping-headsets/">headset</a> carries a top-pressure pad, threading rollers, and pilfer-band forming tools. Thread profile gets plastically formed onto the bottle finish, so roller geometry has to match the glass finish thread helix exactly.</p>
+                    <div class="card">
+                        <span class="pill">ROPP</span>
+                        <h3>Roll-on pilfer-proof caps</h3>
+                        <p>Aluminum caps for spirits, wine, olive oil, and medicine syrups. The <a href="/capping-headsets/#ropp">ROPP headset</a> uses rollers to press threads into the cap. Roller shape must match the glass threads exactly.</p>
                     </div>
-
-                    <div class="app-entry">
-                        <span class="app-code">CRC</span>
-                        <h3>Child-Resistant Closures</h3>
-                        <p>Pharmaceutical and household chemical push-turn and squeeze-turn CRC formats. The chuck applies axial load and rotational torque simultaneously to engage the ratchet without over-torquing the inner seal. U.S. child-resistant packaging is governed by <a href="https://www.ecfr.gov/current/title-16/chapter-II/subchapter-E/part-1700" rel="noopener" target="_blank">16 CFR Part 1700</a>. Set production torque from the closure manufacturer's spec and validate on the finished package.</p>
+                    <div class="card">
+                        <span class="pill">CRC</span>
+                        <h3>Child-resistant caps</h3>
+                        <p>Push-and-turn and squeeze-and-turn caps for medicine and cleaners. The chuck pushes down and turns at the same time to lock the cap without overtightening the inner seal. In the U.S., these are covered by <a href="https://www.ecfr.gov/current/title-16/chapter-II/subchapter-E/part-1700" rel="noopener" target="_blank">16 CFR Part 1700</a>. Use the cap maker's torque spec and test the finished package.</p>
                     </div>
-
-                    <div class="app-entry">
-                        <span class="app-code">SPORT</span>
-                        <h3>Sport / Pull-Push Closures</h3>
-                        <p>Pull-push and flip-top sport closures for bottled water, sports drinks, and personal care products. The chuck has to grip the closure body without touching the dispensing spout. Bore clearance is modified to accommodate the protruding nozzle and hinge tab.</p>
+                    <div class="card">
+                        <span class="pill">Sport</span>
+                        <h3>Sport and pull-push caps</h3>
+                        <p>Flip-top and pull-push caps for water, sports drinks, and personal care. The chuck grips the cap body without touching the spout. The inside of the chuck has extra room for the spout and hinge.</p>
                     </div>
-
-                    <div class="app-entry">
-                        <span class="app-code">TRIG-OC</span>
-                        <h3>Trigger Sprayer Overcaps</h3>
-                        <p>Overcap application for trigger sprayer assemblies on household cleaning and garden chemical containers. This is a snap-fit, not a threaded closure. The chuck applies controlled axial press-on force (<a href="/glossary/#top-load">top load</a>) rather than torque.</p>
+                    <div class="card">
+                        <span class="pill">Trigger</span>
+                        <h3>Trigger sprayer overcaps</h3>
+                        <p>Overcaps for spray cleaners and garden products. These snap on instead of screwing on. The chuck pushes straight down with a set force (<a href="/glossary/#top-load">top load</a>) instead of turning.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="py-16 pb-20">
-            <div class="mx-auto max-w-3xl px-6">
-                <span class="section-rule"></span>
-                <h2 class="mb-4">Related</h2>
-                <ul class="space-y-3 text-[0.92rem]">
-                    <li><a href="/capping-headsets/">Capping Headsets</a> -- magnetic, spring-clutch, and hysteresis headset assemblies</li>
-                    <li><a href="/oem-compatibility/">OEM Compatibility Index</a> -- platform reference and fit-up factors by machine family</li>
-                    <li><a href="/troubleshooting/">Troubleshooting & Calibration</a> -- torque scatter, scuffing, and TE band diagnostics</li>
+        <section class="section">
+            <div class="wrap">
+                <h2>Keep reading</h2>
+                <ul class="related">
+                    <li><a href="/capping-headsets/">Magnetic capping headsets</a></li>
+                    <li><a href="/troubleshooting/">Troubleshooting</a></li>
+                    <li><a href="/oem-compatibility/">OEM compatibility</a></li>
+                    <li><a href="/glossary/">Glossary</a></li>
                 </ul>
             </div>
         </section>

@@ -1,154 +1,145 @@
 ---
-import { Picture } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import ChuckDiagram from '../components/ChuckDiagram.astro';
 import bottlingMachinery from '../assets/images/bottling-machinery.jpg';
 ---
 
 <BaseLayout
-    title="Capping Headsets | Magnetic, Hysteresis, and Spring-Clutch Assemblies"
-    description="Technical guide to capping headsets and magnetic capping headsets. Magnetic hysteresis, spring-clutch, and servo headset assemblies for rotary and inline cappers. ROPP tooling, torque control, and OEM cross-references."
+    title="Magnetic Capping Headsets: How They Work and When to Use Them"
+    description="How magnetic capping headsets use hysteresis to set cap torque with no wearing parts. Specs, smooth vs. pulsating torque, spring-clutch and ROPP headsets, and which headset fits your line speed."
     canonical="https://cappingchucks.com/capping-headsets/"
-    ogTitle="Capping Headsets | CappingChucks.com"
-    ogDescription="Magnetic capping headsets, spring-clutch assemblies, and ROPP headset tooling. Torque control mechanisms for rotary and inline capping lines."
+    ogTitle="Magnetic Capping Headsets | CappingChucks.com"
+    ogDescription="How magnetic capping headsets work, their specs, and when to pick magnetic, spring-clutch, or ROPP headsets."
     schemaType="TechArticle"
-    breadcrumb="Capping Headsets"
+    breadcrumb="Magnetic Capping Headsets"
 >
-    <header class="pt-20 pb-12 border-b border-border">
-        <div class="mx-auto max-w-3xl px-6 pb-4">
-            <p class="font-mono text-[0.7rem] text-teal-700 tracking-wider uppercase mb-2"><a href="/" class="no-underline hover:underline">Home</a> / Capping Headsets</p>
-            <h1 class="mb-4">Capping Headsets</h1>
-            <p class="text-lg text-ink-light leading-relaxed max-w-xl">A magnetic capping headset is a spindle-mounted assembly that uses electromagnetic hysteresis to apply repeatable torque to a closure. It is the dominant headset on high-speed rotary cappers, replacing friction-clutch designs that wear and pulsate. Spring-clutch and ROPP variants handle lower-speed lines and aluminum closures.</p>
-        </div>
-        <figure class="mx-auto max-w-4xl px-6">
-            <Picture
-                src={bottlingMachinery}
-                alt="Glass bottles passing through capping machinery on a high-speed production line"
-                class="w-full h-56 sm:h-72 object-cover object-center rounded-lg"
-                widths={[600, 900, 1200]}
-                sizes="100vw"
-                formats={['avif', 'webp']}
-                quality={80}
-                loading="eager"
-            />
-            <figcaption class="mt-2 font-mono text-[0.68rem] text-ink-faint">Capping station on a glass bottle production line. Photo: Pexels</figcaption>
-        </figure>
-    </header>
+    <PageHero
+        title="Magnetic Capping Headsets"
+        crumb="Capping Headsets"
+        answerLabel="What is a magnetic capping headset?"
+        image={bottlingMachinery}
+        alt="Glass bottles passing through capping machinery on a high-speed production line"
+        caption="Capping station on a glass bottle line. Photo: Pexels"
+    >
+        <p>A magnetic capping headset is the full capping unit on a spindle. It uses magnets instead of rubbing parts to set how tight each cap goes on. It is the standard headset on rotary cappers running over 800 caps per minute.</p>
+    </PageHero>
 
     <main>
-        <section id="magnetic" class="py-16 border-b border-border">
-            <div class="mx-auto max-w-3xl px-6">
-                <span class="section-rule"></span>
-                <h2 class="mb-6">Magnetic Capping Headsets</h2>
-
-                <div class="space-y-4 text-[0.95rem] text-ink-light">
-                    <p>Magnetic capping headsets use an electromagnetic hysteresis coupling to control application torque. Two sets of magnetic plates face each other inside the headset body. One plate connects to the input shaft (driven by the spindle motor), the other to the output shaft (which drives the chuck). When the input shaft rotates, the magnetic field drags the output shaft along. At the preset torque threshold, the output shaft slips smoothly against the magnetic field rather than through mechanical friction.</p>
-
-                    <p>This is the dominant headset on high-speed rotary cappers above 800 CPM. There are no friction plates in the torque path, so nothing wears out at speed and torque repeatability holds across millions of cycles. Recalibration interval still depends on the closure, the spindle coupling, and the maintenance program — the contactless drive does not eliminate the rest of the wear chain.</p>
-
-                    <p>Most magnetic headsets in service are built to interchange with OEM platforms: Zalkin, Krones, AROL, CSI, KHS, Federal, Fogg. Aftermarket units match the original spindle interface and chuck envelope so they drop in without machine modifications. Before installing, verify the spindle taper, retention method, and signal interface against the OEM spec. Cross-references by platform are in the <a href="/oem-compatibility/">OEM Compatibility Index</a>.</p>
-                </div>
-
-                <div class="spec-panel mt-8">
-                    <h3 class="mb-3 text-sm">Magnetic Headset Specifications</h3>
-                    <div class="spec-row"><span class="spec-label">Torque Control</span><span class="spec-value">Variable DC current to hysteresis coil</span></div>
-                    <div class="spec-row"><span class="spec-label">Slip-Torque Repeatability</span><span class="spec-value">&plusmn;0.1 N&middot;m typical on validated platforms</span></div>
-                    <div class="spec-row"><span class="spec-label">Torque CV%</span><span class="spec-value">Under 3% on well-maintained units</span></div>
-                    <div class="spec-row"><span class="spec-label">Wear Surfaces</span><span class="spec-value">None in the torque path (contactless coupling)</span></div>
-                    <div class="spec-row"><span class="spec-label">Torque Adjustment</span><span class="spec-value">PLC or analog signal, no mechanical changes</span></div>
-                    <div class="spec-row"><span class="spec-label">Typical Line Speed</span><span class="spec-value">800 to 1,200+ CPM</span></div>
-                </div>
-
-                <h3 class="mt-8 mb-3">Smooth Torque vs. Pulsating Torque</h3>
-                <div class="space-y-4 text-[0.95rem] text-ink-light">
-                    <p>Older magnetic headset designs use opposing pole configurations that produce a pulsating torque output. The magnetic field snaps from pole to pole as the discs rotate, creating torque spikes at each transition. This works, but pulsation introduces micro-shocks that increase mechanical wear on downstream components and can cause inconsistent TE band engagement on thin-wall closures.</p>
-
-                    <p>Current-generation headsets use a smooth torque design where the magnetic field provides constant, even resistance throughout the rotation. This eliminates pulsation, reduces mechanical stress on the capping turret, and delivers more consistent <a href="/glossary/#slip-torque">slip torque</a> across the full speed range.</p>
+        <section id="magnetic" class="section">
+            <div class="wrap">
+                <span class="kicker">How it works</span>
+                <h2>How magnetic capping headsets set torque</h2>
+                <div class="grid gap-8 md:grid-cols-2 items-start">
+                    <div>
+                        <p>Inside the headset, two sets of magnetic plates face each other. One set turns with the motor. The other set turns the <a href="/">capping chuck</a>. The magnetic pull drags the second set along.</p>
+                        <p>When the cap gets tight enough, the pull is no longer strong enough to keep turning it. The plates slip past each other without touching. This is called a <a href="/glossary/#hysteresis">hysteresis</a> coupling. The cap stops at the same torque every time.</p>
+                        <p>Nothing rubs, so nothing wears out in the torque path. Torque stays steady over millions of caps. You still need to check it on a schedule, because the chuck, spindle, and caps still wear.</p>
+                    </div>
+                    <ChuckDiagram caption="On a magnetic headset, part 2 is a set of magnetic plates. They slip at the set torque without touching." />
                 </div>
             </div>
         </section>
 
-        <section id="headset-vs-chuck" class="py-16 border-b border-border">
-            <div class="mx-auto max-w-3xl px-6">
-                <span class="section-rule"></span>
-                <h2 class="mb-6">Headset vs. Chuck</h2>
+        <section id="specs" class="section section-alt">
+            <div class="wrap">
+                <span class="kicker kicker-green">Specs</span>
+                <h2>Magnetic headset specs</h2>
+                <div class="specs prose-col">
+                    <p class="specs-title">Typical numbers</p>
+                    <div class="spec-row"><span class="spec-label">How torque is set</span><span class="spec-value">DC current to the magnet coil</span></div>
+                    <div class="spec-row"><span class="spec-label">Repeatability</span><span class="spec-value">&plusmn;0.1 N&middot;m on approved machines</span></div>
+                    <div class="spec-row"><span class="spec-label">Torque spread (CV%)</span><span class="spec-value">Under 3% when well kept</span></div>
+                    <div class="spec-row"><span class="spec-label">Parts that rub</span><span class="spec-value">None in the torque path</span></div>
+                    <div class="spec-row"><span class="spec-label">Changing torque</span><span class="spec-value">PLC or analog signal, no tools</span></div>
+                    <div class="spec-row"><span class="spec-label">Line speed</span><span class="spec-value">800 to 1,200+ caps per minute</span></div>
+                </div>
 
-                <div class="space-y-4 text-[0.95rem] text-ink-light">
-                    <p>The terms "capping chuck" and "capping headset" are used interchangeably in the field, but they refer to different levels of the assembly. The chuck is the closure-gripping component at the bottom of the spindle. The headset is the full unit: chuck, torque-limiting mechanism (clutch or magnetic coupling), spindle adapter, and on ROPP lines, the threading roller and pilfer-band forming tooling.</p>
+                <h3 class="mt-10">Smooth torque vs. pulsing torque</h3>
+                <div class="prose-col">
+                    <p>Older magnetic headsets have magnets with opposite poles. As the plates turn, the pull jumps from pole to pole. Each jump makes a small torque spike. These spikes add wear to the machine and can make tamper bands seat unevenly on thin caps.</p>
+                    <p>Newer headsets use a smooth design. The magnetic pull stays even all the way around. That means no spikes, less stress on the capper, and steadier <a href="/glossary/#slip-torque">slip torque</a> at every speed.</p>
+                </div>
 
-                    <p>When someone orders a "magnetic capping headset," they are buying the complete assembly with an electromagnetic hysteresis torque limiter built in. When they order a "capping chuck," they typically mean just the replaceable closure-gripping piece that bolts onto the existing headset.</p>
+                <h3 class="mt-10">Will it fit my capper?</h3>
+                <div class="prose-col">
+                    <p>Most magnetic headsets are built to swap into machines from Zalkin, Krones, AROL, CSI, KHS, Federal, and Fogg. Aftermarket units copy the original spindle connection and size. Before you install one, check the spindle taper, how it locks in place, and the control signal. See the <a href="/oem-compatibility/">OEM compatibility guide</a>.</p>
                 </div>
             </div>
         </section>
 
-        <section id="spring-clutch" class="py-16 border-b border-border">
-            <div class="mx-auto max-w-3xl px-6">
-                <span class="section-rule"></span>
-                <h2 class="mb-6">Spring-Clutch Headsets</h2>
+        <section id="headset-vs-chuck" class="section">
+            <div class="wrap prose-col">
+                <span class="kicker kicker-blue">Words</span>
+                <h2>Capping head vs. chuck</h2>
+                <p>People use these words as if they mean the same thing. They don't. The chuck is only the part that grips the cap. The headset (or capping head) is the whole unit: the chuck, the torque clutch, the spindle adapter, and on ROPP lines, the thread rollers.</p>
+                <p>If you order a "magnetic capping headset," you get the full unit with the magnetic clutch inside. If you order a "capping chuck," you usually get just the cap-gripping part that bolts onto a headset you already have.</p>
+            </div>
+        </section>
 
-                <div class="space-y-4 text-[0.95rem] text-ink-light">
-                    <p>Spring-clutch (friction) headsets, sometimes called capping clutches, transmit torque through a stack of clutch plates held under spring compression. When the applied torque exceeds the spring preload, the plates slip. You set the torque target by adjusting the spring compression via a threaded collar or shim stack.</p>
-
-                    <p>These are the standard headset on inline cappers and lower-speed rotary machines running under 600 CPM. They cost less than magnetic headsets and are mechanically simpler to maintain. The tradeoff is wear: clutch plates degrade over time, and torque output drifts as friction surfaces wear. Expect to replace clutch plates on a regular maintenance cycle and verify torque calibration after each replacement.</p>
-                </div>
-
-                <div class="spec-panel mt-8">
-                    <h3 class="mb-3 text-sm">Spring-Clutch Headset Specifications</h3>
-                    <div class="spec-row"><span class="spec-label">Torque Control</span><span class="spec-value">Mechanical spring preload</span></div>
-                    <div class="spec-row"><span class="spec-label">Clutch Materials</span><span class="spec-value">Sintered bronze, friction composite, ceramic</span></div>
-                    <div class="spec-row"><span class="spec-label">Torque Adjustment</span><span class="spec-value">Threaded collar or shim stack</span></div>
-                    <div class="spec-row"><span class="spec-label">Typical Line Speed</span><span class="spec-value">200 to 600 CPM</span></div>
-                    <div class="spec-row"><span class="spec-label">Maintenance</span><span class="spec-value">Periodic clutch plate replacement</span></div>
+        <section id="spring-clutch" class="section section-alt">
+            <div class="wrap">
+                <span class="kicker">Other headsets</span>
+                <h2>Spring-clutch headsets</h2>
+                <div class="grid gap-8 md:grid-cols-2 items-start">
+                    <div>
+                        <p>Spring-clutch headsets, also called friction headsets or capping clutches, use a stack of plates pressed together by a spring. When the cap gets tight enough, the plates slip. To set torque, you tighten or loosen the spring with a threaded collar or shims.</p>
+                        <p>They are the normal pick for inline cappers and rotary lines under 600 caps per minute. They cost less than magnetic headsets. The downside is wear: the plates rub, so torque drifts over time. Replace plates on a schedule and recheck torque every time you do.</p>
+                    </div>
+                    <div class="specs">
+                        <p class="specs-title">Spring-clutch specs</p>
+                        <div class="spec-row"><span class="spec-label">How torque is set</span><span class="spec-value">Spring pressure</span></div>
+                        <div class="spec-row"><span class="spec-label">Plate materials</span><span class="spec-value">Sintered bronze, friction composite, ceramic</span></div>
+                        <div class="spec-row"><span class="spec-label">Changing torque</span><span class="spec-value">Threaded collar or shims</span></div>
+                        <div class="spec-row"><span class="spec-label">Line speed</span><span class="spec-value">200 to 600 caps per minute</span></div>
+                        <div class="spec-row"><span class="spec-label">Upkeep</span><span class="spec-value">Replace clutch plates on a schedule</span></div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="ropp" class="py-16 border-b border-border">
-            <div class="mx-auto max-w-3xl px-6">
-                <span class="section-rule"></span>
-                <h2 class="mb-6">ROPP Headset Assemblies</h2>
-
-                <div class="space-y-4 text-[0.95rem] text-ink-light">
-                    <p>Roll-On Pilfer-Proof headsets are a distinct category because they do more than apply torque. The headset carries a top-pressure pad that holds the aluminum closure against the bottle finish, threading rollers that plastically form the thread profile onto the closure shell, and pilfer-band forming tools that roll the skirt under the finish bead.</p>
-
-                    <p>ROPP headset geometry is critical. The threading roller angle, depth, and radial position must match the glass finish thread helix exactly. If the roller geometry is off, you get incomplete thread formation, loose closures, or cracked finishes. These headsets are typically OEM-specific and are cross-referenced by machine platform in the <a href="/oem-compatibility/">OEM Compatibility Index</a>.</p>
-                </div>
+        <section id="ropp" class="section">
+            <div class="wrap prose-col">
+                <span class="kicker kicker-green">Aluminum caps</span>
+                <h2>ROPP headsets</h2>
+                <p>ROPP means roll-on pilfer-proof. These aluminum caps start with no threads. The headset makes the threads on the spot. A top pressure pad holds the cap down on the glass. Rollers press the soft aluminum into the bottle's threads. Other rollers tuck the bottom band under a ridge on the bottle neck.</p>
+                <p>The roller angle, depth, and position must match the bottle's threads exactly. If they are off, you get weak threads, loose caps, or cracked glass. ROPP headsets are usually made for one machine brand.</p>
             </div>
         </section>
 
-        <section id="selection" class="py-16 border-b border-border">
-            <div class="mx-auto max-w-3xl px-6">
-                <span class="section-rule"></span>
-                <h2 class="mb-6">Headset Selection by Line Speed</h2>
-
+        <section id="selection" class="section section-alt">
+            <div class="wrap">
+                <span class="kicker kicker-blue">Pick one</span>
+                <h2>Which headset fits your line speed?</h2>
                 <div class="overflow-x-auto">
                     <table>
                         <thead>
                             <tr>
-                                <th>Line Speed</th>
-                                <th>Headset Type</th>
+                                <th>Caps per minute</th>
+                                <th>Headset</th>
                                 <th>Why</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Under 200 CPM</td>
+                                <td>Under 200</td>
                                 <td>Spring-clutch or pneumatic</td>
-                                <td>Low speed doesn't justify magnetic headset cost. Pneumatic if multi-SKU changeover is frequent.</td>
+                                <td>Too slow to justify magnetic cost. Pick pneumatic if you change cap types often.</td>
                             </tr>
                             <tr>
-                                <td>200 to 600 CPM</td>
+                                <td>200 to 600</td>
                                 <td>Spring-clutch</td>
-                                <td>Mechanical friction headsets handle this range well. Maintenance interval is manageable.</td>
+                                <td>Handles this range well. Plate changes are easy to keep up with.</td>
                             </tr>
                             <tr>
-                                <td>600 to 800 CPM</td>
+                                <td>600 to 800</td>
                                 <td>Magnetic or spring-clutch</td>
-                                <td>Transition zone. Magnetic if torque CV% requirements are tight (&lt;3%). Spring-clutch if budget is constrained.</td>
+                                <td>Either works. Go magnetic if torque spread must stay under 3%.</td>
                             </tr>
                             <tr>
-                                <td>Above 800 CPM</td>
-                                <td>Magnetic hysteresis</td>
-                                <td>No friction wear at speed. Contactless coupling, no heat buildup. Standard on high-speed rotary.</td>
+                                <td>Over 800</td>
+                                <td>Magnetic</td>
+                                <td>No rubbing parts and no heat buildup at high speed. Standard on fast rotary lines.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -156,14 +147,22 @@ import bottlingMachinery from '../assets/images/bottling-machinery.jpg';
             </div>
         </section>
 
-        <section class="py-16 pb-20">
-            <div class="mx-auto max-w-3xl px-6">
-                <span class="section-rule"></span>
-                <h2 class="mb-4">Related</h2>
-                <ul class="space-y-3 text-[0.92rem]">
-                    <li><a href="/chuck-types/">Capping Chuck Types</a> -- the closure-gripping component that mounts to the headset</li>
-                    <li><a href="/oem-compatibility/">OEM Compatibility Index</a> -- headset cross-references by machine platform</li>
-                    <li><a href="/troubleshooting/">Troubleshooting & Calibration</a> -- diagnosing torque issues in headset assemblies</li>
+        <section id="calibration" class="section">
+            <div class="wrap prose-col">
+                <span class="kicker">Setup</span>
+                <h2>How to calibrate a capper headset</h2>
+                <p>Get the target torque from the cap maker. Set it with coil current on a magnetic headset, or spring pressure on a spring-clutch headset. Cap at least 30 bottles, test them with a calibrated torque tester, and check the spread (CV%). The full steps are in our <a href="/troubleshooting/#calibration">headset calibration guide</a>.</p>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="wrap">
+                <h2>Keep reading</h2>
+                <ul class="related">
+                    <li><a href="/chuck-types/">Capping chuck types</a></li>
+                    <li><a href="/troubleshooting/">Troubleshooting</a></li>
+                    <li><a href="/oem-compatibility/">OEM compatibility</a></li>
+                    <li><a href="/glossary/">Glossary</a></li>
                 </ul>
             </div>
         </section>

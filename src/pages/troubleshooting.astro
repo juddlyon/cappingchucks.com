@@ -1,121 +1,125 @@
 ---
-import { Picture } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
 import measurementCaliper from '../assets/images/measurement-caliper.jpg';
+
+const problems = [
+    {
+        id: 'scuffing',
+        title: 'Scuffed caps',
+        why: 'The chuck squeezes too hard, or its opening is off-center. The cap rubs against the grip ridges as it turns.',
+        fix: 'Lower the grip pressure or replace a worn insert. The chuck opening should match the cap width within &plusmn;0.15 mm. Replace a scuffed urethane liner.',
+    },
+    {
+        id: 'uneven-torque',
+        title: 'Uneven torque (high CV%)',
+        why: 'Worn clutch plates, a dirty magnetic disc, or air pressure that jumps around. Caps or bottle necks that are out of spec also cause it.',
+        fix: 'Replace clutch plates or clean the magnetic unit. Check air pressure matches the machine spec (often 6.0 bar &plusmn;0.2 bar) and that the moisture trap works. If torque still varies, run a Cpk study on incoming caps and bottles.',
+    },
+    {
+        id: 'te-bands',
+        title: 'Broken tamper bands',
+        why: 'Too much torque. The cap turns past the point where the band\'s small plastic <a href="/glossary/#bridge-count">bridges</a> break. The band snaps during capping instead of when the customer opens it.',
+        fix: 'Lower torque by 10 to 15%. Check the bridge count and thickness against the cap spec. Check the chuck for wobble (runout) that pushes down unevenly.',
+    },
+    {
+        id: 'cross-threading',
+        title: 'Cross-threading',
+        why: 'The cap is not centered on the bottle before it starts turning. Causes: worn guide rails, chuck set at the wrong height, or the cap feed dropping caps.',
+        fix: 'Check how far the chuck comes down and where it first touches the cap. Look for wear on the centering bell. Make sure the bottle neck tilts less than 1&deg;, per the bottle drawing.',
+    },
+    {
+        id: 'vacuum-loss',
+        title: 'Lost vacuum after capping',
+        why: 'Not enough torque to press the seal fully. It can also be a damaged liner or a chipped or out-of-round bottle neck.',
+        fix: 'Raise torque in 0.2 N&middot;m steps until headspace vacuum meets spec. Check the bottle\'s sealing surface with go/no-go gauges.',
+    },
+    {
+        id: 'undertorque',
+        title: 'Caps too loose (undertorque)',
+        why: 'The clutch slips too early. Causes: worn friction plates, a weak spring, or a failing magnet coil. Oil or dirt on the clutch also makes it slip.',
+        fix: 'Replace the clutch disc and spring. Clean all contact surfaces. On <a href="/capping-headsets/#magnetic">magnetic units</a>, check coil resistance and current draw against spec. Check every spindle, not just one.',
+    },
+];
 ---
 
 <BaseLayout
-    title="Capping Chuck Troubleshooting & Calibration Guide"
-    description="Diagnostic procedures for capping chuck and headset issues: cap scuffing, torque scatter, stripped TE bands, cross-threading, vacuum loss, and undertorque. Calibration steps and fix procedures."
+    title="Capping Troubleshooting and Headset Calibration Guide"
+    description="Fix common capping problems: scuffed caps, uneven torque, broken tamper bands, cross-threading, lost vacuum, and loose caps. Plus step-by-step capper headset calibration."
     canonical="https://cappingchucks.com/troubleshooting/"
-    ogTitle="Troubleshooting & Calibration | CappingChucks.com"
-    ogDescription="Capping chuck troubleshooting guide. Diagnostics and fixes for scuffing, torque variation, TE band failures, cross-threading, and undertorque."
+    ogTitle="Capping Troubleshooting and Calibration | CappingChucks.com"
+    ogDescription="Causes and fixes for common capping line problems, plus how to calibrate a capper headset step by step."
     schemaType="TechArticle"
     breadcrumb="Troubleshooting"
 >
-    <header class="pt-20 pb-12 border-b border-border">
-        <div class="mx-auto max-w-3xl px-6 pb-4">
-            <p class="font-mono text-[0.7rem] text-teal-700 tracking-wider uppercase mb-2"><a href="/" class="no-underline hover:underline">Home</a> / Troubleshooting</p>
-            <h1 class="mb-4">Troubleshooting & Calibration</h1>
-            <p class="text-lg text-ink-light leading-relaxed max-w-xl">Common capping line issues, root causes, and corrective procedures. Covers both <a href="/chuck-types/">chuck</a> and <a href="/capping-headsets/">headset</a> failures.</p>
-        </div>
-        <figure class="mx-auto max-w-4xl px-6">
-            <Picture
-                src={measurementCaliper}
-                alt="Mitutoyo digital caliper measuring steel beam width for dimensional verification"
-                class="w-full h-56 sm:h-72 object-cover object-center rounded-lg"
-                widths={[600, 900, 1200]}
-                sizes="100vw"
-                formats={['avif', 'webp']}
-                quality={80}
-                loading="eager"
-            />
-            <figcaption class="mt-2 font-mono text-[0.68rem] text-ink-faint">Dimensional verification with a digital caliper. Photo: Pexels</figcaption>
-        </figure>
-    </header>
+    <PageHero
+        title="Capping Troubleshooting and Calibration"
+        crumb="Troubleshooting"
+        answerLabel="Start here"
+        image={measurementCaliper}
+        alt="Mitutoyo digital caliper measuring steel beam width for dimensional verification"
+        caption="Checking a part size with a digital caliper. Photo: Pexels"
+    >
+        <p>Most capping problems come from one of three things: torque set wrong, worn <a href="/chuck-types/">chuck</a> or <a href="/capping-headsets/">headset</a> parts, or caps and bottles that are out of spec. Find your problem below, then check the fix.</p>
+    </PageHero>
 
     <main>
-        <section class="py-16 border-b border-border">
-            <div class="mx-auto max-w-3xl px-6">
-                <span class="section-rule"></span>
-                <h2 class="mb-6">Issue Diagnostics</h2>
-
-                <div class="overflow-x-auto">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Issue</th>
-                                <th>Likely Cause</th>
-                                <th>Fix</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Cap Scuffing</td>
-                                <td>Excessive radial grip force or misaligned bore. The closure shell abrades against the chuck's <a href="/glossary/#knurling">knurl</a> pattern during rotation.</td>
-                                <td>Reduce grip pressure or replace worn insert. Verify bore ID matches closure OD within &plusmn;0.15mm. Replace urethane liner if scuffed.</td>
-                            </tr>
-                            <tr>
-                                <td>Inconsistent Torque (High CV%)</td>
-                                <td>Worn clutch plates, contaminated hysteresis disc, or unstable pneumatic supply pressure. Also check incoming closure and container finish dimensions.</td>
-                                <td>Replace clutch plates or clean the hysteresis assembly. Verify pneumatic supply at the machine's specified pressure (typical: 6.0 bar &plusmn;0.2 bar) with a working moisture trap. If variation persists, run a Cpk study on incoming closures and finishes.</td>
-                            </tr>
-                            <tr>
-                                <td>Stripped TE Bands</td>
-                                <td>Over-torque causing the closure to rotate past the <a href="/glossary/#bridge-count">bridge</a> fracture point. Bridges shear during application instead of at first opening.</td>
-                                <td>Reduce application torque 10 to 15%. Verify bridge count and thickness against the closure spec. Check chuck runout for uneven axial loading.</td>
-                            </tr>
-                            <tr>
-                                <td>Cross-Threading</td>
-                                <td>Closure not centered on the finish before thread engagement. Worn guide rails, wrong chuck height, or vacuum pick failure in cap feed.</td>
-                                <td>Check chuck descent height and pre-thread contact point. Inspect the centering bell for wear. Confirm container-finish perpendicularity (tilt under 1&deg;) against the container drawing.</td>
-                            </tr>
-                            <tr>
-                                <td>Vacuum Loss Post-Capping</td>
-                                <td>Not enough torque for full seal compression. Could also be damaged liner or out-of-spec container finish (chipped or ovalized).</td>
-                                <td>Increase torque in 0.2 N&middot;m steps until headspace vacuum hits spec. Check the finish sealing surface with go/no-go gauges.</td>
-                            </tr>
-                            <tr>
-                                <td>Undertorque</td>
-                                <td>Clutch slipping below target due to worn friction surfaces, weak spring, or hysteresis coil degradation. Contamination on clutch interfaces drops the friction coefficient.</td>
-                                <td>Replace clutch disc and spring. Degrease all contact surfaces. On <a href="/capping-headsets/#magnetic">hysteresis units</a>, verify coil resistance and current draw against spec. Audit all spindle stations.</td>
-                            </tr>
-                        </tbody>
-                    </table>
+        <section id="problems" class="section">
+            <div class="wrap">
+                <span class="kicker">Problems</span>
+                <h2>Common capping problems and fixes</h2>
+                <div class="cards cards-2">
+                    {problems.map((p) => (
+                        <div class="card problem" id={p.id}>
+                            <h3>{p.title}</h3>
+                            <dl>
+                                <dt class="why">Why it happens</dt>
+                                <dd set:html={p.why} />
+                                <dt class="fix">How to fix it</dt>
+                                <dd set:html={p.fix} />
+                            </dl>
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>
 
-        <section id="calibration" class="py-16 border-b border-border">
-            <div class="mx-auto max-w-3xl px-6">
-                <span class="section-rule"></span>
-                <h2 class="mb-6">Calibration Procedure</h2>
-
-                <div class="space-y-4 text-[0.95rem] text-ink-light">
-                    <p>Set the target application torque from the closure manufacturer's spec. On <a href="/capping-headsets/#spring-clutch">spring-clutch headsets</a>, adjust the compression preload via the threaded collar or shim stack. On <a href="/capping-headsets/#magnetic">magnetic hysteresis headsets</a>, adjust the DC current to the coil.</p>
-
-                    <p>Verify with a calibrated torque analyzer using your validated sample size. Calculate CV%. High-speed rotary lines run tighter targets (&le; 3%) than inline (&le; 5%). If variation runs over your limit, check for worn clutch surfaces, spindle-coupling backlash, or out-of-spec incoming closures.</p>
+        <section id="calibration" class="section section-alt">
+            <div class="wrap">
+                <span class="kicker kicker-green">Calibration</span>
+                <h2>How to calibrate a capper headset</h2>
+                <p class="lead prose-col">Do this after any clutch or insert change, and on your plant's regular audit schedule. Faster lines need more frequent checks.</p>
+                <div class="grid gap-8 md:grid-cols-2 items-start">
+                    <ol class="steps">
+                        <li>Get the target application torque from the cap maker's spec for your exact cap and liner.</li>
+                        <li>Set the torque. On a <a href="/capping-headsets/#spring-clutch">spring-clutch headset</a>, turn the threaded collar or change shims. On a <a href="/capping-headsets/#magnetic">magnetic headset</a>, change the DC current to the coil.</li>
+                        <li>Run at least 30 bottles, or the number your validation plan calls for.</li>
+                        <li>Test each cap with a calibrated torque tester, using a written method.</li>
+                        <li>Work out the spread (<a href="/glossary/#cv">CV%</a>). Aim for 5% or less. Fast rotary lines aim for 3% or less.</li>
+                        <li>If the spread is too high, look for worn clutch parts, play in the spindle connection, or out-of-spec caps.</li>
+                        <li>Check every spindle on the turret, not just one, and write down the results.</li>
+                    </ol>
+                    <div class="specs">
+                        <p class="specs-title">Calibration numbers</p>
+                        <div class="spec-row"><span class="spec-label">Sample size</span><span class="spec-value">30+ caps</span></div>
+                        <div class="spec-row"><span class="spec-label">CV% target</span><span class="spec-value">&le; 5% standard, &le; 3% fast rotary</span></div>
+                        <div class="spec-row"><span class="spec-label">Torque tester</span><span class="spec-value">Calibrated, with a written method</span></div>
+                        <div class="spec-row"><span class="spec-label">Rules to follow</span><span class="spec-value">Cap maker, customer, and regulations (see <a href="https://store.astm.org/d2063_d2063m-24.html" rel="noopener" target="_blank">ASTM D2063</a>)</span></div>
+                    </div>
                 </div>
-
-                <div class="spec-panel mt-8">
-                    <h3 class="mb-3 text-sm">Calibration Parameters</h3>
-                    <div class="spec-row"><span class="spec-label">Sample Size</span><span class="spec-value">30+ closures (per validation procedure)</span></div>
-                    <div class="spec-row"><span class="spec-label">CV% Target</span><span class="spec-value">&le; 5% standard, &le; 3% on high-speed rotary</span></div>
-                    <div class="spec-row"><span class="spec-label">High-Speed Lines</span><span class="spec-value">Tighter CV%, more frequent torque audits</span></div>
-                    <div class="spec-row"><span class="spec-label">Torque Analyzer</span><span class="spec-value">Calibrated, with a documented method</span></div>
-                    <div class="spec-row"><span class="spec-label">Verification Basis</span><span class="spec-value">Closure supplier, customer, regulatory, and plant requirements (see <a href="https://store.astm.org/d2063_d2063m-24.html" rel="noopener" target="_blank">ASTM D2063</a>)</span></div>
+                <div class="note prose-col">
+                    <strong>Remember:</strong> Torque drops after capping as the liner settles. Removal torque tested later is often 10 to 30% lower than the torque applied. See <a href="/glossary/#static-torque">static torque</a>.
                 </div>
             </div>
         </section>
 
-        <section class="py-16 pb-20">
-            <div class="mx-auto max-w-3xl px-6">
-                <span class="section-rule"></span>
-                <h2 class="mb-4">Related</h2>
-                <ul class="space-y-3 text-[0.92rem]">
-                    <li><a href="/chuck-types/">Capping Chuck Types</a> -- understand the mechanism before diagnosing the failure</li>
-                    <li><a href="/capping-headsets/">Capping Headsets</a> -- headset-level torque control and maintenance</li>
-                    <li><a href="/glossary/">Glossary</a> -- definitions for torque, slip torque, CV%, and related terms</li>
+        <section class="section">
+            <div class="wrap">
+                <h2>Keep reading</h2>
+                <ul class="related">
+                    <li><a href="/chuck-types/">Capping chuck types</a></li>
+                    <li><a href="/capping-headsets/">Magnetic capping headsets</a></li>
+                    <li><a href="/glossary/">Glossary</a></li>
                 </ul>
             </div>
         </section>

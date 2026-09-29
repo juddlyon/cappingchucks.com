@@ -1,0 +1,45 @@
+---
+import { Picture } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+    title: string;
+    crumb?: string;
+    answerLabel?: string;
+    image?: ImageMetadata;
+    alt?: string;
+    caption?: string;
+}
+
+const { title, crumb, answerLabel = 'Quick answer', image, alt = '', caption } = Astro.props;
+---
+
+<div class="hero">
+    <div class="wrap">
+        {crumb && <p class="crumbs"><a href="/">Home</a> / {crumb}</p>}
+        <div class="hero-grid">
+            <div>
+                <h1>{title}</h1>
+                <div class="answer">
+                    <span class="answer-label">{answerLabel}</span>
+                    <slot />
+                </div>
+            </div>
+            {image && (
+                <figure>
+                    <Picture
+                        src={image}
+                        alt={alt}
+                        class="hero-img"
+                        widths={[600, 900, 1200]}
+                        sizes="(max-width: 860px) 100vw, 480px"
+                        formats={['avif', 'webp']}
+                        quality={80}
+                        loading="eager"
+                    />
+                    {caption && <figcaption class="hero-caption">{caption}</figcaption>}
+                </figure>
+            )}
+        </div>
+    </div>
+</div>

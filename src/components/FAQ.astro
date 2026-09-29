@@ -2,41 +2,45 @@
 const faqs = [
     {
         question: "What is a capping chuck?",
-        answer: "A capping chuck is the tooling component that sits on a capping machine spindle and applies torque to a closure. It grips the cap's outer surface, rotates it onto the container finish threads, and releases at a preset torque value. Chucks are used on both rotary and inline capping equipment."
+        answer: "A capping chuck is the part of a capping machine that grabs a bottle cap and screws it on. It sits at the bottom of a spinning shaft called a spindle. It turns the cap onto the bottle threads and lets go when the cap reaches a set torque (twisting force). Chucks are used on both rotary and inline cappers."
     },
     {
-        question: "What is the difference between a capping chuck and a capping headset?",
-        answer: "The terms are often used interchangeably. Strictly, a capping chuck refers to the closure-gripping component, while a capping headset is the full assembly including the chuck, clutch mechanism, and spindle coupling. On ROPP lines, the headset also includes threading rollers and a top-pressure pad."
+        question: "Is there a difference between capping heads and chucks?",
+        answer: "Yes. The chuck is only the part that grips the cap. The capping head, also called a headset, is the whole unit. It includes the chuck, the clutch that controls torque, and the part that attaches to the spindle. On ROPP lines for aluminum caps, the head also has thread-forming rollers and a top pressure pad. People often mix up the two words."
     },
     {
         question: "How do you calibrate a capping chuck?",
-        answer: "Set the target application torque from the closure manufacturer's spec. On friction chucks, adjust the spring preload via the threaded collar or shim stack. On magnetic hysteresis chucks, adjust the DC current to the coil. Verify with a calibrated torque analyzer and compare CV% against the line's validation limits."
+        answer: "Start with the torque number from the cap maker. On a friction (spring) clutch, turn the threaded collar or change the shims to set spring pressure. On a magnetic clutch, change the DC current to the coil. Then cap 30 or more bottles, test each one with a calibrated torque tester, and check that the spread (CV%) is 5% or less. High-speed rotary lines aim for 3% or less."
     },
     {
-        question: "What causes inconsistent torque on a capping line?",
-        answer: "Common causes include worn clutch plates, contaminated hysteresis discs, unstable pneumatic supply pressure, and out-of-spec incoming closures or container finishes. Backlash in the spindle coupling and incorrect chuck bore diameter can also contribute to torque scatter."
+        question: "Do you need the cap liner specs to set up a chuck?",
+        answer: "Yes. The liner, or the built-in seal on a linerless cap, changes how much torque and top load it takes to seal. A foil induction liner and a plain plastic seal do not need the same settings. Get the torque spec from the cap maker for the exact cap and liner you run."
+    },
+    {
+        question: "What causes uneven torque on a capping line?",
+        answer: "The usual causes are worn clutch plates, a dirty magnetic disc, unsteady air pressure, and caps or bottles that are out of spec. Play (backlash) where the chuck connects to the spindle, or a chuck bore that is the wrong size, can also cause it."
     },
     {
         question: "Can aftermarket capping chucks replace OEM parts?",
-        answer: "Sometimes. Brand name is not enough to confirm fit. Verify against the machine model, spindle interface, closure format, and any validated change parts on the line before ordering."
+        answer: "Sometimes. The machine brand alone does not tell you if a part will fit. Check the machine model, the spindle connection, the cap type, and any approved change parts on the line before you order."
     },
     {
         question: "What type of capping chuck is best for high-speed lines?",
-        answer: "Magnetic hysteresis on high-speed rotary lines where torque CV% has to stay under 3%. Friction clutches on inline and lower-speed rotary where cost matters more than tight repeatability. The decision is set by closure format, line speed, and the variation budget."
+        answer: "Magnetic (hysteresis) chucks are best on rotary lines above 800 caps per minute, or anywhere torque spread must stay under 3%. Friction chucks fit inline and slower rotary lines where cost matters more. The right pick depends on the cap, the line speed, and how much torque variation you can accept."
     },
 ];
 ---
 
-<section id="faq" class="py-14 border-b border-border">
-    <div class="mx-auto max-w-3xl px-6">
-        <span class="section-rule"></span>
-        <h2 class="mb-6">Frequently Asked Questions</h2>
+<section id="faq" class="section">
+    <div class="wrap">
+        <span class="kicker kicker-blue">FAQ</span>
+        <h2>Common questions</h2>
 
-        <div class="space-y-6">
+        <div class="cards cards-2">
             {faqs.map((faq) => (
-                <div class="faq-entry">
-                    <h3 class="text-base mb-1">{faq.question}</h3>
-                    <p class="text-[0.92rem] text-ink-light leading-relaxed">{faq.answer}</p>
+                <div class="card">
+                    <h3>{faq.question}</h3>
+                    <p>{faq.answer}</p>
                 </div>
             ))}
         </div>
