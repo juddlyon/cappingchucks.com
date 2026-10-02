@@ -35,12 +35,12 @@ import precisionMachining from '../assets/images/precision-machining.jpg';
                     <div class="card card-blue" id="magnetic">
                         <span class="pill">Magnetic</span>
                         <h3>Magnetic hysteresis chucks</h3>
-                        <p>Magnets pass the turning force from the motor to the cap. A DC electric current sets how strong the magnets pull. When the cap reaches the set torque, the magnets slip without touching. Nothing rubs, so nothing wears out.</p>
+                        <p>Magnets pass the turning force from the motor to the cap across a small gap. Most use permanent magnets, and you set torque by turning an adjustment ring. A few electric models set it with coil current from the PLC. When the cap reaches the set torque, the magnets slip without touching. Nothing rubs, so nothing wears out.</p>
                         <ul>
                             <li>No rubbing clutch parts</li>
-                            <li>Repeats within &plusmn;0.1 N&middot;m over 10 million+ caps</li>
-                            <li>Torque set by a PLC or analog signal</li>
-                            <li>Standard on rotary cappers above 800 caps per minute</li>
+                            <li>Torque holds steady over millions of caps</li>
+                            <li>Set with an adjustment ring, or the PLC on electric models</li>
+                            <li>Common on fast rotary cappers</li>
                         </ul>
                         <p class="mt-3">These chucks are the heart of <a href="/capping-headsets/">magnetic capping headsets</a>.</p>
                     </div>
@@ -51,9 +51,9 @@ import precisionMachining from '../assets/images/precision-machining.jpg';
                         <p>A spring presses clutch plates together. The plates pass the turning force by friction. When the cap is tight, the plates slip. To change torque, tighten or loosen the spring with a threaded collar or shims. Best at lower speeds, where slipping plates don't get too hot.</p>
                         <ul>
                             <li>Spring pressure sets the torque</li>
-                            <li>Plates made of sintered bronze, friction composite, or ceramic</li>
+                            <li>Clutch plates are a wear part</li>
                             <li>Adjusted with shims or a threaded collar</li>
-                            <li>Good value at 200 to 600 caps per minute</li>
+                            <li>Good value on inline and slower rotary lines</li>
                         </ul>
                     </div>
 
@@ -77,9 +77,52 @@ import precisionMachining from '../assets/images/precision-machining.jpg';
                             <li>Suction holds thin and delicate caps</li>
                             <li>Vacuum comes from a venturi (air-powered) or a pump</li>
                             <li>Keeps caps from bending at high speed</li>
-                            <li>Used on ROPP, flat caps, and light aluminum caps</li>
+                            <li>Used on flat caps and light caps</li>
                         </ul>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="grip" class="section section-alt">
+            <div class="wrap">
+                <span class="kicker kicker-blue">How it holds the cap</span>
+                <h2>Chuck body styles</h2>
+                <p class="lead prose-col">The four types above are about how torque is controlled. Separately, chucks differ in how the body holds the cap.</p>
+                <div class="cards cards-2">
+                    <div class="card" id="one-piece">
+                        <h3>One-piece (rigid) chucks</h3>
+                        <p>A solid aluminum or stainless steel cup with a rubber or urethane <a href="#inserts">insert</a> inside. The insert is sized to one cap. This is the simplest and most common chuck.</p>
+                    </div>
+                    <div class="card" id="jaw">
+                        <h3>Jaw chucks</h3>
+                        <p>Three or four metal or plastic jaws close around the cap, driven by springs, cams, or air. Jaws can grip caps with odd shapes, tabs, or spouts that a plain cup can't hold.</p>
+                    </div>
+                    <div class="card" id="flexible">
+                        <h3>Flexible (bladder) chucks</h3>
+                        <p>A rubber sleeve inflates with air and squeezes around the cap. It adjusts to small size differences, so one chuck covers caps that vary a little. Collet chucks do the same job with slotted fingers.</p>
+                    </div>
+                    <div class="card" id="press-on">
+                        <h3>Press-on heads</h3>
+                        <p>A flat pad that pushes a snap-on cap straight down without turning. Used for overcaps, snap caps, and plugs on <a href="/capping-machines/#snap-capper">snap cappers</a> and chuck cappers.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="inserts" class="section">
+            <div class="wrap prose-col">
+                <span class="kicker">Wear parts</span>
+                <h2>Chuck inserts and friction rings</h2>
+                <p>The insert is the part that actually touches the cap. Most are a ring or cup of rubber or urethane pressed into the chuck body. Some are called friction rings or friction bands. The inside is either smooth or ribbed to match the <a href="/glossary/#knurling">knurling</a> on the cap.</p>
+                <ul class="bullets">
+                    <li><strong>Material.</strong> Inserts are made of rubber or urethane. Ask the chuck maker which suits your cap and cleaning chemicals. On food and drink lines, use a material that meets FDA food-contact rules, such as <a href="https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-177/subpart-C/section-177.2600" rel="noopener" target="_blank">21 CFR 177.2600</a> for rubber.</li>
+                    <li><strong>Hardness.</strong> Measured in <a href="/glossary/#durometer">durometer</a> (Shore A). Inserts commonly come in about 40 to 80 Shore A, with 55 a common middle choice (<a href="https://www.kinexcappers.com/faq/about-liners.htm" rel="noopener" target="_blank">Kinex</a>). Softer inserts grip better but wear faster. Harder inserts last longer but can let the cap slip.</li>
+                    <li><strong>Size.</strong> The insert is sized to the cap's outside width across the ridges. Measure the cap, not the bottle. See <a href="/cap-sizes/#sizing-a-chuck">sizing a chuck to a cap</a>.</li>
+                    <li><strong>When to replace.</strong> Replace inserts when they look shiny, cracked, or flared, when caps start slipping or scuffing, or when <a href="/cap-torque/">torque</a> spread goes up. Track insert changes by cap count so you learn your own interval.</li>
+                </ul>
+                <div class="note">
+                    <strong>Tip:</strong> Replace every insert on a turret at the same time. Mixing worn and new inserts makes torque vary from spindle to spindle.
                 </div>
             </div>
         </section>
@@ -107,17 +150,17 @@ import precisionMachining from '../assets/images/precision-machining.jpg';
                     <div class="card">
                         <span class="pill">PCO-1881-T</span>
                         <h3>28 mm <a href="https://www.isbt.com/resources/isbt-threadspecs" rel="noopener" target="_blank">PCO 1881</a> tethered caps</h3>
-                        <p>Tethered caps stay attached to the bottle. The <a href="https://eur-lex.europa.eu/eli/dir/2019/904/oj" rel="noopener" target="_blank">EU Single-Use Plastics Directive</a> requires them on drink bottles. The chuck needs a reshaped inside so it clears the hinge and tether. Standard 28 mm PCO chucks won't do.</p>
+                        <p>Tethered caps stay attached to the bottle. Since July 3, 2024, the <a href="https://eur-lex.europa.eu/eli/dir/2019/904/oj" rel="noopener" target="_blank">EU Single-Use Plastics Directive</a> requires them on single-use plastic drink bottles up to 3 liters. Most cappers need new chuck cones shaped to clear the hinge and tether (<a href="https://www.arol.com/news-events/tethered-caps-change-is-coming" rel="noopener" target="_blank">AROL</a>).</p>
                     </div>
                     <div class="card">
                         <span class="pill">HDPE-38</span>
                         <h3>38 mm dairy and juice caps</h3>
-                        <p>Wide plastic caps for milk, juice, and smoothies. They need a strong grip on the <a href="/glossary/#knurling">knurling</a>. Typical torque is 2.0 to 4.5 N&middot;m. Check this against the cap maker's spec and the foil seal target.</p>
+                        <p>Wide plastic caps for milk, juice, and smoothies. They need a strong grip on the <a href="/glossary/#knurling">knurling</a>. Guide charts give 17 to 26 in-lb (about 1.9 to 2.9 N&middot;m) for 38 mm caps. Check this against the cap maker's spec and the foil seal target. See the <a href="/cap-torque/#chart">cap torque chart</a>.</p>
                     </div>
                     <div class="card">
                         <span class="pill">ROPP</span>
                         <h3>Roll-on pilfer-proof caps</h3>
-                        <p>Aluminum caps for spirits, wine, olive oil, and medicine syrups. The <a href="/capping-headsets/#ropp">ROPP headset</a> uses rollers to press threads into the cap. Roller shape must match the glass threads exactly.</p>
+                        <p>Aluminum caps for spirits, wine, olive oil, and medicine syrups. The <a href="/capping-headsets/#ropp">ROPP headset</a> uses rollers to press threads into the cap. Roller shape must match the glass threads exactly. See <a href="/ropp-capping/">ROPP capping</a>.</p>
                     </div>
                     <div class="card">
                         <span class="pill">CRC</span>
@@ -132,7 +175,7 @@ import precisionMachining from '../assets/images/precision-machining.jpg';
                     <div class="card">
                         <span class="pill">Trigger</span>
                         <h3>Trigger sprayer overcaps</h3>
-                        <p>Overcaps for spray cleaners and garden products. These snap on instead of screwing on. The chuck pushes straight down with a set force (<a href="/glossary/#top-load">top load</a>) instead of turning.</p>
+                        <p>Overcaps for spray cleaners and garden products. These snap on instead of screwing on. A <a href="#press-on">press-on head</a> pushes straight down with a set force (<a href="/glossary/#top-load">top load</a>) instead of turning.</p>
                     </div>
                 </div>
             </div>
@@ -143,6 +186,8 @@ import precisionMachining from '../assets/images/precision-machining.jpg';
                 <h2>Keep reading</h2>
                 <ul class="related">
                     <li><a href="/capping-headsets/">Magnetic capping headsets</a></li>
+                    <li><a href="/cap-sizes/">Cap and neck finish sizes</a></li>
+                    <li><a href="/capping-machines/">Capping machine types</a></li>
                     <li><a href="/troubleshooting/">Troubleshooting</a></li>
                     <li><a href="/oem-compatibility/">OEM compatibility</a></li>
                     <li><a href="/glossary/">Glossary</a></li>

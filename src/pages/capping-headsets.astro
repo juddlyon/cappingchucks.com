@@ -7,7 +7,7 @@ import bottlingMachinery from '../assets/images/bottling-machinery.jpg';
 
 <BaseLayout
     title="Magnetic Capping Headsets: How They Work and When to Use Them"
-    description="How magnetic capping headsets use hysteresis to set cap torque with no wearing parts. Specs, smooth vs. pulsating torque, spring-clutch and ROPP headsets, and which headset fits your line speed."
+    description="How magnetic capping headsets set cap torque with no wearing parts. How to calibrate them, and how they compare to spring-clutch, pneumatic, servo, and ROPP headsets."
     canonical="https://cappingchucks.com/capping-headsets/"
     ogTitle="Magnetic Capping Headsets | CappingChucks.com"
     ogDescription="How magnetic capping headsets work, their specs, and when to pick magnetic, spring-clutch, or ROPP headsets."
@@ -22,7 +22,7 @@ import bottlingMachinery from '../assets/images/bottling-machinery.jpg';
         alt="Glass bottles passing through capping machinery on a high-speed production line"
         caption="Capping station on a glass bottle line. Photo: Pexels"
     >
-        <p>A magnetic capping headset is the full capping unit on a spindle. It uses magnets instead of rubbing parts to set how tight each cap goes on. It is the standard headset on rotary cappers running over 800 caps per minute.</p>
+        <p>A magnetic capping headset is the full capping unit on a spindle. It uses magnets instead of rubbing parts to set how tight each cap goes on. It is a common choice on fast rotary cappers.</p>
     </PageHero>
 
     <main>
@@ -32,11 +32,12 @@ import bottlingMachinery from '../assets/images/bottling-machinery.jpg';
                 <h2>How magnetic capping headsets set torque</h2>
                 <div class="grid gap-8 md:grid-cols-2 items-start">
                     <div>
-                        <p>Inside the headset, two sets of magnetic plates face each other. One set turns with the motor. The other set turns the <a href="/">capping chuck</a>. The magnetic pull drags the second set along.</p>
-                        <p>When the cap gets tight enough, the pull is no longer strong enough to keep turning it. The plates slip past each other without touching. This is called a <a href="/glossary/#hysteresis">hysteresis</a> coupling. The cap stops at the same torque every time.</p>
+                        <p>Inside a hysteresis headset, a ring of magnets turns with the motor. Across a small air gap sits a hysteresis disc, made of a special magnetic alloy, that turns the <a href="/">capping chuck</a>. The magnetic pull drags the disc along.</p>
+                        <p>When the cap gets tight enough, the pull is no longer strong enough to keep turning it. The disc slips without touching the magnets. This is called a <a href="/glossary/#hysteresis">hysteresis</a> clutch. The cap stops at the same torque every time.</p>
+                        <p>Most magnetic headsets use permanent magnets. You set torque by turning an adjustment ring that changes how much the magnets overlap the disc. A few electric models set torque with coil current from the PLC.</p>
                         <p>Nothing rubs, so nothing wears out in the torque path. Torque stays steady over millions of caps. You still need to check it on a schedule, because the chuck, spindle, and caps still wear.</p>
                     </div>
-                    <ChuckDiagram caption="On a magnetic headset, part 2 is a set of magnetic plates. They slip at the set torque without touching." />
+                    <ChuckDiagram caption="On a magnetic headset, part 2 is the magnets and hysteresis disc. They slip at the set torque without touching." />
                 </div>
             </div>
         </section>
@@ -46,19 +47,17 @@ import bottlingMachinery from '../assets/images/bottling-machinery.jpg';
                 <span class="kicker kicker-green">Specs</span>
                 <h2>Magnetic headset specs</h2>
                 <div class="specs prose-col">
-                    <p class="specs-title">Typical numbers</p>
-                    <div class="spec-row"><span class="spec-label">How torque is set</span><span class="spec-value">DC current to the magnet coil</span></div>
-                    <div class="spec-row"><span class="spec-label">Repeatability</span><span class="spec-value">&plusmn;0.1 N&middot;m on approved machines</span></div>
-                    <div class="spec-row"><span class="spec-label">Torque spread (CV%)</span><span class="spec-value">Under 3% when well kept</span></div>
+                    <p class="specs-title">Magnetic headset basics</p>
+                    <div class="spec-row"><span class="spec-label">How torque is set</span><span class="spec-value">Magnet overlap (adjustment ring), or coil current on electric models</span></div>
                     <div class="spec-row"><span class="spec-label">Parts that rub</span><span class="spec-value">None in the torque path</span></div>
-                    <div class="spec-row"><span class="spec-label">Changing torque</span><span class="spec-value">PLC or analog signal, no tools</span></div>
-                    <div class="spec-row"><span class="spec-label">Line speed</span><span class="spec-value">800 to 1,200+ caps per minute</span></div>
+                    <div class="spec-row"><span class="spec-label">Changing torque</span><span class="spec-value">Turn the ring by hand, or from the PLC on electric models</span></div>
+                    <div class="spec-row"><span class="spec-label">Line speed</span><span class="spec-value">Common on fast rotary cappers</span></div>
                 </div>
 
                 <h3 class="mt-10">Smooth torque vs. pulsing torque</h3>
                 <div class="prose-col">
-                    <p>Older magnetic headsets have magnets with opposite poles. As the plates turn, the pull jumps from pole to pole. Each jump makes a small torque spike. These spikes add wear to the machine and can make tamper bands seat unevenly on thin caps.</p>
-                    <p>Newer headsets use a smooth design. The magnetic pull stays even all the way around. That means no spikes, less stress on the capper, and steadier <a href="/glossary/#slip-torque">slip torque</a> at every speed.</p>
+                    <p>Some magnetic headsets use two magnet rings with opposite poles facing each other. As they turn, the pull jumps from pole to pole and makes small torque spikes. Warner Electric, which sells a smooth-torque design, says these spikes over-tighten caps and add shock to spindles and cap retention knives (<a href="https://www.warnerelectric.com/key-markets/Packaging-Machinery/bottling-capping/magnetic-capping-headsets" rel="noopener" target="_blank">Warner Electric</a>).</p>
+                    <p>Hysteresis designs keep the pull even all the way around. That means no spikes and steadier <a href="/glossary/#slip-torque">slip torque</a>. If you are comparing headsets, ask the maker which design it uses.</p>
                 </div>
 
                 <h3 class="mt-10">Will it fit my capper?</h3>
@@ -84,17 +83,39 @@ import bottlingMachinery from '../assets/images/bottling-machinery.jpg';
                 <div class="grid gap-8 md:grid-cols-2 items-start">
                     <div>
                         <p>Spring-clutch headsets, also called friction headsets or capping clutches, use a stack of plates pressed together by a spring. When the cap gets tight enough, the plates slip. To set torque, you tighten or loosen the spring with a threaded collar or shims.</p>
-                        <p>They are the normal pick for inline cappers and rotary lines under 600 caps per minute. They cost less than magnetic headsets. The downside is wear: the plates rub, so torque drifts over time. Replace plates on a schedule and recheck torque every time you do.</p>
+                        <p>They are a common pick for inline cappers and slower rotary lines. They cost less than magnetic headsets. The downside is wear: the plates rub, so torque drifts over time. Replace plates on a schedule and recheck torque every time you do.</p>
                     </div>
                     <div class="specs">
                         <p class="specs-title">Spring-clutch specs</p>
                         <div class="spec-row"><span class="spec-label">How torque is set</span><span class="spec-value">Spring pressure</span></div>
-                        <div class="spec-row"><span class="spec-label">Plate materials</span><span class="spec-value">Sintered bronze, friction composite, ceramic</span></div>
                         <div class="spec-row"><span class="spec-label">Changing torque</span><span class="spec-value">Threaded collar or shims</span></div>
-                        <div class="spec-row"><span class="spec-label">Line speed</span><span class="spec-value">200 to 600 caps per minute</span></div>
+                        <div class="spec-row"><span class="spec-label">Line speed</span><span class="spec-value">Inline and slower rotary lines</span></div>
                         <div class="spec-row"><span class="spec-label">Upkeep</span><span class="spec-value">Replace clutch plates on a schedule</span></div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section id="pneumatic" class="section">
+            <div class="wrap prose-col">
+                <span class="kicker kicker-blue">Other headsets</span>
+                <h2>Pneumatic headsets</h2>
+                <p>A pneumatic headset is a friction clutch where air pressure does the job of the spring. Air pushes on a piston or diaphragm, which presses the clutch plates together. More air pressure means more torque.</p>
+                <p>The big advantage is fast changeover. You set torque by changing air pressure at a regulator, with no tools and no stopping to turn collars. That makes them a good fit for slower lines that switch cap types often.</p>
+                <p>Some machines sold as pneumatic cappers work differently. They use an air motor that stalls at the set torque instead of a clutch.</p>
+                <p>Torque is only as steady as the air supply. If plant air pressure drops, torque drops with it. Use a dedicated regulator and check the gauge as part of every torque audit.</p>
+                <h3 class="mt-10">Do pneumatic clutches wear more than magnetic?</h3>
+                <p>Yes. A pneumatic clutch still has plates that rub every time it slips, so the plates wear and need replacing, the same as a spring clutch. A magnetic clutch has no rubbing parts in the torque path. On a monoblock running all day, that means a magnetic clutch needs less upkeep and holds its setting longer.</p>
+            </div>
+        </section>
+
+        <section id="servo" class="section section-alt">
+            <div class="wrap prose-col">
+                <span class="kicker kicker-green">Other headsets</span>
+                <h2>Servo capping heads</h2>
+                <p>A servo capping head has no clutch. Each spindle has its own servo motor, and the drive stops the motor when the cap reaches the set torque. The motor itself is the torque control.</p>
+                <p>Because the drive measures torque on every cap, a servo head can log a torque reading for each bottle and reject caps that miss the target. Torque, speed, and how many turns the cap gets are all stored in the recipe, so a changeover is a menu selection.</p>
+                <p>Servo heads cost the most, and each one needs its own drive and wiring. They make sense when you need a torque record for every cap, such as pharmaceutical lines, or when you run many cap types on one machine.</p>
             </div>
         </section>
 
@@ -103,43 +124,53 @@ import bottlingMachinery from '../assets/images/bottling-machinery.jpg';
                 <span class="kicker kicker-green">Aluminum caps</span>
                 <h2>ROPP headsets</h2>
                 <p>ROPP means roll-on pilfer-proof. These aluminum caps start with no threads. The headset makes the threads on the spot. A top pressure pad holds the cap down on the glass. Rollers press the soft aluminum into the bottle's threads. Other rollers tuck the bottom band under a ridge on the bottle neck.</p>
-                <p>The roller angle, depth, and position must match the bottle's threads exactly. If they are off, you get weak threads, loose caps, or cracked glass. ROPP headsets are usually made for one machine brand.</p>
+                <p>The roller angle, depth, and position must match the bottle's threads exactly. If they are off, you get weak threads, loose caps, or cracked glass. ROPP headsets are usually made for one machine brand. See the <a href="/ropp-capping/">ROPP capping guide</a> for setup and defects.</p>
             </div>
         </section>
 
         <section id="selection" class="section section-alt">
             <div class="wrap">
                 <span class="kicker kicker-blue">Pick one</span>
-                <h2>Which headset fits your line speed?</h2>
+                <h2>Which headset fits your line?</h2>
                 <div class="overflow-x-auto">
                     <table>
                         <thead>
                             <tr>
-                                <th>Caps per minute</th>
+                                <th>Your line</th>
                                 <th>Headset</th>
                                 <th>Why</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Under 200</td>
-                                <td>Spring-clutch or pneumatic</td>
-                                <td>Too slow to justify magnetic cost. Pick pneumatic if you change cap types often.</td>
-                            </tr>
-                            <tr>
-                                <td>200 to 600</td>
+                                <td>Small or slow line</td>
                                 <td>Spring-clutch</td>
-                                <td>Handles this range well. Plate changes are easy to keep up with.</td>
+                                <td>Lowest cost. Plate changes are easy to keep up with.</td>
                             </tr>
                             <tr>
-                                <td>600 to 800</td>
-                                <td>Magnetic or spring-clutch</td>
-                                <td>Either works. Go magnetic if torque spread must stay under 3%.</td>
+                                <td>Many cap types, frequent changeovers</td>
+                                <td>Pneumatic</td>
+                                <td>One air regulator resets torque for every spindle with no tools.</td>
                             </tr>
                             <tr>
-                                <td>Over 800</td>
+                                <td>Fast rotary line</td>
                                 <td>Magnetic</td>
-                                <td>No rubbing parts and no heat buildup at high speed. Standard on fast rotary lines.</td>
+                                <td>No rubbing parts, so torque holds steady with little upkeep.</td>
+                            </tr>
+                            <tr>
+                                <td>Tight torque limits</td>
+                                <td>Magnetic or servo</td>
+                                <td>Both keep cap-to-cap spread low. Servo also measures every cap.</td>
+                            </tr>
+                            <tr>
+                                <td>Need a torque record for every cap</td>
+                                <td>Servo</td>
+                                <td>The drive logs torque for each bottle and can reject misses.</td>
+                            </tr>
+                            <tr>
+                                <td>Aluminum ROPP caps</td>
+                                <td>ROPP head</td>
+                                <td>The cap is formed on the bottle, so no torque clutch is used.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -151,7 +182,31 @@ import bottlingMachinery from '../assets/images/bottling-machinery.jpg';
             <div class="wrap prose-col">
                 <span class="kicker">Setup</span>
                 <h2>How to calibrate a capper headset</h2>
-                <p>Get the target torque from the cap maker. Set it with coil current on a magnetic headset, or spring pressure on a spring-clutch headset. Cap at least 30 bottles, test them with a calibrated torque tester, and check the spread (CV%). The full steps are in our <a href="/troubleshooting/#calibration">headset calibration guide</a>.</p>
+                <p>Every headset is calibrated the same basic way. Get the target torque from the cap maker. Set the headset. Cap at least 30 bottles, test them with a calibrated <a href="/cap-torque/#testers">torque tester</a>, and check the spread (<a href="/glossary/#cv">CV%</a>). The step-by-step version is in the <a href="/troubleshooting/#calibration">calibration guide</a>. What changes from one headset to the next is what you adjust and what tends to throw the setting off.</p>
+
+                <h3 class="mt-10">Magnetic headsets</h3>
+                <p>On headsets with permanent magnets, you turn an adjustment ring that changes how much the magnet plates overlap. More overlap means more torque. On electrically controlled headsets, you change the current to the coil from the HMI or PLC.</p>
+                <ul class="bullets">
+                    <li>Set each spindle, then test caps from each spindle on its own. One spindle that is off will hide inside a turret average.</li>
+                    <li>Test at production speed. Torque measured at jog speed can read differently.</li>
+                    <li>If one spindle won't hold its setting, look at the chuck insert and spindle connection before the magnets. Magnets rarely drift.</li>
+                </ul>
+
+                <h3 class="mt-10">Spring-clutch headsets</h3>
+                <p>You set torque by tightening or loosening the spring with the threaded collar, or by adding or removing shims. Mark the collar position once a setting is proven so it can be put back after a teardown.</p>
+                <ul class="bullets">
+                    <li>Recheck torque after every clutch plate change. New plates grip differently until they wear in.</li>
+                    <li>Run the line for a short time before the final check. Warm plates slip at a different torque than cold ones.</li>
+                    <li>If torque keeps drifting down between checks, the plates are worn. Turning the collar to make up for it only hides the problem.</li>
+                </ul>
+
+                <h3 class="mt-10">ROPP headsets</h3>
+                <p>ROPP headsets have no torque clutch to set. You adjust the top pressure (how hard the pad pushes the cap onto the bottle) and the position and pressure of the thread and tuck rollers.</p>
+                <ul class="bullets">
+                    <li>Check the result by testing removal torque and looking at the formed threads and the tucked band.</li>
+                    <li>Look for the bridges on the tamper band to break cleanly when the cap is opened.</li>
+                    <li>Recheck roller settings after any change in cap supplier or bottle mold. Small changes in the glass threads change how the aluminum forms.</li>
+                </ul>
             </div>
         </section>
 
@@ -160,9 +215,11 @@ import bottlingMachinery from '../assets/images/bottling-machinery.jpg';
                 <h2>Keep reading</h2>
                 <ul class="related">
                     <li><a href="/chuck-types/">Capping chuck types</a></li>
+                    <li><a href="/cap-torque/">Cap torque guide</a></li>
+                    <li><a href="/capping-machines/">Capping machine types</a></li>
+                    <li><a href="/ropp-capping/">ROPP capping</a></li>
                     <li><a href="/troubleshooting/">Troubleshooting</a></li>
                     <li><a href="/oem-compatibility/">OEM compatibility</a></li>
-                    <li><a href="/glossary/">Glossary</a></li>
                 </ul>
             </div>
         </section>

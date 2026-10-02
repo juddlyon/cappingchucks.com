@@ -6,24 +6,66 @@ import technicalBlueprint from '../assets/images/technical-blueprint.jpg';
 const terms = [
     { id: 'capping-chuck', term: 'Capping Chuck', def: 'The part of a capping machine that grips a cap and screws it onto a bottle. It sits at the bottom of a spinning spindle. See <a href="/">capping chucks</a>.' },
     { id: 'capping-headset', term: 'Capping Headset (Capping Head)', def: 'The full unit on a spindle: the chuck, the clutch that controls torque, and the spindle adapter. See <a href="/capping-headsets/">magnetic capping headsets</a>.' },
-    { id: 'torque', term: 'Torque', def: 'Twisting force. For caps, it is measured in newton-meters (N&middot;m). Capping torque runs from about 0.5 to 25 N&middot;m, depending on the cap.' },
-    { id: 'insert', term: 'Chuck Insert', def: 'The rubber, urethane, or plastic lining inside a chuck that touches the cap. It wears out and gets replaced, often every 2 to 5 million caps.' },
+    { id: 'torque', term: 'Torque', def: 'Twisting force. For caps, it is measured in newton-meters (N&middot;m). Capping torque runs from well under 1 N&middot;m on small caps to about 8 N&middot;m on 120 mm caps. See the <a href="/cap-torque/#chart">cap torque chart</a>.' },
+    { id: 'insert', term: 'Chuck Insert', def: 'The rubber, urethane, or plastic lining inside a chuck that touches the cap. It wears out and gets replaced. See <a href="/chuck-types/#inserts">chuck inserts</a>.' },
     { id: 'knurling', term: 'Knurling', def: 'The small ridges on the side of a cap. The chuck insert grips these. If the insert does not match the ridges, the cap slips or gets <a href="/troubleshooting/#scuffing">scuffed</a>.' },
     { id: 'slip-torque', term: 'Slip Torque', def: 'The torque where the headset clutch lets go and stops turning the cap. It must be higher than the target torque but lower than the torque that would break the cap.' },
-    { id: 'static-torque', term: 'Static Torque (Removal Torque)', def: 'The torque needed to start opening a cap after it has sat for a while. It is often 10 to 30% lower than the torque used to put the cap on, because the liner settles. This is the main number checked in quality audits.' },
-    { id: 'cv', term: 'CV% (Torque Spread)', def: 'Coefficient of variation. It shows how much torque changes from cap to cap. Lower is better. Most lines aim for 5% or less. Fast rotary lines aim for 3% or less.' },
-    { id: 'cpm', term: 'CPM', def: 'Caps (or containers) per minute. A measure of line speed. The fastest lines run about 1,200 CPM.' },
+    { id: 'static-torque', term: 'Static Torque (Removal Torque)', def: 'The torque needed to start opening a cap after it has sat for a while. Measured 24 hours after capping, it is usually 40 to 60% of the torque used to put the cap on, because the liner and plastic relax. This is the main number checked in quality audits.' },
+    { id: 'cv', term: 'CV% (Torque Spread)', def: 'Coefficient of variation. It shows how much torque changes from cap to cap. Lower is better. Many lines aim for 5% or less. Check your own quality spec.' },
+    { id: 'cpm', term: 'CPM', def: 'Caps (or containers) per minute. A measure of line speed. The fastest single rotary cappers run about 1,400 CPM (84,000 per hour).' },
     { id: 'hysteresis', term: 'Hysteresis Coupling', def: 'A magnetic clutch. Magnets pass turning force across a gap without touching. When the load gets too high, the magnets slip. Used in <a href="/capping-headsets/#magnetic">magnetic capping headsets</a>.' },
     { id: 'top-load', term: 'Top Load', def: 'How hard the chuck pushes down on the top of the cap, measured in newtons (N). It presses the liner against the bottle to make a seal. Too much bends thin caps. Too little gives a weak seal.' },
     { id: 'liner', term: 'Liner', def: 'The seal inside a cap. It can be a separate disc (like a foil induction liner) or a seal molded into the cap. The liner type changes how much torque and top load you need.' },
-    { id: 'thread-pitch', term: 'Thread Pitch', def: 'The distance from one thread to the next, in millimeters. Drink caps run from 3.0 to 6.35 mm (see <a href="https://www.isbt.com/resources/isbt-threadspecs" rel="noopener" target="_blank">ISBT threadspecs</a>). Pitch sets how many turns it takes to fully seat the cap.' },
-    { id: 'bridge-count', term: 'Bridge Count (Tamper Band)', def: 'The number of small plastic bridges that hold the tamper band to the cap, usually 6 to 12. They should break when the customer opens the bottle, not <a href="/troubleshooting/#te-bands">during capping</a>.' },
-    { id: 'closure-ovalization', term: 'Cap Ovalization', def: 'When a round cap gets squeezed into an oval. Causes include too much chuck grip, bad storage, or molding problems. Oval caps cross-thread and seal badly. The limit is often &plusmn;0.2 mm from the normal width, per the cap maker.' },
-    { id: 'ropp', term: 'ROPP', def: 'Roll-on pilfer-proof. An aluminum cap that has no threads until the capping head rolls them into the metal. Used on spirits, wine, and olive oil. See <a href="/capping-headsets/#ropp">ROPP headsets</a>.' },
-    { id: 'pco-1881', term: 'PCO 1881', def: 'A common 28 mm bottle neck finish for soft drinks and water, published in the <a href="https://www.isbt.com/resources/isbt-threadspecs" rel="noopener" target="_blank">ISBT threadspecs</a>. Tethered versions are required in the EU.' },
-    { id: '29-25', term: '29/25', def: 'A bottle neck finish with a 29 mm thread diameter and a 25 mm inside diameter. Common on still water because it uses less plastic than older finishes.' },
+    { id: 'thread-pitch', term: 'Thread Pitch', def: 'The distance from one thread to the next, in millimeters. For example, PCO 1881 has a pitch of about 2.7 mm (see <a href="https://www.isbt.com/resources/isbt-threadspecs" rel="noopener" target="_blank">ISBT threadspecs</a>). Pitch sets how many turns it takes to fully seat the cap.' },
+    { id: 'bridge-count', term: 'Bridge Count (Tamper Band)', def: 'The number of small plastic bridges that hold the tamper band to the cap. The cap drawing gives the count and size. They should break when the customer opens the bottle, not <a href="/troubleshooting/#te-bands">during capping</a>.' },
+    { id: 'closure-ovalization', term: 'Cap Ovalization', def: 'When a round cap gets squeezed into an oval. Causes include too much chuck grip, bad storage, or molding problems. Oval caps cross-thread and seal badly. The cap maker sets the allowed limit.' },
+    { id: 'ropp', term: 'ROPP', def: 'Roll-on pilfer-proof. An aluminum cap that has no threads until the capping head rolls them into the metal. Used on spirits, wine, and olive oil. See the <a href="/ropp-capping/">ROPP capping guide</a>.' },
+    { id: 'pco-1881', term: 'PCO 1881', def: 'A common 28 mm bottle neck finish for soft drinks and water, published in the <a href="https://www.isbt.com/resources/isbt-threadspecs" rel="noopener" target="_blank">ISBT threadspecs</a>. Tethered caps have been required on single-use plastic drink bottles up to 3 liters in the EU since July 3, 2024.' },
+    { id: '29-25', term: '29/25', def: 'A bottle neck finish with a 29 mm thread diameter and a 25 mm inside diameter. Common on still water because it uses less plastic than older finishes. CETIE standard GME 30.26. See <a href="/cap-sizes/#beverage">beverage finishes</a>.' },
+    { id: 'application-torque', term: 'Application Torque', def: 'The torque a capper uses to put a cap on. This is the number the headset clutch is set to. See the <a href="/cap-torque/">cap torque guide</a>.' },
+    { id: 'strip-torque', term: 'Strip Torque', def: 'The torque where the cap threads jump over the bottle threads. Application torque must stay well below it. See <a href="/cap-torque/#strip">strip torque</a>.' },
+    { id: 'neck-finish', term: 'Neck Finish', def: 'The top of the bottle that the cap fits onto: the threads, the sealing surface, and the ring below. Finishes have codes like 28-410 or PCO 1881. See <a href="/cap-sizes/">cap and neck finish sizes</a>.' },
+    { id: 'ct-cap', term: 'Continuous Thread (CT) Cap', def: 'A screw cap with a thread that runs in an unbroken spiral. The most common cap type. Chuck cappers and spindle cappers both apply them.' },
+    { id: 'lug-cap', term: 'Lug Cap', def: 'A metal twist-off lid with a few small tabs (lugs) instead of a full thread. Used on glass food jars, often sealed with a steam vacuum. See <a href="/capping-machines/#lug-capper">lug cappers</a>.' },
+    { id: 'crown', term: 'Crown Cap', def: 'The fluted metal cap on beer and soda bottles. It is crimped on, not screwed on. See <a href="/capping-machines/#crown-capper">crown cappers</a>.' },
+    { id: 'snap-cap', term: 'Snap Cap', def: 'A cap pressed straight down over a bead on the bottle neck instead of being turned. Applied by a <a href="/capping-machines/#snap-capper">snap capper</a> or a press-on head.' },
+    { id: 'tethered-cap', term: 'Tethered Cap', def: 'A cap that stays attached to the bottle after opening. Required on single-use plastic drink bottles up to 3 liters in the EU since July 3, 2024. Needs a chuck shaped to clear the tether. See <a href="/chuck-types/#applications">chucks by cap</a>.' },
+    { id: 'induction-seal', term: 'Induction Seal', def: 'A foil liner that is heat-sealed to the bottle rim after capping, using an electromagnetic field. It can lower removal torque, so some lines retorque after sealing. See <a href="/cap-torque/#what-changes-torque">what changes torque</a>.' },
+    { id: 'durometer', term: 'Durometer (Shore A)', def: 'A measure of how hard rubber or urethane is. Used to spec chuck inserts. Softer inserts grip better and wear faster. See <a href="/chuck-types/#inserts">chuck inserts</a>.' },
+    { id: 'jaw-chuck', term: 'Jaw Chuck', def: 'A chuck with three or four metal jaws that close around the cap. Used for caps with odd shapes. See <a href="/chuck-types/#jaw">chuck body styles</a>.' },
+    { id: 'chuck-capper', term: 'Chuck Capper', def: 'A capping machine that uses chucks to grip and turn each cap. Can be inline or rotary. See <a href="/capping-machines/#chuck-capper">chuck cappers</a>.' },
+    { id: 'spindle-capper', term: 'Spindle Capper', def: 'A capping machine that turns caps with pairs of spinning wheels on both sides of the conveyor. It does not use chucks. See <a href="/capping-machines/#spindle-capper">spindle cappers</a>.' },
+    { id: 'retorquer', term: 'Retorquer', def: 'A machine that tightens caps a second time after they settle, often after induction sealing or hot filling. See <a href="/capping-machines/#retorquer">retorquers</a>.' },
+    { id: 'pick-and-place', term: 'Pick-and-Place / Pick-Off', def: 'Two ways a chuck capper gets caps. Pick-and-place: the chuck grabs a cap and carries it to the bottle. Pick-off: the bottle catches a cap from the chute, then the chuck tightens it.' },
+    { id: 'monoblock', term: 'Monoblock', def: 'A filler and capper built as one machine on a shared frame, with bottles passed between them by starwheels. Common on fast drink lines.' },
+    { id: 'servo-head', term: 'Servo Capping Head', def: 'A capping head where a servo motor on each spindle controls torque instead of a clutch. Can record torque for every cap. See <a href="/capping-headsets/#servo">servo capping heads</a>.' },
+    { id: 'pneumatic-headset', term: 'Pneumatic Headset', def: 'A capping headset with a friction clutch loaded by air pressure instead of a spring. Torque is set by air pressure at a regulator. See <a href="/capping-headsets/#pneumatic">pneumatic headsets</a>.' },
+    { id: 'gpi-finish', term: 'GPI/SPI Finish', def: 'U.S. neck finish codes like 28-400 or 38-410. The first number is the thread diameter in mm. The second is the thread style. See <a href="/cap-sizes/#gpi-series">thread series</a>.' },
+    { id: 't-dimension', term: 'T, E, H, S, and I Dimensions', def: 'The letters on a neck finish drawing. T is the width across the threads, E the width at the thread root, H the finish height, S the distance to the first thread, and I the opening. See <a href="/cap-sizes/#dimensions">neck finish dimensions</a>.' },
+    { id: 'isbt', term: 'ISBT', def: 'International Society of Beverage Technologists. Publishes drink bottle finish drawings such as PCO 1810 and PCO 1881. See <a href="/cap-sizes/#beverage">beverage finishes</a>.' },
+    { id: 'cetie', term: 'CETIE', def: 'The International Technical Centre for Bottling, based in Paris. It publishes neck finish data sheets, such as GME 30.26 for 29/25 and GME 30.40 for 26/22.' },
+    { id: 'hot-fill', term: 'Hot Fill', def: 'Filling a product such as juice or tea while hot, into heat-set PET or glass. Caps lose torque as they cool, so check removal torque after cooling. See <a href="/cap-torque/#what-changes-torque">what changes torque</a>.' },
+    { id: 'pressure-block', term: 'Pressure Block', def: 'The part of a ROPP head that pushes down on the cap to seal the liner against the glass. See <a href="/ropp-capping/#how-it-works">how ROPP works</a>.' },
+    { id: 'thread-roller', term: 'Thread Roller', def: 'A roller on a ROPP head that presses the aluminum shell into the glass threads to form the cap threads.' },
+    { id: 'pilfer-roller', term: 'Pilfer Roller (Tuck Roller)', def: 'A roller on a ROPP head that folds the bottom band of the cap under the neck ridge, forming the tamper band.' },
+    { id: 'cpk', term: 'Cpk', def: 'A process capability number that shows how well a process, such as cap torque, stays inside its limits. Higher is better. Often used to check incoming caps and bottles.' },
+    { id: 'cap-sorter', term: 'Cap Sorter (Cap Elevator)', def: 'A machine that turns bulk caps the right way up and feeds them down a chute to the capper. See <a href="/capping-machines/#cap-feeding">cap feeding</a>.' },
     { id: 'vacuum-chuck', term: 'Vacuum Chuck', def: 'A chuck that holds the cap with suction instead of squeezing it. Used for thin or light caps. See <a href="/chuck-types/#vacuum">vacuum cap chucks</a>.' },
 ];
+terms.sort((a, b) => a.term.localeCompare(b.term));
+
+const termSet = {
+    '@context': 'https://schema.org',
+    '@type': 'DefinedTermSet',
+    name: 'Capping Glossary',
+    url: 'https://cappingchucks.com/glossary/',
+    hasDefinedTerm: terms.map((t) => ({
+        '@type': 'DefinedTerm',
+        name: t.term,
+        description: t.def.replace(/<[^>]+>/g, '').replace(/&middot;/g, '·').replace(/&plusmn;/g, '±'),
+        url: `https://cappingchucks.com/glossary/#${t.id}`,
+    })),
+};
 ---
 
 <BaseLayout
@@ -45,6 +87,8 @@ const terms = [
         <p>Plain definitions for the words used around <a href="/chuck-types/">capping chucks</a> and <a href="/capping-headsets/">headsets</a>. Each one keeps the real numbers.</p>
     </PageHero>
 
+    <script type="application/ld+json" set:html={JSON.stringify(termSet)} />
+
     <main>
         <section class="section">
             <div class="wrap prose-col">
@@ -57,7 +101,7 @@ const terms = [
                     ))}
                 </dl>
                 <div class="note">
-                    <strong>Testing tip:</strong> Use the cap maker's current torque test method plus any customer or legal rules. <a href="https://store.astm.org/d2063_d2063m-24.html" rel="noopener" target="_blank">ASTM D2063</a> covers how to measure torque on threaded caps.
+                    <strong>Testing tip:</strong> Use the cap maker's current torque test method plus any customer or legal rules. <a href="https://store.astm.org/d2063_d2063m-24.html" rel="noopener" target="_blank">ASTM D2063</a> covers torque retention (removal torque over time) on continuous-thread caps with manual testers.
                 </div>
             </div>
         </section>
@@ -69,7 +113,8 @@ const terms = [
                 <ul class="space-y-3">
                     <li><a href="https://www.isbt.com/" rel="noopener" target="_blank">ISBT</a>: International Society of Beverage Technologists. Publishes the <a href="https://www.isbt.com/resources/isbt-threadspecs" rel="noopener" target="_blank">threadspecs</a> for PCO 1881, 1810, and other finishes.</li>
                     <li><a href="https://www.pmmi.org/" rel="noopener" target="_blank">PMMI</a>: The trade group for packaging machine makers.</li>
-                    <li><a href="https://store.astm.org/d2063_d2063m-24.html" rel="noopener" target="_blank">ASTM D2063</a>: Test methods for torque on threaded caps (2024 edition).</li>
+                    <li><a href="https://store.astm.org/d2063_d2063m-24.html" rel="noopener" target="_blank">ASTM D2063</a>: Torque retention test methods for continuous-thread caps using manual testers (2024 edition).</li>
+                    <li><a href="https://store.astm.org/d7860-14r22.html" rel="noopener" target="_blank">ASTM D7860</a>: The same torque retention tests using automated testers.</li>
                     <li><a href="https://www.ecfr.gov/current/title-16/chapter-II/subchapter-E/part-1700" rel="noopener" target="_blank">16 CFR Part 1700</a>: U.S. rules for child-resistant packaging.</li>
                     <li><a href="https://eur-lex.europa.eu/eli/dir/2019/904/oj" rel="noopener" target="_blank">EU Directive 2019/904</a>: The Single-Use Plastics Directive, which requires tethered caps on some drink bottles.</li>
                 </ul>
@@ -83,6 +128,8 @@ const terms = [
                     <li><a href="/chuck-types/">Capping chuck types</a></li>
                     <li><a href="/capping-headsets/">Magnetic capping headsets</a></li>
                     <li><a href="/troubleshooting/">Troubleshooting</a></li>
+                    <li><a href="/cap-torque/">Cap torque guide</a></li>
+                    <li><a href="/capping-machines/">Capping machine types</a></li>
                 </ul>
             </div>
         </section>

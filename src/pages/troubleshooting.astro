@@ -8,13 +8,13 @@ const problems = [
         id: 'scuffing',
         title: 'Scuffed caps',
         why: 'The chuck squeezes too hard, or its opening is off-center. The cap rubs against the grip ridges as it turns.',
-        fix: 'Lower the grip pressure or replace a worn insert. The chuck opening should match the cap width within &plusmn;0.15 mm. Replace a scuffed urethane liner.',
+        fix: 'Lower the grip pressure or replace a worn insert. The chuck opening should match the cap width to the chuck maker\'s tolerance. Replace a scuffed urethane liner.',
     },
     {
         id: 'uneven-torque',
         title: 'Uneven torque (high CV%)',
         why: 'Worn clutch plates, a dirty magnetic disc, or air pressure that jumps around. Caps or bottle necks that are out of spec also cause it.',
-        fix: 'Replace clutch plates or clean the magnetic unit. Check air pressure matches the machine spec (often 6.0 bar &plusmn;0.2 bar) and that the moisture trap works. If torque still varies, run a Cpk study on incoming caps and bottles.',
+        fix: 'Replace clutch plates or clean the magnetic unit. Check that air pressure is steady and matches the machine spec, and that the moisture trap works. If torque still varies, run a Cpk study on incoming caps and bottles.',
     },
     {
         id: 'te-bands',
@@ -26,7 +26,7 @@ const problems = [
         id: 'cross-threading',
         title: 'Cross-threading',
         why: 'The cap is not centered on the bottle before it starts turning. Causes: worn guide rails, chuck set at the wrong height, or the cap feed dropping caps.',
-        fix: 'Check how far the chuck comes down and where it first touches the cap. Look for wear on the centering bell. Make sure the bottle neck tilts less than 1&deg;, per the bottle drawing.',
+        fix: 'Check how far the chuck comes down and where it first touches the cap. Look for wear on the centering bell. Make sure the bottle neck tilt is within the limit on the bottle drawing.',
     },
     {
         id: 'vacuum-loss',
@@ -37,8 +37,8 @@ const problems = [
     {
         id: 'undertorque',
         title: 'Caps too loose (undertorque)',
-        why: 'The clutch slips too early. Causes: worn friction plates, a weak spring, or a failing magnet coil. Oil or dirt on the clutch also makes it slip.',
-        fix: 'Replace the clutch disc and spring. Clean all contact surfaces. On <a href="/capping-headsets/#magnetic">magnetic units</a>, check coil resistance and current draw against spec. Check every spindle, not just one.',
+        why: 'The clutch slips too early. Causes: worn friction plates, a weak spring, or a magnetic headset set too low. Oil or dirt on the clutch also makes it slip.',
+        fix: 'Replace the clutch disc and spring. Clean all contact surfaces. On <a href="/capping-headsets/#magnetic">magnetic units</a>, check the adjustment ring setting and look for a cracked or dirty magnet or hysteresis disc. Check every spindle, not just one.',
     },
 ];
 ---
@@ -92,23 +92,23 @@ const problems = [
                 <div class="grid gap-8 md:grid-cols-2 items-start">
                     <ol class="steps">
                         <li>Get the target application torque from the cap maker's spec for your exact cap and liner.</li>
-                        <li>Set the torque. On a <a href="/capping-headsets/#spring-clutch">spring-clutch headset</a>, turn the threaded collar or change shims. On a <a href="/capping-headsets/#magnetic">magnetic headset</a>, change the DC current to the coil.</li>
+                        <li>Set the torque. On a <a href="/capping-headsets/#spring-clutch">spring-clutch headset</a>, turn the threaded collar or change shims. On a <a href="/capping-headsets/#magnetic">magnetic headset</a>, turn the adjustment ring, or change the coil current on electric models.</li>
                         <li>Run at least 30 bottles, or the number your validation plan calls for.</li>
-                        <li>Test each cap with a calibrated torque tester, using a written method.</li>
-                        <li>Work out the spread (<a href="/glossary/#cv">CV%</a>). Aim for 5% or less. Fast rotary lines aim for 3% or less.</li>
+                        <li>Test each cap with a calibrated <a href="/cap-torque/#testers">torque tester</a>, using a written method.</li>
+                        <li>Work out the spread (<a href="/glossary/#cv">CV%</a>). Many lines aim for 5% or less. Use your own quality spec.</li>
                         <li>If the spread is too high, look for worn clutch parts, play in the spindle connection, or out-of-spec caps.</li>
                         <li>Check every spindle on the turret, not just one, and write down the results.</li>
                     </ol>
                     <div class="specs">
                         <p class="specs-title">Calibration numbers</p>
                         <div class="spec-row"><span class="spec-label">Sample size</span><span class="spec-value">30+ caps</span></div>
-                        <div class="spec-row"><span class="spec-label">CV% target</span><span class="spec-value">&le; 5% standard, &le; 3% fast rotary</span></div>
+                        <div class="spec-row"><span class="spec-label">CV% target</span><span class="spec-value">Often &le; 5%. Use your quality spec.</span></div>
                         <div class="spec-row"><span class="spec-label">Torque tester</span><span class="spec-value">Calibrated, with a written method</span></div>
-                        <div class="spec-row"><span class="spec-label">Rules to follow</span><span class="spec-value">Cap maker, customer, and regulations (see <a href="https://store.astm.org/d2063_d2063m-24.html" rel="noopener" target="_blank">ASTM D2063</a>)</span></div>
+                        <div class="spec-row"><span class="spec-label">Rules to follow</span><span class="spec-value">Cap maker, customer, and regulations (see <a href="/cap-torque/#testing">torque test methods</a>)</span></div>
                     </div>
                 </div>
                 <div class="note prose-col">
-                    <strong>Remember:</strong> Torque drops after capping as the liner settles. Removal torque tested later is often 10 to 30% lower than the torque applied. See <a href="/glossary/#static-torque">static torque</a>.
+                    <strong>Remember:</strong> Torque drops after capping as the liner settles. Removal torque tested 24 hours later is often only 40 to 60% of the torque applied. See <a href="/cap-torque/#what-changes-torque">why removal torque is lower</a>. See <a href="/glossary/#static-torque">static torque</a>.
                 </div>
             </div>
         </section>
@@ -119,6 +119,8 @@ const problems = [
                 <ul class="related">
                     <li><a href="/chuck-types/">Capping chuck types</a></li>
                     <li><a href="/capping-headsets/">Magnetic capping headsets</a></li>
+                    <li><a href="/cap-torque/">Cap torque guide</a></li>
+                    <li><a href="/capping-machines/">Capping machine types</a></li>
                     <li><a href="/glossary/">Glossary</a></li>
                 </ul>
             </div>

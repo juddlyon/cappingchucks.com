@@ -28,11 +28,10 @@ import bottlingLine from '../assets/images/bottling-line.jpg';
                 <span class="kicker">Fast facts</span>
                 <h2>Capping chucks by the numbers</h2>
                 <div class="facts">
-                    <div class="fact"><span class="fact-num">0.5&ndash;25 N&middot;m</span><span class="fact-label">Torque range, set by the cap</span></div>
-                    <div class="fact"><span class="fact-num">&le; 5%</span><span class="fact-label">Torque spread (<a href="/glossary/#cv">CV%</a>) on most lines. &le; 3% on fast rotary lines.</span></div>
-                    <div class="fact"><span class="fact-num">1,200</span><span class="fact-label">Caps per minute on the fastest lines</span></div>
-                    <div class="fact"><span class="fact-num">18&ndash;120 mm</span><span class="fact-label">Cap sizes chucks are made for</span></div>
-                    <div class="fact"><span class="fact-num">2&ndash;5 million</span><span class="fact-label">Caps before an insert needs replacing</span></div>
+                    <div class="fact"><span class="fact-num">0.3&ndash;8 N&middot;m</span><span class="fact-label">Typical application torque, from 8 mm to 120 mm caps (<a href="/cap-torque/#chart">chart</a>)</span></div>
+                    <div class="fact"><span class="fact-num">40&ndash;60%</span><span class="fact-label">Removal torque after 24 hours, as a share of application torque</span></div>
+                    <div class="fact"><span class="fact-num">&le; 5%</span><span class="fact-label">A common target for torque spread (<a href="/glossary/#cv">CV%</a>)</span></div>
+                    <div class="fact"><span class="fact-num">1,400</span><span class="fact-label">Caps per minute on the fastest single rotary cappers (84,000 per hour)</span></div>
                 </div>
             </div>
         </section>
@@ -46,7 +45,7 @@ import bottlingLine from '../assets/images/bottling-line.jpg';
                         <li>The chuck comes down over a loose cap sitting on the bottle.</li>
                         <li>A rubber or plastic <a href="/glossary/#insert">insert</a> inside the chuck grips the ridges (<a href="/glossary/#knurling">knurling</a>) on the side of the cap.</li>
                         <li>The spindle spins the chuck. The cap threads onto the bottle neck.</li>
-                        <li>When the cap hits the set torque, the clutch above the chuck slips. The cap stops turning, so it is never too tight.</li>
+                        <li>When the cap hits the set <a href="/cap-torque/">torque</a>, the clutch above the chuck slips. The cap stops turning, so it is never too tight.</li>
                         <li>The chuck lets go and lifts. The next bottle moves in.</li>
                     </ol>
                     <ChuckDiagram />
@@ -66,7 +65,7 @@ import bottlingLine from '../assets/images/bottling-line.jpg';
                     </div>
                     <div class="card card-red">
                         <h3>Jaw chuck</h3>
-                        <p>Three or four metal jaws close around the cap. Jaws can handle caps with odd shapes and features that a plain cup cannot grip.</p>
+                        <p>Three or four metal or plastic jaws close around the cap. Jaws can handle caps with odd shapes and features that a plain cup cannot grip.</p>
                     </div>
                     <div class="card card-yellow">
                         <h3>Pneumatic chuck</h3>
@@ -85,7 +84,7 @@ import bottlingLine from '../assets/images/bottling-line.jpg';
                 <span class="kicker kicker-blue">Chuck or headset?</span>
                 <h2>The chuck is one part of the headset</h2>
                 <p>The chuck only grips the cap. The full unit on the spindle is called a capping headset, or capping head. The headset holds the chuck plus the clutch that controls torque.</p>
-                <p>On fast rotary lines, that clutch is usually magnetic. To learn how those work, read our guide to <a href="/capping-headsets/">magnetic capping headsets</a>.</p>
+                <p>On fast rotary lines, that clutch is usually magnetic. To learn how those work, read our guide to <a href="/capping-headsets/">magnetic capping headsets</a>. Chucks are used on <a href="/capping-machines/#chuck-capper">chuck cappers</a>. Spindle cappers and crown cappers don't use them.</p>
             </div>
         </section>
 
@@ -100,7 +99,23 @@ import bottlingLine from '../assets/images/bottling-line.jpg';
                     </a>
                     <a href="/capping-headsets/" class="card card-link card-red">
                         <h3>Magnetic Capping Headsets</h3>
-                        <p>How magnetic headsets set torque with no parts rubbing, plus spring-clutch and ROPP heads.</p>
+                        <p>How magnetic headsets set torque with no parts rubbing, plus spring-clutch, pneumatic, servo, and ROPP heads.</p>
+                    </a>
+                    <a href="/capping-machines/" class="card card-link card-green">
+                        <h3>Capping Machine Types</h3>
+                        <p>Chuck, spindle, snap, ROPP, crown, and lug cappers. How each one applies a cap and which ones use chucks.</p>
+                    </a>
+                    <a href="/cap-torque/" class="card card-link card-yellow">
+                        <h3>Cap Torque Guide</h3>
+                        <p>Application vs. removal torque, a torque chart by cap size, unit conversions, and torque testers.</p>
+                    </a>
+                    <a href="/cap-sizes/" class="card card-link card-blue">
+                        <h3>Cap and Neck Finish Sizes</h3>
+                        <p>What codes like 38-400 and PCO 1881 mean, and how to size a chuck to your cap.</p>
+                    </a>
+                    <a href="/ropp-capping/" class="card card-link card-red">
+                        <h3>ROPP Capping</h3>
+                        <p>How roll-on pilfer-proof aluminum caps are formed on the bottle, head setup, and common defects.</p>
                     </a>
                     <a href="/troubleshooting/" class="card card-link card-yellow">
                         <h3>Troubleshooting and Calibration</h3>
@@ -110,7 +125,7 @@ import bottlingLine from '../assets/images/bottling-line.jpg';
                         <h3>OEM Compatibility</h3>
                         <p>Zalkin, Krones, AROL, CSI, and Tedelta cappers, and what to check before buying parts.</p>
                     </a>
-                    <a href="/glossary/" class="card card-link card-blue">
+                    <a href="/glossary/" class="card card-link card-green">
                         <h3>Glossary</h3>
                         <p>Plain definitions for torque, knurling, top load, slip torque, 29/25, PCO 1881, and more.</p>
                     </a>

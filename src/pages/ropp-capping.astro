@@ -1,0 +1,166 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import goldCapBottles from '../assets/images/gold-cap-bottles.jpg';
+---
+
+<BaseLayout
+    title="ROPP Capping: How Roll-On Pilfer-Proof Caps and Cappers Work"
+    description="How ROPP (roll-on pilfer-proof) aluminum caps are formed on the bottle: top load, thread rollers, and pilfer rollers. ROPP cap sizes, capper setup, and how to fix common ROPP defects."
+    canonical="https://cappingchucks.com/ropp-capping/"
+    ogTitle="ROPP Capping | CappingChucks.com"
+    ogDescription="How ROPP aluminum caps are formed on the bottle, ROPP sizes, capper setup, and common defects."
+    schemaType="TechArticle"
+    breadcrumb="ROPP Capping"
+>
+    <PageHero
+        title="ROPP Capping"
+        crumb="ROPP Capping"
+        answerLabel="What is ROPP?"
+        image={goldCapBottles}
+        alt="Three green glass bottles with gold aluminum screw caps and neck labels"
+        caption="Aluminum screw caps on glass bottles. Photo: Pexels"
+    >
+        <p>ROPP stands for roll-on pilfer-proof. A ROPP cap starts as a plain aluminum shell with no threads. The capping head presses it onto the bottle and uses rollers to form threads into the metal and lock a tamper band under the neck.</p>
+    </PageHero>
+
+    <main>
+        <section id="how-it-works" class="section">
+            <div class="wrap">
+                <span class="kicker">How it works</span>
+                <h2>How a ROPP capping head forms the cap</h2>
+                <div class="grid gap-8 md:grid-cols-2 items-start">
+                    <ol class="steps">
+                        <li>The capper places a smooth aluminum shell over the bottle neck.</li>
+                        <li>A pressure block pushes down on the top of the cap. This top load presses the liner against the glass to make the seal.</li>
+                        <li>While the top load holds, the head spins its rollers around the cap.</li>
+                        <li>Thread rollers press the soft aluminum into the glass threads, forming matching threads in the cap.</li>
+                        <li>Pilfer rollers (also called tuck rollers) fold the bottom band under a ridge on the neck. This band breaks away when the cap is first opened.</li>
+                        <li>The rollers pull back and the head lifts.</li>
+                    </ol>
+                    <div class="specs">
+                        <p class="specs-title">ROPP head settings</p>
+                        <div class="spec-row"><span class="spec-label">Top load</span><span class="spec-value">Sets the seal</span></div>
+                        <div class="spec-row"><span class="spec-label">Thread roller pressure</span><span class="spec-value">Sets thread depth</span></div>
+                        <div class="spec-row"><span class="spec-label">Thread roller height</span><span class="spec-value">Must match the glass threads</span></div>
+                        <div class="spec-row"><span class="spec-label">Pilfer roller pressure</span><span class="spec-value">Sets how the band locks</span></div>
+                        <div class="spec-row"><span class="spec-label">Torque clutch</span><span class="spec-value">None. The cap is formed, not turned.</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="vs-screw-caps" class="section section-alt">
+            <div class="wrap prose-col">
+                <span class="kicker kicker-blue">Compare</span>
+                <h2>ROPP vs. pre-threaded screw caps</h2>
+                <p>A plastic or pre-threaded metal cap is screwed on by a <a href="/">capping chuck</a> and stops at a set <a href="/cap-torque/">torque</a>. A ROPP cap is not screwed on at all. The seal comes from top load, and the threads are made on the bottle. That is why a ROPP head has no torque clutch and why the settings that matter are pressure and roller position.</p>
+                <p>ROPP gives a tight seal and a clear sign of tampering, which is why it is common on spirits, wine, olive oil, and medicine syrups. It needs a glass or rigid bottle that can take the top load and roller pressure.</p>
+            </div>
+        </section>
+
+        <section id="sizes" class="section">
+            <div class="wrap prose-col">
+                <span class="kicker kicker-green">Sizes</span>
+                <h2>Common ROPP cap sizes</h2>
+                <p>ROPP caps are named by diameter, and for long caps by diameter and height. The two most common:</p>
+                <ul class="bullets">
+                    <li><strong>28 mm.</strong> The standard for spirits, olive oil, and many syrups.</li>
+                    <li><strong>30 &times; 60 mm.</strong> The long screw cap used on still wine. Its tall skirt needs a head with four rollers: two thread rollers and two pilfer rollers.</li>
+                </ul>
+                <p class="mt-4">Smaller and larger sizes are made for medicine, sauces, and specialty bottles. Whatever the size, the cap shell is thin aluminum sheet, and the glass finish must match the cap maker's drawing. See <a href="/cap-sizes/">cap and neck finish sizes</a>.</p>
+            </div>
+        </section>
+
+        <section id="setup" class="section section-alt">
+            <div class="wrap prose-col">
+                <span class="kicker">Setup</span>
+                <h2>Setting up a ROPP capper</h2>
+                <ol class="steps">
+                    <li>Get the cap maker's spec for top load and the bottle drawing for the thread and neck ridge position.</li>
+                    <li>Set the head height so the pressure block meets the cap squarely.</li>
+                    <li>Set top load first. Too little leaks. Too much crushes the cap top or cracks the glass.</li>
+                    <li>Set thread roller height and pressure so the rollers follow the glass threads from start to end.</li>
+                    <li>Set pilfer roller height and pressure so the band tucks fully under the neck ridge without tearing.</li>
+                    <li>Run sample bottles. Check thread form, band tuck, and removal <a href="/cap-torque/#removal">torque</a>, then test for leaks.</li>
+                    <li>Check every head on the turret, and recheck after any change of cap supplier or bottle mold.</li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="defects" class="section">
+            <div class="wrap">
+                <span class="kicker kicker-blue">Problems</span>
+                <h2>Common ROPP defects and fixes</h2>
+                <div class="cards cards-2">
+                    <div class="card problem">
+                        <h3>Shallow or uneven threads</h3>
+                        <dl>
+                            <dt class="why">Why it happens</dt>
+                            <dd>Thread roller pressure is too low, the roller is set at the wrong height, or the roller is worn.</dd>
+                            <dt class="fix">How to fix it</dt>
+                            <dd>Reset roller height to the glass threads. Raise roller pressure in small steps. Replace worn rollers.</dd>
+                        </dl>
+                    </div>
+                    <div class="card problem">
+                        <h3>Leaking caps</h3>
+                        <dl>
+                            <dt class="why">Why it happens</dt>
+                            <dd>Not enough top load, a damaged liner, or a chipped bottle rim.</dd>
+                            <dt class="fix">How to fix it</dt>
+                            <dd>Check top load against spec. Inspect liners and bottle rims. Make sure the pressure block is flat and not worn.</dd>
+                        </dl>
+                    </div>
+                    <div class="card problem">
+                        <h3>Band not tucked or torn</h3>
+                        <dl>
+                            <dt class="why">Why it happens</dt>
+                            <dd>Pilfer roller set too high, too low, or with the wrong pressure. Shell length that doesn't match the bottle.</dd>
+                            <dt class="fix">How to fix it</dt>
+                            <dd>Reset pilfer roller height to the neck ridge. Adjust pressure. Confirm the cap length matches the bottle drawing.</dd>
+                        </dl>
+                    </div>
+                    <div class="card problem">
+                        <h3>Bridges broken on the line</h3>
+                        <dl>
+                            <dt class="why">Why it happens</dt>
+                            <dd>Too much pilfer roller pressure, or the band is formed too tight around the neck.</dd>
+                            <dt class="fix">How to fix it</dt>
+                            <dd>Lower pilfer roller pressure. Check <a href="/glossary/#bridge-count">bridges</a> on sample caps before running full speed.</dd>
+                        </dl>
+                    </div>
+                    <div class="card problem">
+                        <h3>Crushed cap tops or cracked glass</h3>
+                        <dl>
+                            <dt class="why">Why it happens</dt>
+                            <dd>Too much top load, or bottles taller than the head is set for.</dd>
+                            <dt class="fix">How to fix it</dt>
+                            <dd>Lower top load to the cap maker's spec. Check head height against the bottle height range.</dd>
+                        </dl>
+                    </div>
+                    <div class="card problem">
+                        <h3>Cap spins or won't open cleanly</h3>
+                        <dl>
+                            <dt class="why">Why it happens</dt>
+                            <dd>Threads too shallow to grip, or formed too deep and binding on the glass.</dd>
+                            <dt class="fix">How to fix it</dt>
+                            <dd>Check thread form on cut-open caps. Adjust thread roller pressure and height, then retest removal torque.</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="wrap">
+                <h2>Keep reading</h2>
+                <ul class="related">
+                    <li><a href="/capping-headsets/#ropp">ROPP headsets</a></li>
+                    <li><a href="/capping-machines/">Capping machine types</a></li>
+                    <li><a href="/cap-sizes/">Cap and neck finish sizes</a></li>
+                    <li><a href="/troubleshooting/">Troubleshooting</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+</BaseLayout>

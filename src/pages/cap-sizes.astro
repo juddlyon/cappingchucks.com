@@ -1,0 +1,224 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import bottleCaps from '../assets/images/bottle-caps.jpg';
+
+const series = [
+    { code: '400', turns: 'About 1', notes: 'Short finish. The most common thread for jars and wide caps.' },
+    { code: '410', turns: 'About 1.5', notes: 'Slightly taller. Common on personal care bottles with dispensing caps.' },
+    { code: '415', turns: 'About 2', notes: 'Tall finish with two turns of thin thread. Used on tubes and tall, narrow bottles.' },
+    { code: '425', turns: '2', notes: 'Narrow threads on small sizes. Common on small medicine and lab bottles.' },
+    { code: '430', turns: 'Varies', notes: 'Heavy buttress-style thread with a bead at the top.' },
+];
+
+const lugs = [
+    { size: '38 mm', lugs: '3', gpi: '2000' },
+    { size: '43 and 48 mm', lugs: '4', gpi: '2010' },
+    { size: '53 and 58 mm', lugs: '4', gpi: '2020' },
+    { size: '63 and 70 mm', lugs: '4', gpi: '2030' },
+    { size: '77 and 82 mm', lugs: '6', gpi: '2040' },
+    { size: '89 mm', lugs: '6', gpi: '2050' },
+    { size: '100 mm', lugs: '6', gpi: '2055' },
+    { size: '110 mm', lugs: '8', gpi: '2070' },
+];
+---
+
+<BaseLayout
+    title="Bottle Cap and Neck Finish Sizes: 38-400, PCO 1881, and Lug Sizes"
+    description="What neck finish codes like 38-400, 28-410, PCO 1881, and 29/25 mean, the T, E, H, and S dimensions, lug cap sizes, and how to size a capping chuck to your cap."
+    canonical="https://cappingchucks.com/cap-sizes/"
+    ogTitle="Cap and Neck Finish Sizes | CappingChucks.com"
+    ogDescription="Neck finish codes like 38-400 and PCO 1881 explained, plus lug sizes and how to size a chuck to a cap."
+    schemaType="TechArticle"
+    breadcrumb="Cap and Neck Finish Sizes"
+>
+    <PageHero
+        title="Cap and Neck Finish Sizes"
+        crumb="Cap Sizes"
+        answerLabel="What does 38-400 mean?"
+        image={bottleCaps}
+        alt="Assorted plastic closure caps in various sizes and colors"
+        caption="Caps come in many sizes and thread styles. Photo: Pexels"
+    >
+        <p>The first number is the outside diameter of the bottle threads in millimeters. The second number is the thread style. A 38-400 finish is 38 mm across the threads with a 400-style thread, which is about one full turn. A 38-400 cap fits a 38-400 bottle, and only that.</p>
+    </PageHero>
+
+    <main>
+        <section id="dimensions" class="section">
+            <div class="wrap">
+                <span class="kicker">Measure</span>
+                <h2>Neck finish dimensions: T, E, H, S, and I</h2>
+                <div class="grid gap-8 md:grid-cols-2 items-start">
+                    <div>
+                        <p>Every neck finish drawing uses the same letters. Bottle makers and cap makers check parts against them.</p>
+                        <dl class="dims">
+                            <div><dt>T</dt><dd>Outside diameter across the threads. This is the first number in the finish code.</dd></div>
+                            <div><dt>E</dt><dd>Outside diameter of the neck at the bottom of the threads.</dd></div>
+                            <div><dt>H</dt><dd>Height from the top of the finish down to the shoulder or neck ring.</dd></div>
+                            <div><dt>S</dt><dd>Distance from the top of the finish to the start of the first thread. It controls where the cap starts to grab.</dd></div>
+                            <div><dt>I</dt><dd>Inside diameter of the neck opening.</dd></div>
+                        </dl>
+                    </div>
+                    <figure class="diagram">
+                        <svg viewBox="0 0 420 360" role="img" aria-labelledby="finish-title finish-desc" style="width:100%;height:auto;font-family:var(--font-display)">
+                            <title id="finish-title">Bottle neck finish dimensions</title>
+                            <desc id="finish-desc">Side view of a threaded bottle neck. T is the width across the threads, E is the width at the thread root, I is the inside opening, H is the height of the finish, and S is the distance from the top to the first thread.</desc>
+                            <path d="M150 60 H270 V250 C270 280 330 290 330 330 V360 H90 V330 C90 290 150 280 150 250 Z" fill="#e8f2ff" stroke="#1b1f2a" stroke-width="3" stroke-linejoin="round" />
+                            <rect x="170" y="60" width="80" height="10" fill="#fff" stroke="#1b1f2a" stroke-width="2" />
+                            <g fill="#ffcd00" stroke="#1b1f2a" stroke-width="2">
+                                <path d="M136 98 L150 92 V112 L136 118 Z" /><path d="M270 106 L284 100 V120 L270 126 Z" />
+                                <path d="M136 138 L150 132 V152 L136 158 Z" /><path d="M270 146 L284 140 V160 L270 166 Z" />
+                                <path d="M136 178 L150 172 V192 L136 198 Z" />
+                            </g>
+                            <rect x="136" y="225" width="148" height="12" rx="3" fill="#0057b8" stroke="#1b1f2a" stroke-width="2" />
+                            <g stroke="#d1001f" stroke-width="2.5" fill="#d1001f" font-size="20" font-weight="800">
+                                <line x1="136" y1="30" x2="284" y2="30" /><text x="200" y="22" stroke="none">T</text>
+                                <line x1="136" y1="24" x2="136" y2="36" /><line x1="284" y1="24" x2="284" y2="36" />
+                                <line x1="150" y1="210" x2="270" y2="210" /><text x="203" y="204" stroke="none">E</text>
+                                <line x1="170" y1="82" x2="250" y2="82" /><text x="203" y="102" stroke="none">I</text>
+                                <line x1="320" y1="60" x2="320" y2="225" /><text x="330" y="150" stroke="none">H</text>
+                                <line x1="314" y1="60" x2="326" y2="60" /><line x1="314" y1="225" x2="326" y2="225" />
+                                <line x1="100" y1="60" x2="100" y2="98" /><text x="78" y="86" stroke="none">S</text>
+                                <line x1="94" y1="60" x2="106" y2="60" /><line x1="94" y1="98" x2="106" y2="98" />
+                            </g>
+                        </svg>
+                        <figcaption>Neck finish dimensions. The blue band is the neck ring.</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section id="gpi-series" class="section section-alt">
+            <div class="wrap">
+                <span class="kicker kicker-green">Thread styles</span>
+                <h2>GPI/SPI thread series: 400, 410, 415, 425, 430</h2>
+                <p class="lead prose-col">U.S. glass and plastic bottles use finish codes from the Glass Packaging Institute (GPI) and the plastics industry (SPI). The series number tells you the thread style and roughly how many turns the cap makes.</p>
+                <div class="overflow-x-auto">
+                    <table>
+                        <caption class="sr-only">GPI and SPI neck finish thread series</caption>
+                        <thead>
+                            <tr><th scope="col">Series</th><th scope="col">Thread turns</th><th scope="col">Where it's used</th></tr>
+                        </thead>
+                        <tbody>
+                            {series.map((r) => (
+                                <tr><td>{r.code}</td><td>{r.turns}</td><td>{r.notes}</td></tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="note prose-col">
+                    <strong>Watch out:</strong> A 28-400 cap and a 28-410 cap have the same diameter but a different finish height and number of turns. They are not interchangeable, and neither are their chucks if the cap heights differ.
+                </div>
+            </div>
+        </section>
+
+        <section id="beverage" class="section">
+            <div class="wrap">
+                <span class="kicker kicker-blue">Drinks</span>
+                <h2>Beverage neck finishes</h2>
+                <p class="lead prose-col">Drink bottles use their own finish standards, published by <a href="https://www.isbt.com/resources/isbt-threadspecs" rel="noopener" target="_blank">ISBT</a> in North America and by CETIE in Europe.</p>
+                <div class="cards cards-3">
+                    <div class="card" id="pco-1810">
+                        <span class="pill">28 mm</span>
+                        <h3>PCO 1810</h3>
+                        <p>The older 28 mm soft drink finish, about 21 mm tall. Still common on carbonated soft drinks.</p>
+                    </div>
+                    <div class="card" id="pco-1881">
+                        <span class="pill">28 mm</span>
+                        <h3>PCO 1881</h3>
+                        <p>The shorter 28 mm finish, about 17 mm tall. It saves about 1.3 g of PET per bottle compared with PCO 1810 (<a href="https://www.packagingdigest.com/supply-chain-logistics/short-height-neck-finish" rel="noopener" target="_blank">Packaging Digest</a>). Now the most common soft drink finish. See <a href="/glossary/#pco-1881">PCO 1881</a>.</p>
+                    </div>
+                    <div class="card" id="26-22">
+                        <span class="pill">26 mm</span>
+                        <h3>26/22</h3>
+                        <p>A short, light finish built for tethered caps. Used on carbonated soft drinks and still water. CETIE standard GME 30.40.</p>
+                    </div>
+                    <div class="card" id="29-25">
+                        <span class="pill">29 mm</span>
+                        <h3>29/25</h3>
+                        <p>29 mm thread diameter and 25 mm opening. Common on still water. See <a href="/glossary/#29-25">29/25</a>.</p>
+                    </div>
+                    <div class="card" id="38-3-start">
+                        <span class="pill">38 mm</span>
+                        <h3>38 mm 3-start</h3>
+                        <p>A wide finish with three thread starts, so the cap seats in less than a full turn. Used on juice, dairy, and still drinks. CETIE GME 30.25.</p>
+                    </div>
+                    <div class="card" id="hot-fill">
+                        <span class="pill">38 and 43 mm</span>
+                        <h3>Hot-fill finishes</h3>
+                        <p>Heat-set PET finishes for juice and tea filled hot. ISBT publishes 38 mm and 43 mm hot-fill finishes. Torque drops as the cap cools, so plan for it. See <a href="/cap-torque/#what-changes-torque">what changes torque</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="lug" class="section section-alt">
+            <div class="wrap">
+                <span class="kicker">Glass jars</span>
+                <h2>Lug cap sizes</h2>
+                <p class="lead prose-col">Metal <a href="/glossary/#lug-cap">lug caps</a> on glass food jars use GPI lug finishes. Bigger caps have more lugs.</p>
+                <div class="overflow-x-auto prose-col">
+                    <table>
+                        <caption class="sr-only">Lug cap sizes, number of lugs, and GPI lug finish numbers on glass</caption>
+                        <thead>
+                            <tr><th scope="col">Cap size</th><th scope="col">Lugs</th><th scope="col">GPI finish</th></tr>
+                        </thead>
+                        <tbody>
+                            {lugs.map((r) => (
+                                <tr><td>{r.size}</td><td>{r.lugs}</td><td>{r.gpi}</td></tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+                <p class="mt-4 prose-col text-base text-ink-soft">Source: <a href="https://silgancls.com/silganu/wp-content/uploads/2021/10/Silgan-U-Master-Presentation-Steel-Closures.pdf" rel="noopener" target="_blank">Silgan steel closures guide</a>. Deep-skirt versions use other finish numbers.</p>
+            </div>
+        </section>
+
+        <section id="metal-caps" class="section">
+            <div class="wrap prose-col">
+                <span class="kicker kicker-green">Metal caps</span>
+                <h2>ROPP and crown sizes</h2>
+                <ul class="bullets">
+                    <li><strong>ROPP.</strong> 28 mm is the standard for spirits and oil. 30 &times; 60 mm is the long wine screw cap. See <a href="/ropp-capping/#sizes">ROPP sizes</a>.</li>
+                    <li><strong>Crown.</strong> The standard beer and soda crown is 26 mm across the inside with 21 teeth. It is crimped on, so it has no thread code. See <a href="/capping-machines/#crown-capper">crown cappers</a>.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="sizing-a-chuck" class="section section-alt">
+            <div class="wrap">
+                <span class="kicker kicker-blue">Chucks</span>
+                <h2>Sizing a capping chuck to your cap</h2>
+                <div class="grid gap-8 md:grid-cols-2 items-start">
+                    <ol class="steps">
+                        <li>Get the cap drawing from the cap maker. The neck finish code alone isn't enough.</li>
+                        <li>Measure the cap's outside width across the ridges (<a href="/glossary/#knurling">knurling</a>), not the bottle. The <a href="/chuck-types/#inserts">insert</a> is sized to this.</li>
+                        <li>Measure the cap height. The chuck must reach the grip area without pressing on the tamper band.</li>
+                        <li>Note any features the chuck must clear: hinges, spouts, tethers, trigger heads, or child-resistant outer shells.</li>
+                        <li>Send sample caps and bottles to the chuck maker. Test the first chucks on the line before buying a full set.</li>
+                    </ol>
+                    <div class="specs">
+                        <p class="specs-title">What the chuck maker needs</p>
+                        <div class="spec-row"><span class="spec-label">Neck finish</span><span class="spec-value">Code and drawing</span></div>
+                        <div class="spec-row"><span class="spec-label">Cap</span><span class="spec-value">Drawing and 20+ samples</span></div>
+                        <div class="spec-row"><span class="spec-label">Machine</span><span class="spec-value">Model and spindle connection</span></div>
+                        <div class="spec-row"><span class="spec-label">Torque</span><span class="spec-value">Target from the cap maker</span></div>
+                    </div>
+                </div>
+                <p class="mt-6 prose-col">For the machine side, see <a href="/oem-compatibility/">OEM compatibility</a>. For the right chuck type, see <a href="/chuck-types/#applications">chucks by cap</a>.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="wrap">
+                <h2>Keep reading</h2>
+                <ul class="related">
+                    <li><a href="/chuck-types/">Capping chuck types</a></li>
+                    <li><a href="/cap-torque/">Cap torque guide</a></li>
+                    <li><a href="/oem-compatibility/">OEM compatibility</a></li>
+                    <li><a href="/glossary/">Glossary</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+</BaseLayout>

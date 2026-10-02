@@ -1,0 +1,201 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import plasticBottleLine from '../assets/images/plastic-bottle-line.jpg';
+
+// Application and removal torque guide for continuous-thread caps, in inch-pounds.
+// Source: O.Berk torque chart (oberk.com).
+const chart: [number, string, string][] = [
+    [8,'3-7','2-4'],
+    [10,'4-8','2-4'],
+    [13,'5-9','3-5'],
+    [15,'5-9','3-5'],
+    [18,'7-10','3-5'],
+    [20,'8-12','4-6'],
+    [22,'9-14','4-6'],
+    [24,'10-18','4-11'],
+    [28,'12-21','5-12'],
+    [30,'13-23','6-14'],
+    [33,'15-25','6-15'],
+    [38,'17-26','7-16'],
+    [43,'17-27','7-20'],
+    [48,'19-30','8-18'],
+    [53,'21-36','9-22'],
+    [58,'23-40','10-24'],
+    [63,'25-43','10-26'],
+    [66,'26-45','11-27'],
+    [70,'28-50','12-30'],
+    [83,'32-60','16-36'],
+    [86,'40-65','16-39'],
+    [89,'40-70','18-42'],
+];
+const toNm = (range: string) => range.split('-').map((v) => (Number(v) * 0.113).toFixed(1)).join('–');
+---
+
+<BaseLayout
+    title="Cap Torque Guide: Application vs. Removal Torque, Chart, and Testing"
+    description="Application torque vs. removal torque, a cap torque chart by size, how to convert N·m and in-lb, what changes torque after capping, and how to test it with a cap torque tester."
+    canonical="https://cappingchucks.com/cap-torque/"
+    ogTitle="Cap Torque Guide | CappingChucks.com"
+    ogDescription="Application vs. removal torque, a cap torque chart by size, and how to test cap torque."
+    schemaType="TechArticle"
+    breadcrumb="Cap Torque"
+>
+    <PageHero
+        title="Cap Torque Guide"
+        crumb="Cap Torque"
+        answerLabel="What is cap torque?"
+        image={plasticBottleLine}
+        alt="Capped water bottle moving along a conveyor inside a guarded bottling machine"
+        caption="Capped bottle leaving the capper. Photo: Pexels"
+    >
+        <p>Cap torque is the twisting force used to put a cap on (application torque) or take it off (removal torque). It is measured in newton-meters (N&middot;m) or inch-pounds (in-lb). The right number comes from the cap maker and depends on the cap size, the liner, and the bottle.</p>
+    </PageHero>
+
+    <main>
+        <section id="types" class="section">
+            <div class="wrap">
+                <span class="kicker">Words</span>
+                <h2>Application torque vs. removal torque</h2>
+                <div class="cards cards-2">
+                    <div class="card card-blue" id="application">
+                        <h3>Application torque</h3>
+                        <p>The torque the capper uses to put the cap on. It is set by the clutch in the <a href="/capping-headsets/">capping headset</a>. This is the number you calibrate the capper to.</p>
+                    </div>
+                    <div class="card card-red" id="removal">
+                        <h3>Removal torque</h3>
+                        <p>The torque it takes to open the cap. It is also called static or release torque. Test it after the cap has sat for a while. It is almost always lower than application torque because the liner and plastic relax.</p>
+                    </div>
+                    <div class="card card-yellow" id="slip">
+                        <h3>Slip torque</h3>
+                        <p>The torque where the headset clutch lets go. On a <a href="/capping-headsets/#magnetic">magnetic headset</a> it sets the application torque directly. See <a href="/glossary/#slip-torque">slip torque</a>.</p>
+                    </div>
+                    <div class="card card-green" id="strip">
+                        <h3>Strip torque</h3>
+                        <p>The torque where the cap threads jump or strip over the bottle threads. Application torque must stay well below it, or caps will jump threads and leak.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="chart" class="section section-alt">
+            <div class="wrap">
+                <span class="kicker kicker-green">Chart</span>
+                <h2>Cap torque chart by size</h2>
+                <p class="lead prose-col">This is the guide chart most U.S. packaging suppliers publish for continuous-thread caps. A quick rule of thumb: application torque in in-lb is about half the cap diameter in mm. A 28 mm cap starts around 14 in-lb.</p>
+                <div class="overflow-x-auto prose-col">
+                    <table>
+                        <caption class="sr-only">Recommended application torque by cap diameter for continuous-thread caps</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Cap size</th>
+                                <th scope="col">Application (in-lb)</th>
+                                <th scope="col">Application (N&middot;m)</th>
+                                <th scope="col">Removal (in-lb)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {chart.map(([mm, app, rem]) => (
+                                <tr>
+                                    <td>{mm} mm</td>
+                                    <td>{app.replace('-', '–')}</td>
+                                    <td>{toNm(app)}</td>
+                                    <td>{rem.replace('-', '–')}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="note prose-col"><strong>Use this as a starting point only.</strong> Removal values are measured 24 hours after capping. The real spec comes from your cap maker and depends on the liner, the cap and bottle materials, and the product. Chart source: <a href="https://www.oberk.com/packaging-crash-course/quick-question-monday-how-to-make-sure-your-cap-is-tight-enough" rel="noopener" target="_blank">O.Berk</a>.</div>
+            </div>
+        </section>
+
+        <section id="units" class="section">
+            <div class="wrap prose-col">
+                <span class="kicker kicker-blue">Units</span>
+                <h2>Converting N&middot;m and in-lb</h2>
+                <div class="specs">
+                    <p class="specs-title">Torque conversions</p>
+                    <div class="spec-row"><span class="spec-label">1 N&middot;m</span><span class="spec-value">8.85 in-lb</span></div>
+                    <div class="spec-row"><span class="spec-label">1 in-lb</span><span class="spec-value">0.113 N&middot;m</span></div>
+                    <div class="spec-row"><span class="spec-label">1 N&middot;m</span><span class="spec-value">10.2 kgf&middot;cm</span></div>
+                    <div class="spec-row"><span class="spec-label">1 ft-lb</span><span class="spec-value">12 in-lb (1.356 N&middot;m)</span></div>
+                </div>
+                <p class="mt-4">Europe and most cap makers outside the U.S. use N&middot;m. U.S. specs often use in-lb. Write both on your setup sheet so no one converts in their head.</p>
+            </div>
+        </section>
+
+        <section id="what-changes-torque" class="section section-alt">
+            <div class="wrap prose-col">
+                <span class="kicker">After capping</span>
+                <h2>Why removal torque is lower</h2>
+                <p>Torque starts dropping the moment the cap is on. Measured 24 hours later, removal torque is usually 40 to 60% of application torque (<a href="https://www.enerconind.com/sealing/library-resource/understanding-application-removal-torque/" rel="noopener" target="_blank">Enercon</a>). For example, a 38 mm cap put on at 18 in-lb often opens at about 9 in-lb. The main causes:</p>
+                <ul class="bullets">
+                    <li><strong>Liner relaxation.</strong> The <a href="/glossary/#liner">liner</a> or molded seal is squeezed when the cap goes on, then slowly flattens and pushes back less.</li>
+                    <li><strong>Plastic creep.</strong> Plastic caps and PET bottle necks stretch a little over time under load, so the threads hold less tightly.</li>
+                    <li><strong>Induction sealing.</strong> The heat from the induction sealer softens the liner, and part of it flows onto the bottle rim or soaks into the backing. The liner gets thinner, so the cap holds less tightly. If the cap loosens, a <a href="/capping-machines/#retorquer">retorquer</a> can tighten it again.</li>
+                    <li><strong>Heat.</strong> Hot-fill products and heat tunnels soften the cap and liner, then they shrink as they cool.</li>
+                </ul>
+                <p class="mt-4">Because of this, set application torque high enough that removal torque is still above the minimum for a good seal after storage. Ask the cap maker for both numbers.</p>
+            </div>
+        </section>
+
+        <section id="testing" class="section">
+            <div class="wrap">
+                <span class="kicker kicker-green">Testing</span>
+                <h2>How to test cap torque</h2>
+                <div class="grid gap-8 md:grid-cols-2 items-start">
+                    <ol class="steps">
+                        <li>Pull bottles from every spindle, not just one. Label each bottle with its spindle number.</li>
+                        <li>Clamp the bottle in a calibrated <a href="#testers">torque tester</a>. Hold the bottle, not the cap.</li>
+                        <li>Turn the cap off smoothly at a steady speed. Record the peak torque.</li>
+                        <li>Test some bottles right away and some after a set wait, such as 24 hours, so you know how much torque drops.</li>
+                        <li>Work out the average and the spread (<a href="/glossary/#cv">CV%</a>). Compare to the cap maker's limits.</li>
+                        <li>If one spindle reads high or low, recheck that spindle's clutch and <a href="/chuck-types/#inserts">insert</a>. See <a href="/troubleshooting/#uneven-torque">uneven torque</a>.</li>
+                    </ol>
+                    <div class="specs">
+                        <p class="specs-title">Test methods</p>
+                        <div class="spec-row"><span class="spec-label">Torque retention, manual testers</span><span class="spec-value"><a href="https://store.astm.org/d2063_d2063m-24.html" rel="noopener" target="_blank">ASTM D2063</a> (manual testers)</span></div>
+                        <div class="spec-row"><span class="spec-label">Torque retention, automated testers</span><span class="spec-value"><a href="https://store.astm.org/d7860-14r22.html" rel="noopener" target="_blank">ASTM D7860</a></span></div>
+                        <div class="spec-row"><span class="spec-label">Sample size</span><span class="spec-value">30+ caps for a calibration study</span></div>
+                        <div class="spec-row"><span class="spec-label">Spread target</span><span class="spec-value">Often CV% &le; 5%. Use your quality spec.</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testers" class="section section-alt">
+            <div class="wrap">
+                <span class="kicker kicker-blue">Equipment</span>
+                <h2>Types of cap torque testers</h2>
+                <div class="cards cards-3">
+                    <div class="card">
+                        <h3>Manual testers</h3>
+                        <p>A bench clamp holds the bottle and a digital gauge reads the torque as an operator turns the cap by hand. Cheap and common. Results depend on how steadily the operator turns.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Motorized testers</h3>
+                        <p>A motor turns the cap at a set speed and the tester records the peak. Results don't depend on the operator, so they repeat better. Many can save results so you can compare spindles.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Sensor bottles</h3>
+                        <p>A test bottle with a torque sensor inside runs through the capper like a normal bottle. It measures the torque each spindle applies at full speed, which a bench tester can't do.</p>
+                    </div>
+                </div>
+                <p class="mt-6 prose-col">Common bench testers include the Mecmesin Orbis (manual) and Vortex (motorized) lines. Calibrate the tester itself on a schedule. A tester that reads wrong makes every capper setting wrong.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="wrap">
+                <h2>Keep reading</h2>
+                <ul class="related">
+                    <li><a href="/troubleshooting/#calibration">Headset calibration</a></li>
+                    <li><a href="/capping-headsets/">Capping headsets</a></li>
+                    <li><a href="/cap-sizes/">Cap and neck finish sizes</a></li>
+                    <li><a href="/glossary/">Glossary</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+</BaseLayout>

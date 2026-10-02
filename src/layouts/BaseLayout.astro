@@ -1,5 +1,6 @@
 ---
 import { SEO } from 'astro-seo';
+import { Font } from 'astro:assets';
 import '../styles/global.css';
 
 interface Props {
@@ -64,8 +65,22 @@ const breadcrumbSchema = breadcrumb ? {
 const navItems = [
     { href: '/chuck-types/', label: 'Chuck Types' },
     { href: '/capping-headsets/', label: 'Headsets' },
-    { href: '/oem-compatibility/', label: 'OEM' },
+    { href: '/capping-machines/', label: 'Cappers' },
+    { href: '/cap-torque/', label: 'Torque' },
+    { href: '/cap-sizes/', label: 'Cap Sizes' },
     { href: '/troubleshooting/', label: 'Troubleshooting' },
+    { href: '/glossary/', label: 'Glossary' },
+];
+const footerLinks = [
+    { href: '/', label: 'Capping chucks' },
+    { href: '/chuck-types/', label: 'Capping chuck types' },
+    { href: '/capping-headsets/', label: 'Capping headsets' },
+    { href: '/capping-machines/', label: 'Capping machine types' },
+    { href: '/cap-torque/', label: 'Cap torque guide' },
+    { href: '/cap-sizes/', label: 'Cap and neck finish sizes' },
+    { href: '/ropp-capping/', label: 'ROPP capping' },
+    { href: '/troubleshooting/', label: 'Troubleshooting' },
+    { href: '/oem-compatibility/', label: 'OEM compatibility' },
     { href: '/glossary/', label: 'Glossary' },
 ];
 const path = Astro.url.pathname;
@@ -76,6 +91,8 @@ const path = Astro.url.pathname;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <SEO
         title={title}
         description={description}
@@ -107,21 +124,26 @@ const path = Astro.url.pathname;
     <script type="application/ld+json" set:html={JSON.stringify(pageSchema)} />
     {breadcrumbSchema && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@600;700;800&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Fonts (self-hosted by Astro, with metric-matched fallbacks) -->
+    <Font cssVariable="--font-jost" preload={[{ weight: '800' }]} />
+    <Font cssVariable="--font-nunito" preload={[{ weight: '400' }]} />
 </head>
 <body>
     <header class="site-header">
         <nav class="wrap" aria-label="Primary navigation">
-            <a href="/" class="logo" aria-label="CappingChucks.com home"><span class="logo-dot" aria-hidden="true"></span>CappingChucks</a>
+            <a href="/" class="logo" aria-label="CappingChucks.com home"><img src="/favicon.svg" alt="" class="logo-mark" width="32" height="32">CappingChucks</a>
             <ul class="nav-links">
                 {navItems.map((item) => (
                     <li><a href={item.href} aria-current={path === item.href ? 'page' : undefined}>{item.label}</a></li>
                 ))}
             </ul>
         </nav>
+        <script is:inline>
+            (function () {
+                var cur = document.querySelector('.nav-links [aria-current="page"]');
+                if (cur) cur.closest('.nav-links').scrollLeft = cur.parentElement.offsetLeft - 16;
+            })();
+        </script>
     </header>
 
     <slot />
@@ -132,6 +154,13 @@ const path = Astro.url.pathname;
                 <p class="font-bold text-lg">CappingChucks.com</p>
                 <p>A plain-English guide to capping chucks and headsets.</p>
             </div>
+            <nav aria-label="Footer navigation">
+                <ul class="footer-links">
+                    {footerLinks.map((item) => (
+                        <li><a href={item.href}>{item.label}</a></li>
+                    ))}
+                </ul>
+            </nav>
             <p>&copy; 2026 CappingChucks.com<br>All trademarks belong to their owners.</p>
         </div>
     </footer>

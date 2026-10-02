@@ -1,0 +1,208 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import bottlingFactory from '../assets/images/bottling-factory.jpg';
+---
+
+<BaseLayout
+    title="Capping Machine Types: Chuck, Spindle, Snap, ROPP, and Lug Cappers"
+    description="The main types of capping machines explained: chuck cappers, spindle cappers, snap cappers, ROPP cappers, crown cappers, and lug cappers. How each one applies a cap and which ones use capping chucks."
+    canonical="https://cappingchucks.com/capping-machines/"
+    ogTitle="Capping Machine Types | CappingChucks.com"
+    ogDescription="Chuck, spindle, snap, ROPP, crown, and lug cappers. How each one works and which ones use chucks."
+    schemaType="TechArticle"
+    breadcrumb="Capping Machine Types"
+>
+    <PageHero
+        title="Capping Machine Types"
+        crumb="Capping Machines"
+        answerLabel="The short version"
+        image={bottlingFactory}
+        alt="Automated beverage bottling hall with conveyors carrying bottles between filling and capping machines"
+        caption="Conveyors linking the filler and capper in a bottling hall. Photo: Pexels"
+    >
+        <p>Capping machines put caps on containers in one of three ways: they screw the cap on, press it on, or crimp it on. Chuck cappers and spindle cappers screw caps on. Snap cappers press them on. Crown and ROPP cappers shape metal caps onto the bottle.</p>
+    </PageHero>
+
+    <main>
+        <section id="overview" class="section">
+            <div class="wrap">
+                <span class="kicker">Compare</span>
+                <h2>Capping machine types at a glance</h2>
+                <div class="overflow-x-auto">
+                    <table>
+                        <caption class="sr-only">Capping machine types compared by how they apply the cap, typical caps, and whether they use chucks</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Capper</th>
+                                <th scope="col">How it applies the cap</th>
+                                <th scope="col">Typical caps</th>
+                                <th scope="col">Uses chucks?</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><a href="#chuck-capper">Chuck capper</a></td>
+                                <td>A chuck grips the cap and spins it to a set torque</td>
+                                <td>Screw caps, sport caps, child-resistant caps, trigger sprayers</td>
+                                <td>Yes</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#spindle-capper">Spindle capper</a></td>
+                                <td>Pairs of spinning wheels or belts turn the cap as the bottle passes</td>
+                                <td>Flat-sided screw caps</td>
+                                <td>No</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#snap-capper">Snap capper</a></td>
+                                <td>A belt or plunger pushes the cap straight down</td>
+                                <td>Snap-on caps, overcaps, plugs</td>
+                                <td>Sometimes, as a press-on head</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#ropp-capper">ROPP capper</a></td>
+                                <td>Rollers form threads into a plain aluminum shell</td>
+                                <td>Aluminum caps on spirits, wine, oil, syrups</td>
+                                <td>The ROPP head replaces the chuck</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#crown-capper">Crown capper</a></td>
+                                <td>A die crimps the crown's skirt under the bottle lip</td>
+                                <td>Crown caps on beer and soda</td>
+                                <td>No</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#lug-capper">Lug capper</a></td>
+                                <td>Turns or presses a lug cap on, often with steam to pull a vacuum</td>
+                                <td>Metal twist-off caps on glass food jars</td>
+                                <td>Some use chucks, others use belts</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="chuck-capper" class="section section-alt">
+            <div class="wrap">
+                <span class="kicker kicker-blue">Uses chucks</span>
+                <h2>Chuck cappers</h2>
+                <div class="grid gap-8 md:grid-cols-2 items-start">
+                    <div>
+                        <p>A chuck capper lowers a <a href="/">capping chuck</a> onto each cap, spins it, and stops at a set <a href="/cap-torque/">torque</a>. A clutch in the <a href="/capping-headsets/">capping headset</a> controls when it stops. Because the chuck wraps around the whole cap, it can handle caps that wheels cannot grip, such as sport caps, child-resistant caps, and trigger sprayers.</p>
+                        <p>Chuck cappers come in two layouts:</p>
+                        <ul class="bullets">
+                            <li><strong>Inline.</strong> Bottles move in a straight line. One or a few chucks cap each bottle while it is held in place. Common on small and medium lines and on lines that change products often.</li>
+                            <li><strong>Rotary.</strong> Bottles ride around a turning starwheel under a ring of spindles, each with its own chuck. Every bottle gets its own spindle, so torque is even and speed is high. Standard on large drink lines, often built as a <a href="/glossary/#monoblock">monoblock</a> with the filler. The fastest single rotary cappers run about 84,000 containers per hour (<a href="https://www.krones.com/en/products/machines/capper-models-for-a-wide-range-of-applications.php" rel="noopener" target="_blank">Krones</a>).</li>
+                        </ul>
+                        <p>Chuck cappers repeat torque better than wheel cappers because each cap sees one clutch setting. The trade-off is changeover: each cap size needs its own chuck or <a href="/chuck-types/#inserts">insert</a>.</p>
+                    </div>
+                    <div class="specs">
+                        <p class="specs-title">Chuck capper basics</p>
+                        <div class="spec-row"><span class="spec-label">Grips</span><span class="spec-value">The whole cap, from above</span></div>
+                        <div class="spec-row"><span class="spec-label">Torque set by</span><span class="spec-value">Clutch in the headset</span></div>
+                        <div class="spec-row"><span class="spec-label">Layouts</span><span class="spec-value">Inline or rotary</span></div>
+                        <div class="spec-row"><span class="spec-label">Caps</span><span class="spec-value">Almost any screw cap</span></div>
+                        <div class="spec-row"><span class="spec-label">Change parts</span><span class="spec-value">Chuck or insert per cap size</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="spindle-capper" class="section">
+            <div class="wrap prose-col">
+                <span class="kicker">No chucks</span>
+                <h2>Spindle cappers</h2>
+                <p>A spindle capper has several pairs of spinning wheels (spindles) set on both sides of the conveyor. As each bottle moves through, the wheels rub against the sides of the cap and turn it down. The last pair of wheels often has a clutch that sets the final torque.</p>
+                <p>Spindle cappers change over fast because one set of wheels handles a range of cap sizes. They need caps with straight, grippable sides. Caps with odd shapes, flip-tops, or trigger heads usually need a chuck capper instead.</p>
+                <p>The wheels grip the cap by friction as the bottle moves past, so torque varies more from cap to cap than on a chuck capper. Lines with tight torque limits often use a chuck capper or follow the spindle capper with a <a href="#retorquer">retorquer</a>.</p>
+            </div>
+        </section>
+
+        <section id="snap-capper" class="section section-alt">
+            <div class="wrap prose-col">
+                <span class="kicker kicker-green">Press on</span>
+                <h2>Snap cappers</h2>
+                <p>A snap capper presses caps straight down instead of turning them. A slanted belt or a plunger pushes the cap over a bead on the bottle neck until it clicks into place. Snap-on caps, trigger sprayer overcaps, and plugs go on this way.</p>
+                <p>On a chuck capper, a press-on head does the same job. It pushes down with a set force (<a href="/glossary/#top-load">top load</a>) and does not turn. See <a href="/chuck-types/#applications">trigger sprayer overcaps</a>.</p>
+            </div>
+        </section>
+
+        <section id="ropp-capper" class="section">
+            <div class="wrap prose-col">
+                <span class="kicker kicker-blue">Aluminum caps</span>
+                <h2>ROPP cappers</h2>
+                <p>A ROPP (roll-on pilfer-proof) capper puts a plain aluminum shell over the bottle neck. A pressure pad holds it down while rollers press threads into the metal and tuck the bottom band under a ridge on the neck. The head forms the cap on the bottle, so it does not need a torque clutch.</p>
+                <p>ROPP cappers run spirits, wine, olive oil, and medicine syrups. See the full <a href="/ropp-capping/">ROPP capping guide</a>.</p>
+            </div>
+        </section>
+
+        <section id="crown-capper" class="section section-alt">
+            <div class="wrap prose-col">
+                <span class="kicker">Crimp on</span>
+                <h2>Crown cappers</h2>
+                <p>A crown capper puts the classic fluted metal cap on beer and soda bottles. The standard crown is 26 mm with 21 teeth. A die pushes down over the crown and crimps its fluted skirt under the lip of the bottle. There are no threads and no torque. The seal comes from the liner being squeezed against the glass.</p>
+            </div>
+        </section>
+
+        <section id="lug-capper" class="section">
+            <div class="wrap prose-col">
+                <span class="kicker kicker-green">Glass jars</span>
+                <h2>Lug cappers</h2>
+                <p>Lug caps are the metal twist-off lids on jars of pickles, sauce, and baby food. Instead of a full thread, the cap has a few small tabs (lugs) that slide under short threads on the jar, so a short turn closes it. A 38 mm cap has 3 lugs, and most 43 to 70 mm caps have 4. See <a href="/cap-sizes/#lug">lug cap sizes</a>.</p>
+                <p>Most food lug cappers blow steam into the headspace just before the cap goes on. As the steam cools, it pulls a vacuum that holds the lid down and makes the button in the middle of the lid pop down. The vacuum, not the torque, does most of the sealing.</p>
+            </div>
+        </section>
+
+        <section id="other" class="section section-alt">
+            <div class="wrap">
+                <span class="kicker kicker-blue">Also on the line</span>
+                <h2>Other capping equipment</h2>
+                <div class="cards cards-2">
+                    <div class="card" id="handheld">
+                        <h3>Handheld and tabletop cappers</h3>
+                        <p>An operator holds a powered spindle with a chuck on the end and presses it onto each cap. The spindle has a clutch that slips at the set torque. Used for small batches, lab work, and startups before they buy an automatic capper.</p>
+                    </div>
+                    <div class="card" id="retorquer">
+                        <h3>Retorquers</h3>
+                        <p>A retorquer is a second capper that tightens caps again after they have settled. It is used after induction sealing or hot filling, when the liner relaxes and the cap loosens. Many retorquers are spindle style.</p>
+                    </div>
+                    <div class="card" id="cap-feeding">
+                        <h3>Cap sorters and elevators</h3>
+                        <p>Caps come in bulk. A sorter or elevator turns every cap the right way up and sends it down a chute to the capper. A jammed or worn chute is a common cause of <a href="/troubleshooting/#cross-threading">cross-threaded caps</a>.</p>
+                    </div>
+                    <div class="card" id="pick-and-place">
+                        <h3>Pick-and-place and pick-off</h3>
+                        <p>Chuck cappers get caps in two ways. In pick-and-place, the chuck grabs a cap from a transfer wheel and carries it to the bottle. In pick-off, the bottle neck catches a cap from the end of the chute as it passes, then the chuck tightens it.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="choose" class="section">
+            <div class="wrap prose-col">
+                <span class="kicker">Pick one</span>
+                <h2>When to pick a chuck capper</h2>
+                <ul class="bullets">
+                    <li>Your caps have flip-tops, spouts, triggers, or child-resistant features that wheels can't grip.</li>
+                    <li>You need tight torque control, such as a <a href="/glossary/#cv">CV%</a> under 5%.</li>
+                    <li>You run a rotary line at high speed, where every bottle needs its own spindle.</li>
+                </ul>
+                <p class="mt-4">Pick a spindle capper when you run many sizes of plain screw caps on a small line and fast changeover matters more than tight torque. Then match the chuck to the cap with the <a href="/chuck-types/">chuck types guide</a> and the <a href="/cap-sizes/">cap size guide</a>.</p>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="wrap">
+                <h2>Keep reading</h2>
+                <ul class="related">
+                    <li><a href="/chuck-types/">Capping chuck types</a></li>
+                    <li><a href="/capping-headsets/">Capping headsets</a></li>
+                    <li><a href="/cap-torque/">Cap torque guide</a></li>
+                    <li><a href="/ropp-capping/">ROPP capping</a></li>
+                    <li><a href="/oem-compatibility/">OEM compatibility</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+</BaseLayout>
