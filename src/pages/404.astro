@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+---
+
+<BaseLayout
+    title="Page Not Found | CappingChucks.com"
+    description="This page doesn't exist. Find capping chuck, headset, torque, and cap size guides here."
+    canonical="https://cappingchucks.com/404/"
+>
+    <PageHero title="Page Not Found" answerLabel="Try one of these">
+        <p>This page doesn't exist or has moved. Pick a guide below, or start at the <a href="/">capping chucks guide</a>.</p>
+    </PageHero>
+
+    <main>
+        <section class="section">
+            <div class="wrap">
+                <h2>Guides</h2>
+                <ul class="related">
+                    <li><a href="/chuck-types/">Capping chuck types</a></li>
+                    <li><a href="/capping-headsets/">Capping headsets</a></li>
+                    <li><a href="/capping-machines/">Capping machine types</a></li>
+                    <li><a href="/cap-torque/">Cap torque guide</a></li>
+                    <li><a href="/cap-sizes/">Cap and neck finish sizes</a></li>
+                    <li><a href="/ropp-capping/">ROPP capping</a></li>
+                    <li><a href="/troubleshooting/">Troubleshooting</a></li>
+                    <li><a href="/glossary/">Glossary</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+</BaseLayout>

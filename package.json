@@ -9,7 +9,10 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "verify": "node --no-warnings scripts/verify.mjs",
+    "deploy": "npm run build && npm run verify && netlify deploy --prod --dir=dist --no-build",
+    "deploy:preview": "npm run build && npm run verify && netlify deploy --dir=dist --no-build"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
