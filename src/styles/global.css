@@ -282,7 +282,7 @@
         .hero-grid figure { position: relative; min-height: 12rem; }
         .hero-grid picture { position: absolute; inset: 0; }
         .hero-grid .hero-img { height: 100%; }
-        .hero-grid .hero-caption { position: absolute; top: 100%; left: 0; }
+        .hero-grid .hero-caption { position: absolute; top: 100%; left: 0; right: 0; }
     }
 
     .hero-img {
@@ -297,6 +297,7 @@
         font-size: 0.85rem;
         margin-top: 0.4rem;
         color: #fff;
+        text-align: center;
     }
 
     /* Quick answer box */
