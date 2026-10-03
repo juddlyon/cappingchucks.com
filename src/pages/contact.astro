@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+---
+
+<BaseLayout
+    title="Contact and Corrections | CappingChucks.com"
+    description="How to send a correction or an editorial question to CappingChucks.com, and where to go for capping equipment quotes and service."
+    canonical="https://cappingchucks.com/contact/"
+    breadcrumb="Contact"
+>
+    <PageHero title="Contact" crumb="Contact" answerLabel="Email">
+        <p>Email <a href="mailto:info@cappingchucks.com">info@cappingchucks.com</a> with corrections and questions about the guides.</p>
+    </PageHero>
+
+    <main>
+        <section id="corrections" class="section">
+            <div class="wrap prose-col">
+                <span class="kicker">Corrections</span>
+                <h2>Editorial questions and corrections</h2>
+                <p>Include the page address and the passage in question. Link to the standard, manual, or maker document that supports your point. Don't send private production details or personal information the fix doesn't need.</p>
+            </div>
+        </section>
+
+        <section id="equipment" class="section section-alt">
+            <div class="wrap prose-col">
+                <span class="kicker kicker-blue">Equipment</span>
+                <h2>Parts, quotes, and service</h2>
+                <p>We don't sell chucks or headsets, give quotes, match buyers with suppliers, or troubleshoot machines remotely. For parts, contact your capper's maker or a chuck supplier. Have your machine model, spindle connection, and cap drawing ready. See <a href="/oem-compatibility/#checklist">what to check before you order</a>.</p>
+                <p>For service, contact your machine's maker or a qualified service provider with the model and serial number. To fix a problem on the line yourself, start with the <a href="/troubleshooting/">troubleshooting guide</a>.</p>
+            </div>
+        </section>
+
+        <section id="replies" class="section">
+            <div class="wrap prose-col">
+                <span class="kicker kicker-green">Replies</span>
+                <h2>What to expect</h2>
+                <p>We read every message but can't promise a reply time. This is not an emergency or tech support channel. See the <a href="/about/">editorial policy</a> for how the guides are prepared.</p>
+            </div>
+        </section>
+    </main>
+</BaseLayout>

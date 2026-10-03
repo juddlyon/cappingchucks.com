@@ -629,6 +629,13 @@
         color: #fff;
     }
 
+    .footer-meta {
+        list-style: none;
+        display: flex;
+        gap: 1rem;
+        margin-top: 0.75rem;
+    }
+
     .footer-links {
         list-style: none;
         display: grid;
