@@ -3,6 +3,7 @@ import { defineConfig, fontProviders } from 'astro/config';
 
 import tailwindcss from '@tailwindcss/vite';
 
+import ogLeadImage from './scripts/og-lead-image.mjs';
 import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
@@ -32,5 +33,5 @@ export default defineConfig({
       fallbacks: ['Helvetica Neue', 'Arial', 'sans-serif'],
     },
   ],
-  integrations: [sitemap({ lastmod: new Date() })]
+  integrations: [sitemap({ lastmod: new Date() }), ogLeadImage({ placeholder: '/og-image.png' })]
 });
